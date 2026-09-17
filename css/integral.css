@@ -172,10 +172,12 @@ html {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
+  bottom: -12vh;
   z-index: 1;
-  height: 32vh;
-  background: linear-gradient(180deg, rgba(0, 5, 14, 0), #000 92%);
+  height: 48vh;
+  background:
+    radial-gradient(ellipse at 50% 16%, rgba(52, 135, 226, .18), transparent 52%),
+    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 13, 32, .64) 42%, #000 88%);
   pointer-events: none;
 }
 
@@ -578,15 +580,31 @@ html {
 }
 
 .mission-panel {
+  position: relative;
+  z-index: 3;
   min-height: 94vh;
-  margin-top: -1px;
-  padding: 118px 4.2vw 118px;
+  margin-top: -14vh;
+  padding: 188px 4.2vw 118px;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% -18%, rgba(39, 112, 206, .22), transparent 34%),
-    linear-gradient(180deg, #000 0%, #03060d 18%, #000 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(51, 135, 232, .24), transparent 44%),
+    linear-gradient(180deg, rgba(0, 6, 17, .92) 0%, #03060d 22%, #000 100%);
+}
+
+.mission-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 180px;
+  background:
+    linear-gradient(180deg, rgba(7, 44, 105, .28), rgba(0, 0, 0, 0)),
+    radial-gradient(ellipse at 50% 0%, rgba(116, 184, 255, .14), transparent 60%);
+  pointer-events: none;
 }
 
 .mission-intro {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(390px, .9fr) minmax(420px, 1.4fr);
   align-items: start;
@@ -612,6 +630,8 @@ html {
 }
 
 .mission-pillars {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.3vw;
