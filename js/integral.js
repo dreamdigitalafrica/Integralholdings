@@ -26,3 +26,32 @@
   tick();
   setInterval(tick, 1000);
 }());
+
+(function () {
+  const header = document.querySelector(".integral-header");
+  if (!header) return;
+
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > lastScrollY;
+
+    if (currentScrollY > 120 && scrollingDown) {
+      header.classList.add("header-hidden");
+    } else {
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollY = Math.max(currentScrollY, 0);
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+}());

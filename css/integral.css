@@ -51,6 +51,14 @@ html {
   padding: 28px 80px 0;
   color: var(--white-100);
   text-transform: uppercase;
+  transition: transform .42s ease, opacity .28s ease;
+  will-change: transform, opacity;
+}
+
+.integral-header.header-hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .integral-brand {
@@ -157,6 +165,18 @@ html {
 
 .panel-hero {
   background-color: #0a3d7b;
+}
+
+.panel-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 1;
+  height: 32vh;
+  background: linear-gradient(180deg, rgba(0, 5, 14, 0), #000 92%);
+  pointer-events: none;
 }
 
 .hero-media {
@@ -559,8 +579,11 @@ html {
 
 .mission-panel {
   min-height: 94vh;
-  padding: 132px 4.2vw 118px;
-  background: #000;
+  margin-top: -1px;
+  padding: 118px 4.2vw 118px;
+  background:
+    radial-gradient(circle at 50% -18%, rgba(39, 112, 206, .22), transparent 34%),
+    linear-gradient(180deg, #000 0%, #03060d 18%, #000 100%);
 }
 
 .mission-intro {
