@@ -31,6 +31,7 @@ html {
   font-size: 16px;
   line-height: 26px;
   overflow-x: hidden;
+  text-size-adjust: 100%;
 }
 
 .integral-page a {
@@ -77,7 +78,7 @@ html {
   justify-content: center;
   gap: 38px;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: clamp(11px, .72vw, 13px);
   line-height: 13px;
   font-weight: 700;
   letter-spacing: .075em;
@@ -104,7 +105,7 @@ html {
   border: 1px solid rgba(240, 240, 250, .42);
   border-radius: 4px;
   color: var(--white-100);
-  font-size: 13px;
+  font-size: clamp(11px, .72vw, 13px);
   line-height: 13px;
   letter-spacing: .11em;
   background: rgba(4, 19, 52, .16);
@@ -215,7 +216,7 @@ html {
 .hero-copy {
   position: relative;
   z-index: 2;
-  margin-top: -12px;
+  margin-top: -16vh;
   text-align: center;
   text-transform: uppercase;
 }
@@ -234,7 +235,7 @@ html {
 
 .hero-logo-mark {
   display: block;
-  width: clamp(230px, 28vw, 470px);
+  width: clamp(220px, 27vw, 470px);
   max-height: 132px;
   object-fit: contain;
   filter: drop-shadow(0 20px 54px rgba(0, 18, 49, .4));
@@ -243,10 +244,11 @@ html {
 .hero-coming-soon {
   margin: 18px 0 0;
   color: rgba(255, 255, 255, .96);
-  font-size: clamp(15px, 1.25vw, 22px);
+  font-size: clamp(13px, 1.18vw, 22px);
   line-height: 1;
   letter-spacing: .15em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .sector-panel {
@@ -364,23 +366,26 @@ html {
 }
 
 .sector-content h2 {
-  width: min(760px, 48vw);
+  width: min(760px, 52vw);
   margin: 0;
   color: var(--white-100);
-  font-size: clamp(46px, 5.3vw, 96px);
-  line-height: .92;
+  font-size: clamp(42px, 5vw, 96px);
+  line-height: .94;
   font-weight: 700;
   letter-spacing: .015em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .sector-content p:not(.eyebrow) {
   width: min(680px, 44vw);
   margin: 28px 0 0;
   color: var(--white-85);
-  font-size: clamp(18px, 1.18vw, 22px);
+  font-size: clamp(16px, 1.08vw, 22px);
   line-height: 1.52;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 .drone-video-layer {
@@ -616,18 +621,21 @@ html {
 .mission-intro h2 {
   margin: 0;
   color: var(--white-100);
-  font-size: clamp(44px, 4.25vw, 78px);
+  font-size: clamp(38px, 4vw, 78px);
   line-height: .98;
   font-weight: 700;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .mission-intro > p {
   max-width: 930px;
   margin: 42px 0 0;
   color: var(--white-85);
-  font-size: clamp(18px, 1.15vw, 23px);
+  font-size: clamp(16px, 1.08vw, 23px);
   line-height: 1.5;
+  overflow-wrap: break-word;
 }
 
 .mission-pillars {
@@ -648,11 +656,12 @@ html {
   display: inline-block;
   margin: 20px 0 0 24px;
   color: var(--white-100);
-  font-size: clamp(23px, 1.7vw, 32px);
+  font-size: clamp(21px, 1.55vw, 32px);
   line-height: 1;
   font-weight: 700;
   text-transform: uppercase;
   vertical-align: top;
+  overflow-wrap: anywhere;
 }
 
 .pillar-icon {
@@ -668,8 +677,9 @@ html {
   max-width: 92%;
   margin: 34px 0 0;
   color: var(--white-85);
-  font-size: clamp(17px, 1.08vw, 21px);
+  font-size: clamp(15px, 1vw, 21px);
   line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 .integral-footer {
@@ -703,8 +713,8 @@ html {
 
 @media (max-width: 1320px) {
   .integral-header {
-    grid-template-columns: 150px 1fr 290px;
-    gap: 24px;
+    grid-template-columns: 145px 1fr 280px;
+    gap: 20px;
     padding: 34px 50px 0;
   }
 
@@ -713,13 +723,13 @@ html {
   }
 
   .integral-nav {
-    gap: 24px;
-    font-size: 12px;
+    gap: clamp(16px, 1.6vw, 24px);
+    font-size: 11px;
   }
 
   .launch-pill {
-    width: 300px;
-    font-size: 13px;
+    width: 280px;
+    font-size: 11px;
   }
 }
 
@@ -741,6 +751,18 @@ html {
     padding: 100px 34px 52px;
   }
 
+  .panel-hero {
+    min-height: 110vh;
+  }
+
+  .hero-copy {
+    margin-top: -12vh;
+  }
+
+  .hero-logo-mark {
+    width: clamp(210px, 42vw, 380px);
+  }
+
   .sector-content,
   .sector-content-right {
     align-items: flex-start;
@@ -751,6 +773,16 @@ html {
   .sector-content h2,
   .sector-content p:not(.eyebrow) {
     width: min(720px, 88vw);
+  }
+
+  .sector-content h2 {
+    font-size: clamp(40px, 9vw, 78px);
+    line-height: .96;
+  }
+
+  .sector-content p:not(.eyebrow) {
+    font-size: clamp(16px, 2.35vw, 20px);
+    line-height: 1.48;
   }
 
   .mission-intro {
@@ -766,6 +798,10 @@ html {
     grid-template-columns: 1fr;
     gap: 54px;
   }
+
+  .mission-pillar p {
+    max-width: 720px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -776,7 +812,7 @@ html {
   }
 
   .integral-brand {
-    width: 132px;
+    width: 126px;
   }
 
   .launch-pill {
@@ -784,35 +820,95 @@ html {
     min-width: 0;
     width: min(100%, 310px);
     padding: 12px 14px;
-    font-size: 12px;
+    font-size: 11px;
+    gap: 12px;
+    letter-spacing: .08em;
   }
 
-  .hero-copy h1 {
-    font-size: clamp(58px, 18vw, 92px);
+  .hero-copy {
+    margin-top: -9vh;
+  }
+
+  .hero-logo-mark {
+    width: min(72vw, 300px);
+    max-height: 94px;
+  }
+
+  .hero-coming-soon {
+    margin-top: 14px;
+    font-size: clamp(12px, 3.6vw, 15px);
+    line-height: 1.25;
+    letter-spacing: .1em;
   }
 
   .sector-content h2 {
-    font-size: clamp(42px, 14vw, 68px);
+    font-size: clamp(34px, 12vw, 58px);
+    width: 100%;
   }
 
   .sector-content p:not(.eyebrow) {
-    font-size: 17px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.46;
   }
 
   .mission-panel {
-    padding: 94px 24px 76px;
+    margin-top: -20vh;
+    padding: 210px 24px 76px;
   }
 
   .mission-intro {
     margin-bottom: 64px;
   }
 
+  .mission-intro h2 {
+    font-size: clamp(32px, 10vw, 46px);
+    line-height: 1;
+  }
+
+  .mission-intro > p {
+    font-size: 16px;
+    line-height: 1.48;
+  }
+
   .mission-pillar {
     min-height: 0;
+  }
+
+  .mission-pillar h3 {
+    display: block;
+    margin: 18px 0 0;
+    font-size: 23px;
+  }
+
+  .mission-pillar p {
+    max-width: 100%;
+    margin-top: 24px;
+    font-size: 15px;
   }
 
   .integral-footer {
     flex-wrap: wrap;
     gap: 22px 28px;
+  }
+}
+
+@media (max-width: 420px) {
+  .integral-header {
+    padding-inline: 18px;
+  }
+
+  .launch-pill {
+    grid-template-columns: 1fr;
+    width: min(100%, 260px);
+    gap: 8px;
+  }
+
+  .panel-content {
+    padding-inline: 22px;
+  }
+
+  .sector-content h2 {
+    font-size: clamp(30px, 11vw, 46px);
   }
 }
