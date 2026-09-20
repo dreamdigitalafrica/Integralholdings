@@ -177,10 +177,9 @@ html {
   right: 0;
   bottom: 0;
   z-index: 1;
-  height: 68vh;
+  height: 82vh;
   background:
-    radial-gradient(ellipse at 50% 22%, rgba(52, 135, 226, .09), transparent 62%),
-    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 7, 18, .04) 24%, rgba(0, 10, 24, .2) 48%, rgba(0, 5, 14, .68) 78%, #000 100%);
+    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 7, 18, .03) 22%, rgba(0, 8, 20, .12) 42%, rgba(0, 6, 16, .34) 62%, rgba(0, 4, 12, .72) 84%, #000 100%);
   pointer-events: none;
 }
 
@@ -198,15 +197,14 @@ html {
 .panel-hero::before {
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(0, 8, 18, .03), rgba(0, 9, 22, .02) 58%, rgba(0, 5, 14, .18)),
-    linear-gradient(90deg, rgba(0, 10, 28, .08), transparent 54%, rgba(0, 8, 24, .08));
+    linear-gradient(180deg, rgba(0, 7, 18, .54) 0%, rgba(0, 8, 22, .28) 9%, rgba(0, 9, 22, .08) 24%, rgba(0, 9, 22, 0) 44%),
+    linear-gradient(90deg, rgba(0, 10, 28, .14), transparent 52%, rgba(0, 8, 24, .1));
 }
 
 .panel-hero .panel-shade {
   z-index: 1;
   background:
-    radial-gradient(circle at 50% 38%, rgba(118, 180, 255, .05), transparent 34%),
-    linear-gradient(180deg, rgba(11, 40, 94, 0), rgba(0, 8, 22, .08));
+    radial-gradient(circle at 50% 38%, rgba(118, 180, 255, .035), transparent 34%);
 }
 
 .hero-grid {
@@ -590,12 +588,12 @@ html {
   position: relative;
   z-index: 3;
   min-height: 94vh;
-  margin-top: -34vh;
-  padding: 320px 4.2vw 118px;
+  margin-top: -42vh;
+  padding: 430px 4.2vw 118px;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(51, 135, 232, .14), transparent 54%),
-    linear-gradient(180deg, rgba(0, 6, 17, 0) 0%, rgba(0, 6, 17, .24) 18%, rgba(2, 8, 20, .9) 46%, #03060d 66%, #000 100%);
+    radial-gradient(ellipse at 50% 18%, rgba(51, 135, 232, .08), transparent 48%),
+    linear-gradient(180deg, rgba(0, 6, 17, 0) 0%, rgba(0, 6, 17, 0) 30%, rgba(0, 6, 17, .24) 48%, rgba(2, 8, 20, .86) 70%, #03060d 86%, #000 100%);
 }
 
 .mission-panel::before {
@@ -604,22 +602,12 @@ html {
   inset: 0 0 auto;
   height: 180px;
   background:
-    linear-gradient(180deg, rgba(7, 44, 105, .28), rgba(0, 0, 0, 0)),
-    radial-gradient(ellipse at 50% 0%, rgba(116, 184, 255, .14), transparent 60%);
+    radial-gradient(ellipse at 50% 0%, rgba(116, 184, 255, .08), transparent 60%);
   pointer-events: none;
 }
 
 .mission-panel::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -44vh;
-  z-index: 0;
-  height: 44vh;
-  background:
-    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 6, 17, .08) 38%, rgba(0, 4, 12, .42) 76%, rgba(2, 6, 13, .82) 100%);
-  pointer-events: none;
+  content: none;
 }
 
 .mission-intro {
