@@ -175,12 +175,12 @@ html {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -42vh;
+  bottom: 0;
   z-index: 1;
-  height: 82vh;
+  height: 68vh;
   background:
-    radial-gradient(ellipse at 50% 8%, rgba(52, 135, 226, .12), transparent 62%),
-    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 7, 18, .08) 24%, rgba(0, 13, 32, .46) 58%, rgba(0, 5, 14, .92) 88%, #000 100%);
+    radial-gradient(ellipse at 50% 22%, rgba(52, 135, 226, .09), transparent 62%),
+    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 7, 18, .04) 24%, rgba(0, 10, 24, .2) 48%, rgba(0, 5, 14, .68) 78%, #000 100%);
   pointer-events: none;
 }
 
@@ -193,8 +193,6 @@ html {
   object-fit: cover;
   object-position: center top;
   filter: saturate(1.08) contrast(1.04) brightness(.98);
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
 }
 
 .panel-hero::before {
@@ -202,8 +200,6 @@ html {
   background:
     linear-gradient(180deg, rgba(0, 8, 18, .03), rgba(0, 9, 22, .02) 58%, rgba(0, 5, 14, .18)),
     linear-gradient(90deg, rgba(0, 10, 28, .08), transparent 54%, rgba(0, 8, 24, .08));
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
 }
 
 .panel-hero .panel-shade {
@@ -211,8 +207,6 @@ html {
   background:
     radial-gradient(circle at 50% 38%, rgba(118, 180, 255, .05), transparent 34%),
     linear-gradient(180deg, rgba(11, 40, 94, 0), rgba(0, 8, 22, .08));
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 62%, rgba(0, 0, 0, .82) 73%, rgba(0, 0, 0, .28) 86%, transparent 96%);
 }
 
 .hero-grid {
@@ -601,7 +595,7 @@ html {
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 0%, rgba(51, 135, 232, .14), transparent 54%),
-    linear-gradient(180deg, rgba(0, 6, 17, .08) 0%, rgba(0, 6, 17, .38) 18%, rgba(2, 8, 20, .9) 42%, #03060d 62%, #000 100%);
+    linear-gradient(180deg, rgba(0, 6, 17, 0) 0%, rgba(0, 6, 17, .24) 18%, rgba(2, 8, 20, .9) 46%, #03060d 66%, #000 100%);
 }
 
 .mission-panel::before {
@@ -624,7 +618,7 @@ html {
   z-index: 0;
   height: 44vh;
   background:
-    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 6, 17, .2) 36%, rgba(0, 4, 12, .72) 76%, #02060d 100%);
+    linear-gradient(180deg, rgba(0, 5, 14, 0) 0%, rgba(0, 6, 17, .08) 38%, rgba(0, 4, 12, .42) 76%, rgba(2, 6, 13, .82) 100%);
   pointer-events: none;
 }
 
