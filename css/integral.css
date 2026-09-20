@@ -54,6 +54,19 @@ html {
   text-transform: uppercase;
   transition: transform .42s ease, opacity .28s ease;
   will-change: transform, opacity;
+  isolation: isolate;
+}
+
+.integral-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 146px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .72) 0%, rgba(0, 5, 15, .5) 32%, rgba(0, 8, 22, .18) 72%, rgba(0, 8, 22, 0) 100%),
+    radial-gradient(ellipse at 50% 0%, rgba(30, 87, 150, .2), transparent 66%);
+  pointer-events: none;
 }
 
 .integral-header.header-hidden {
@@ -92,6 +105,65 @@ html {
 .integral-nav a:hover,
 .integral-nav a:focus {
   opacity: 1;
+}
+
+.company-menu {
+  position: relative;
+}
+
+.company-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.company-trigger .fa {
+  font-size: .9em;
+}
+
+.company-dropdown {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 50%;
+  display: grid;
+  min-width: 172px;
+  gap: 18px;
+  padding: 0;
+  text-align: left;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  isolation: isolate;
+}
+
+.company-dropdown::before {
+  content: "";
+  position: absolute;
+  inset: -28px -34px -24px;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(22, 70, 132, .24), transparent 62%),
+    linear-gradient(180deg, rgba(0, 0, 0, .72), rgba(0, 0, 0, .38) 72%, rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.company-menu:hover .company-dropdown,
+.company-menu:focus-within .company-dropdown {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.company-dropdown a {
+  display: block;
+  font-size: clamp(13px, .96vw, 18px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .1em;
+  opacity: .88;
 }
 
 .launch-pill {
@@ -715,23 +787,30 @@ html {
 
 @media (max-width: 1320px) {
   .integral-header {
-    grid-template-columns: 145px 1fr 280px;
-    gap: 20px;
-    padding: 34px 50px 0;
+    grid-template-columns: 128px minmax(0, 1fr) 232px;
+    gap: 14px;
+    padding: 28px 38px 0;
   }
 
   .integral-brand {
-    width: 128px;
+    width: 124px;
   }
 
   .integral-nav {
-    gap: clamp(16px, 1.6vw, 24px);
-    font-size: 11px;
+    gap: clamp(8px, .9vw, 14px);
+    font-size: clamp(8px, .7vw, 10px);
+    letter-spacing: .055em;
   }
 
   .launch-pill {
-    width: 280px;
-    font-size: 11px;
+    width: 232px;
+    gap: 12px;
+    padding-inline: 14px;
+    font-size: 10px;
+  }
+
+  .company-dropdown a {
+    font-size: 13px;
   }
 
   .mission-pillars {
