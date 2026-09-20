@@ -124,6 +124,7 @@ html {
 .panel {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   isolation: isolate;
   background-color: #000;
@@ -842,14 +843,22 @@ html {
   }
 
   .sector-content h2 {
-    font-size: clamp(34px, 12vw, 58px);
+    font-size: clamp(30px, 9.8vw, 42px);
+    line-height: 1;
+    letter-spacing: .006em;
     width: 100%;
+    max-width: 100%;
   }
 
   .sector-content p:not(.eyebrow) {
     width: 100%;
     font-size: 16px;
     line-height: 1.46;
+  }
+
+  .sector-content,
+  .sector-content-right {
+    padding-bottom: max(142px, calc(18svh + env(safe-area-inset-bottom)));
   }
 
   .mission-panel {
@@ -909,6 +918,11 @@ html {
   }
 
   .sector-content h2 {
-    font-size: clamp(30px, 11vw, 46px);
+    font-size: clamp(28px, 9.2vw, 38px);
+  }
+
+  .sector-content p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.45;
   }
 }
