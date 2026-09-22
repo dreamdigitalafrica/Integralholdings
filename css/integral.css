@@ -90,10 +90,10 @@ html {
   display: flex;
   justify-content: center;
   min-width: 0;
-  gap: clamp(9px, .82vw, 16px);
+  gap: clamp(14px, 1.08vw, 24px);
   white-space: nowrap;
-  font-size: clamp(9px, .66vw, 12px);
-  line-height: 14px;
+  font-size: clamp(10px, .76vw, 14px);
+  line-height: 16px;
   font-weight: 700;
   letter-spacing: .06em;
 }
@@ -839,8 +839,8 @@ html {
   }
 
   .integral-nav {
-    gap: clamp(7px, .72vw, 12px);
-    font-size: clamp(8.5px, .74vw, 10.5px);
+    gap: clamp(9px, .82vw, 14px);
+    font-size: clamp(9px, .82vw, 11.5px);
     letter-spacing: .055em;
   }
 
