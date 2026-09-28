@@ -1198,6 +1198,84 @@ html {
   text-transform: uppercase;
 }
 
+.completed-project {
+  padding-top: 96px;
+}
+
+.completed-project-heading {
+  display: grid;
+  grid-template-columns: minmax(320px, .8fr) minmax(420px, 1.25fr);
+  gap: 8vw;
+  align-items: end;
+  padding-bottom: 48px;
+}
+
+.completed-project-heading h2 {
+  margin: 0;
+  color: var(--white-100);
+  font-size: clamp(42px, 5vw, 104px);
+  line-height: .92;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.completed-project-heading p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 0;
+  color: var(--white-85);
+  font-size: clamp(16px, 1vw, 20px);
+  line-height: 1.55;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.4vw, 24px);
+}
+
+.project-gallery figure {
+  position: relative;
+  min-height: 300px;
+  margin: 0;
+  overflow: hidden;
+  background: #07101f;
+}
+
+.project-gallery-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 640px;
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.project-gallery figure:hover img {
+  transform: scale(1.035);
+}
+
+.project-gallery figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 1;
+  padding: 9px 11px 8px;
+  color: var(--white-100);
+  background: rgba(0, 0, 0, .45);
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1640px) {
   .integral-header {
     grid-template-columns: 136px minmax(0, 1fr) 210px;
@@ -1354,6 +1432,20 @@ html {
   .careers-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 48px 5vw;
+  }
+
+  .completed-project-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-gallery-feature {
+    grid-column: span 2;
+    min-height: 520px;
   }
 
   .leadership-modal-panel {
@@ -1519,6 +1611,28 @@ html {
     max-width: 100%;
     font-size: 15px;
     line-height: 1.5;
+  }
+
+  .completed-project {
+    padding-top: 72px;
+  }
+
+  .completed-project-heading h2 {
+    font-size: clamp(34px, 10vw, 52px);
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery-feature {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project-gallery figure,
+  .project-gallery-feature {
+    min-height: 330px;
   }
 
   .leader-profile-trigger {
