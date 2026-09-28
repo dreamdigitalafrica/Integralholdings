@@ -83,3 +83,45 @@
     menu.addEventListener("focusout", close);
   });
 }());
+
+(function () {
+  const triggers = document.querySelectorAll("[data-modal-target]");
+  const modals = document.querySelectorAll(".leadership-modal");
+  if (!triggers.length || !modals.length) return;
+
+  let activeTrigger = null;
+
+  const closeModal = (modal) => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (activeTrigger) activeTrigger.focus();
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const modal = document.getElementById(trigger.dataset.modalTarget);
+      if (!modal) return;
+
+      activeTrigger = trigger;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      const closeButton = modal.querySelector(".modal-close");
+      if (closeButton) closeButton.focus();
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.querySelectorAll("[data-modal-close]").forEach((closeButton) => {
+      closeButton.addEventListener("click", () => closeModal(modal));
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const openModal = document.querySelector(".leadership-modal.is-open");
+    if (openModal) closeModal(openModal);
+  });
+}());
