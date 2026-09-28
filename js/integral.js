@@ -55,3 +55,31 @@
     }
   }, { passive: true });
 }());
+
+(function () {
+  const menus = document.querySelectorAll(".company-menu");
+  if (!menus.length) return;
+
+  menus.forEach((menu) => {
+    let closeTimer;
+
+    const open = () => {
+      window.clearTimeout(closeTimer);
+      menu.classList.add("is-open");
+    };
+
+    const close = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => {
+        if (!menu.matches(":hover") && !menu.contains(document.activeElement)) {
+          menu.classList.remove("is-open");
+        }
+      }, 260);
+    };
+
+    menu.addEventListener("pointerenter", open);
+    menu.addEventListener("pointerleave", close);
+    menu.addEventListener("focusin", open);
+    menu.addEventListener("focusout", close);
+  });
+}());
