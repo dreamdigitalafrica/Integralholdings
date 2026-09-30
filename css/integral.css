@@ -360,7 +360,7 @@ html {
 }
 
 .sector-auto { --panel-image: url("../images/integral-section-automobile.png"); }
-.sector-oil { --panel-image: url("../images/section-oil-gas-platform.jpg"); }
+.sector-oil { --panel-image: linear-gradient(180deg, #061833, #020814); }
 .sector-construction { --panel-image: url("../images/integral-section-construction.png"); }
 .sector-agriculture { --panel-image: url("../images/integral-section-agriculture.png"); }
 .sector-realestate { --panel-image: url("../images/real-estate-blue-towers.png"); }
