@@ -8,7 +8,7 @@
   <title>84th Autos | Integral Holdings</title>
   <link rel="icon" type="image/png" href="images/integral-favicon-blue.png">
   <link rel="stylesheet" href="icons/font-awesome.min.css">
-  <link rel="stylesheet" href="css/integral.css">
+  <link rel="stylesheet" href="css/integral.css?v=20261010-7">
 </head>
 
 <body class="integral-page detail-page autos-page">
@@ -43,90 +43,112 @@
   </header>
 
   <main id="top">
-    <section class="detail-hero panel" aria-labelledby="detail-title">
-      <video class="hero-media" autoplay muted loop playsinline preload="metadata"><source src="images/section-automobile.mp4" type="video/mp4"></video>
+    <section class="detail-hero panel autos-hero" aria-labelledby="detail-title">
+      <img class="hero-media" src="images/autos-custom-suv.jpg" alt="">
       <div class="panel-shade"></div>
       <div class="panel-content detail-hero-content">
-        <p class="eyebrow">Automobiles & Mobility</p>
         <h1 id="detail-title">84th Autos</h1>
-        <p>Automotive sourcing, fleet support and dependable mobility services for private, corporate and commercial needs.</p>
-        <dl class="detail-stat-strip autos-stat-strip" aria-label="84th Autos summary">
-          <div><dt>Focus</dt><dd>Mobility</dd></div>
-          <div><dt>Support</dt><dd>Fleet</dd></div>
-          <div><dt>Model</dt><dd>Trade</dd></div>
-        </dl>
+        <p>Considered mobility for people and business.</p>
+        <a class="autos-hero-link" href="#autos-collection">Explore 84th Autos <i class="fa fa-arrow-down" aria-hidden="true"></i></a>
       </div>
     </section>
 
-    <section class="detail-body">
-      <section class="detail-copy-block autos-intro">
-          <h2>Automobiles & Mobility</h2>
-          <div>
-            <p>84th Autos Limited represents Integral Holdings' automotive and mobility interests, with a focus on vehicle commerce, sourcing, fleet supply and support services.</p>
-            <p>The company is positioned to help individuals, businesses and institutions access dependable mobility solutions backed by disciplined coordination, transparent processes and long-term service thinking.</p>
-          </div>
-        </section>
+    <section class="autos-intro-band" aria-labelledby="autos-intro-title">
+      <p class="autos-kicker">Automobiles &amp; Mobility</p>
+      <h2 id="autos-intro-title">A clearer way to move.</h2>
+      <p>84th Autos brings vehicle sourcing, fleet supply and practical ownership support together in one focused mobility business.</p>
+    </section>
 
-      <section class="autos-showcase" aria-labelledby="autos-showcase-title">
-        <div class="autos-showcase-media">
-          <video autoplay muted loop playsinline preload="metadata">
-            <source src="images/section-automobile.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="autos-showcase-copy">
-          <p class="eyebrow">Mobility Platform</p>
-          <h2 id="autos-showcase-title">Designed around access, movement and dependable support.</h2>
-          <p>From sourcing to fleet supply, 84th Autos is built to simplify automotive decisions and support customers with practical, commercially aware mobility services.</p>
-        </div>
-      </section>
-
-      <section class="autos-feature-grid" aria-label="84th Autos operating priorities">
-        <article>
-          <span>01</span>
-          <h2>Vehicle commerce</h2>
-          <p>Structured vehicle sales and sourcing for customers who need clarity, responsive coordination and dependable options.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Fleet supply</h2>
-          <p>Mobility support for organisations, project teams and businesses that depend on reliable vehicle access and coordinated delivery.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>Support services</h2>
-          <p>Practical advisory and vehicle support built around maintenance awareness, ownership planning and after-sale confidence.</p>
-        </article>
-      </section>
-
-      <section class="detail-capabilities autos-capabilities" aria-labelledby="capabilities-title">
+    <section class="autos-collection" id="autos-collection" aria-labelledby="autos-collection-title">
+      <div class="autos-section-head">
         <div>
-          <p class="eyebrow">Capabilities</p>
-          <h2 id="capabilities-title">Focused scope</h2>
+          <p class="autos-kicker">Our approach</p>
+          <h2 id="autos-collection-title">Mobility for every journey</h2>
         </div>
-        <ul><li>Vehicle Sales</li><li>Vehicle Sourcing</li><li>Fleet Solutions</li><li>Corporate Fleet Supply</li><li>Automotive Advisory</li><li>Vehicle Support Services</li><li>Mobility Solutions</li></ul>
-      </section>
+        <p>Explore the services shaping 84th Autos. Vehicle images are concept visuals representing our mobility focus.</p>
+      </div>
+      <div class="autos-carousel" data-autos-carousel aria-label="84th Autos mobility services">
+        <div class="autos-carousel-track" data-autos-track tabindex="0" aria-label="Mobility service slides">
+          <article class="autos-vehicle-card" aria-label="Personal sourcing">
+            <img src="images/autos-custom-suv.jpg" alt="Concept image of a dark SUV in a contemporary city setting" fetchpriority="high">
+            <div class="autos-vehicle-content">
+              <p>01 / Vehicle commerce</p>
+              <h3>Personal sourcing</h3>
+              <span>Careful selection. Clear decisions.</span>
+              <a href="#autos-sourcing">Explore service <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="autos-vehicle-card" aria-label="Executive mobility">
+            <img src="images/autos-custom-sedan.jpg" alt="Concept image of a white executive sedan beside a city waterfront" loading="lazy">
+            <div class="autos-vehicle-content">
+              <p>02 / Automotive advisory</p>
+              <h3>Executive mobility</h3>
+              <span>Thoughtful support beyond the vehicle.</span>
+              <a href="#autos-advisory">Explore service <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="autos-vehicle-card" aria-label="Fleet solutions">
+            <img src="images/autos-custom-fleet.jpg" alt="Concept image of a coordinated SUV and van fleet" loading="lazy">
+            <div class="autos-vehicle-content">
+              <p>03 / Business mobility</p>
+              <h3>Fleet solutions</h3>
+              <span>Reliable movement for growing operations.</span>
+              <a href="#autos-fleet">Explore service <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+        <button class="autos-carousel-arrow autos-carousel-prev" type="button" data-autos-prev aria-label="Previous service"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="autos-carousel-arrow autos-carousel-next" type="button" data-autos-next aria-label="Next service"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <div class="autos-carousel-dots" role="group" aria-label="Choose a service">
+          <button type="button" data-autos-dot="0" aria-label="Show personal sourcing" aria-current="true"></button>
+          <button type="button" data-autos-dot="1" aria-label="Show executive mobility" aria-current="false"></button>
+          <button type="button" data-autos-dot="2" aria-label="Show fleet solutions" aria-current="false"></button>
+        </div>
+      </div>
+    </section>
 
-      <section class="autos-spec-panel" aria-labelledby="autos-spec-title">
-        <div>
-          <p class="eyebrow">Service Framework</p>
-          <h2 id="autos-spec-title">Automotive delivery model</h2>
-          <p>84th Autos combines market access, practical vehicle knowledge and coordinated customer support into a simple operating framework.</p>
-        </div>
-        <dl>
-          <div><dt>Primary market</dt><dd>Individuals, businesses and institutional buyers</dd></div>
-          <div><dt>Core activity</dt><dd>Vehicle sourcing, sales and fleet supply</dd></div>
-          <div><dt>Support focus</dt><dd>Advisory, ownership planning and service coordination</dd></div>
-          <div><dt>Commercial value</dt><dd>Dependable mobility that keeps people and operations moving</dd></div>
-        </dl>
-      </section>
+    <section class="autos-editorial" id="autos-sourcing" aria-labelledby="autos-sourcing-title">
+      <div class="autos-editorial-media"><img src="images/autos-custom-suv.jpg" alt="Dark SUV concept in an urban setting" loading="lazy"></div>
+      <div class="autos-editorial-copy">
+        <p class="autos-kicker">01 / Vehicle sourcing</p>
+        <h2 id="autos-sourcing-title">Find the right fit.</h2>
+        <p>We are building a vehicle sourcing experience grounded in clear requirements, considered options and transparent coordination from selection through delivery.</p>
+        <a href="#autos-process">How we work <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
 
-      <section class="autos-split-panel" aria-labelledby="autos-support-title">
+    <section class="autos-editorial autos-editorial-reverse" id="autos-advisory" aria-labelledby="autos-advisory-title">
+      <div class="autos-editorial-media"><img src="images/autos-custom-sedan.jpg" alt="White executive sedan concept at dusk" loading="lazy"></div>
+      <div class="autos-editorial-copy">
+        <p class="autos-kicker">02 / Ownership support</p>
+        <h2 id="autos-advisory-title">Confidence beyond purchase.</h2>
+        <p>Our advisory approach considers the full ownership journey, including practical vehicle choices, support needs and the demands of everyday use.</p>
+        <a href="#autos-process">How we work <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <section class="autos-fleet-band" id="autos-fleet" aria-labelledby="autos-fleet-title">
+      <img src="images/autos-custom-fleet.jpg" alt="SUV and van fleet concept outside a modern building" loading="lazy">
+      <div>
+        <p class="autos-kicker">03 / Fleet solutions</p>
+        <h2 id="autos-fleet-title">Business in motion.</h2>
+        <p>Coordinated vehicle supply and practical support for organisations, project teams and commercial operations.</p>
+      </div>
+    </section>
+
+    <section class="autos-process" id="autos-process" aria-labelledby="autos-process-title">
+      <div class="autos-section-head">
         <div>
-          <p class="eyebrow">Customer Experience</p>
-          <h2 id="autos-support-title">Mobility without unnecessary friction.</h2>
+          <p class="autos-kicker">The 84th Autos approach</p>
+          <h2 id="autos-process-title">Built around the journey</h2>
         </div>
-        <p>84th Autos is being developed around a service experience that is clear, responsive and commercially practical. The goal is simple: help customers make better vehicle decisions and keep mobility dependable beyond the point of purchase.</p>
-      </section>
+      </div>
+      <div class="autos-process-grid">
+        <article><span>01</span><h3>Understand</h3><p>We begin with the intended use, budget and ownership priorities.</p></article>
+        <article><span>02</span><h3>Source</h3><p>Options are assessed against suitability, availability and value.</p></article>
+        <article><span>03</span><h3>Coordinate</h3><p>Clear communication connects decisions, documentation and delivery.</p></article>
+        <article><span>04</span><h3>Support</h3><p>Practical guidance helps keep the vehicle useful beyond handover.</p></article>
+      </div>
     </section>
   </main>
 
@@ -136,7 +158,7 @@
     <a href="index.html#top">Home</a>
   </footer>
 
-  <script src="js/integral.js"></script>
+  <script src="js/integral.js?v=20261010-6"></script>
 </body>
 
 </html>
