@@ -2916,8 +2916,8 @@ html {
 }
 
 .autos-hero {
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 40.25vw;
+  min-height: 560px;
 }
 
 .autos-hero .hero-media {
@@ -2933,6 +2933,8 @@ html {
 }
 
 .autos-hero .detail-hero-content {
+  height: 100%;
+  min-height: 0;
   align-items: center;
   justify-content: flex-start;
   padding: clamp(126px, 12vh, 180px) 24px 70px;
@@ -3441,6 +3443,11 @@ html {
 }
 
 @media (max-width: 980px) {
+  .autos-hero {
+    height: 62svh;
+    min-height: 560px;
+  }
+
   .autos-vehicle-card {
     flex-basis: min(58vw, 590px);
   }
@@ -3481,11 +3488,14 @@ html {
 
 @media (max-width: 640px) {
   .autos-hero {
+    height: auto;
     min-height: 100vh;
     min-height: 100svh;
   }
 
   .autos-hero .detail-hero-content {
+    min-height: 100vh;
+    min-height: 100svh;
     padding-top: 126px;
   }
 
