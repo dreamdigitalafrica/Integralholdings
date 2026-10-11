@@ -38,7 +38,7 @@
     const currentScrollY = window.scrollY;
     const scrollingDown = currentScrollY > lastScrollY;
 
-    if (currentScrollY > 120 && scrollingDown) {
+    if (currentScrollY > 120 && scrollingDown && !header.classList.contains("is-mobile-open")) {
       header.classList.add("header-hidden");
     } else {
       header.classList.remove("header-hidden");
@@ -64,11 +64,13 @@
     let closeTimer;
 
     const open = () => {
+      if (window.innerWidth <= 1380) return;
       window.clearTimeout(closeTimer);
       menu.classList.add("is-open");
     };
 
     const close = () => {
+      if (window.innerWidth <= 1380) return;
       window.clearTimeout(closeTimer);
       closeTimer = window.setTimeout(() => {
         if (!menu.matches(":hover") && !menu.contains(document.activeElement)) {
@@ -99,24 +101,64 @@
   toggle.innerHTML = '<i class="fa fa-bars" aria-hidden="true"></i>';
   header.appendChild(toggle);
 
+  const companyMenu = nav.querySelector(".company-menu");
+  const companyTrigger = companyMenu && companyMenu.querySelector(".company-trigger");
+  const companyDropdown = companyMenu && companyMenu.querySelector(".company-dropdown");
+  if (companyTrigger && companyDropdown) {
+    companyDropdown.id = "integral-company-links";
+    companyTrigger.setAttribute("aria-controls", companyDropdown.id);
+    companyTrigger.setAttribute("aria-expanded", "false");
+    companyTrigger.addEventListener("click", (event) => {
+      if (window.innerWidth > 1380) return;
+      event.preventDefault();
+      const open = !companyMenu.classList.contains("is-open");
+      companyMenu.classList.toggle("is-open", open);
+      companyTrigger.setAttribute("aria-expanded", String(open));
+    });
+  }
+
   const setOpen = (open) => {
     header.classList.toggle("is-mobile-open", open);
+    header.classList.remove("header-hidden");
+    document.body.classList.toggle("mobile-nav-open", open);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     toggle.innerHTML = open
       ? '<i class="fa fa-times" aria-hidden="true"></i>'
       : '<i class="fa fa-bars" aria-hidden="true"></i>';
+    if (!open && companyMenu && companyTrigger) {
+      companyMenu.classList.remove("is-open");
+      companyTrigger.setAttribute("aria-expanded", "false");
+    }
+    if (open) nav.querySelector("a").focus();
   };
 
   toggle.addEventListener("click", (event) => {
     event.stopPropagation();
     setOpen(!header.classList.contains("is-mobile-open"));
   });
+  header.querySelector(".integral-brand").addEventListener("click", () => setOpen(false));
   document.addEventListener("click", (event) => {
     if (!header.contains(event.target)) setOpen(false);
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") setOpen(false);
+    if (event.key === "Escape" && header.classList.contains("is-mobile-open")) {
+      setOpen(false);
+      toggle.focus();
+    }
+    if (event.key === "Tab" && header.classList.contains("is-mobile-open")) {
+      const focusable = [header.querySelector(".integral-brand"), ...nav.querySelectorAll("a"), toggle]
+        .filter((element) => element && element.getClientRects().length);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1380) setOpen(false);
@@ -195,10 +237,9 @@
 
   const goTo = (index) => {
     const boundedIndex = Math.max(0, Math.min(index, maxIndex()));
-    cards[boundedIndex].scrollIntoView({
+    track.scrollTo({
+      left: cards[boundedIndex].offsetLeft - cards[0].offsetLeft,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-      block: "nearest",
-      inline: "start"
     });
     update(boundedIndex);
   };
