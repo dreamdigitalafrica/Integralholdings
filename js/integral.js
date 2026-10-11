@@ -62,11 +62,13 @@
 
   menus.forEach((menu) => {
     let closeTimer;
+    const trigger = menu.querySelector(".company-trigger");
 
     const open = () => {
       if (window.innerWidth <= 1380) return;
       window.clearTimeout(closeTimer);
       menu.classList.add("is-open");
+      if (trigger) trigger.setAttribute("aria-expanded", "true");
     };
 
     const close = () => {
@@ -75,6 +77,7 @@
       closeTimer = window.setTimeout(() => {
         if (!menu.matches(":hover") && !menu.contains(document.activeElement)) {
           menu.classList.remove("is-open");
+          if (trigger) trigger.setAttribute("aria-expanded", "false");
         }
       }, 260);
     };
@@ -162,6 +165,10 @@
   });
   window.addEventListener("resize", () => {
     if (window.innerWidth > 1380) setOpen(false);
+    if (companyMenu && companyTrigger && window.innerWidth <= 1380 && !header.classList.contains("is-mobile-open")) {
+      companyMenu.classList.remove("is-open");
+      companyTrigger.setAttribute("aria-expanded", "false");
+    }
   });
 }());
 
