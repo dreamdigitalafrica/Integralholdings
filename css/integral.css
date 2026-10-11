@@ -3,7 +3,7 @@
   src: url("../fonts/D-DIN.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
 }
 
 :root {
@@ -4184,5 +4184,84 @@ html {
     width: 9px;
     height: 9px;
     background: #171a20;
+  }
+}
+
+/* Keep section typography quieter than the full-bleed hero titles. */
+.about-page .about-image-band h2,
+.about-page .about-section-heading h2,
+.about-page .about-cta h2,
+.mission-intro h2,
+.detail-copy-block h2,
+.detail-capabilities h2,
+.completed-project-heading h2,
+.autos-intro-band h2,
+.autos-section-head h2,
+.autos-editorial h2,
+.autos-fleet-band h2,
+.leadership-governance-copy h2 {
+  font-size: clamp(32px, 3.15vw, 60px);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.about-page .about-vision article {
+  min-height: 390px;
+  justify-content: center;
+  padding: clamp(38px, 4.8vw, 88px);
+}
+
+.about-page .about-vision h2 {
+  max-width: 22ch;
+  font-size: clamp(30px, 2.35vw, 48px);
+  line-height: 1.12;
+}
+
+.about-page .about-values {
+  padding-block: 90px;
+}
+
+.about-page .about-values .about-section-heading {
+  max-width: 820px;
+  margin-bottom: 62px;
+}
+
+.about-page .about-values .about-section-heading h2 {
+  font-size: clamp(36px, 2.9vw, 56px);
+}
+
+@media (max-width: 640px) {
+  .about-page .about-image-band h2,
+  .about-page .about-section-heading h2,
+  .about-page .about-cta h2,
+  .mission-intro h2,
+  .detail-copy-block h2,
+  .detail-capabilities h2,
+  .completed-project-heading h2,
+  .autos-intro-band h2,
+  .autos-section-head h2,
+  .autos-editorial h2,
+  .autos-fleet-band h2,
+  .leadership-governance-copy h2 {
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.12;
+  }
+
+  .about-page .about-vision article {
+    min-height: 0;
+    padding: 66px 24px;
+  }
+
+  .about-page .about-vision h2 {
+    font-size: clamp(28px, 7.5vw, 36px);
+    line-height: 1.16;
+  }
+
+  .about-page .about-values {
+    padding: 72px 22px;
+  }
+
+  .about-page .about-values .about-section-heading h2 {
+    font-size: clamp(32px, 8vw, 40px);
   }
 }
