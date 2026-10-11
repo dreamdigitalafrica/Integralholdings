@@ -177,17 +177,24 @@
   let activeIndex = 0;
   let scrollFrame = 0;
 
+  const maxIndex = () => {
+    const step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 1;
+    return Math.min(cards.length - 1, Math.round((track.scrollWidth - track.clientWidth) / step));
+  };
+
   const update = (index) => {
-    activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    const lastIndex = maxIndex();
+    activeIndex = Math.max(0, Math.min(index, lastIndex));
     dots.forEach((dot, dotIndex) => {
+      dot.hidden = dotIndex > lastIndex;
       dot.setAttribute("aria-current", String(dotIndex === activeIndex));
     });
     previous.disabled = activeIndex === 0;
-    next.disabled = activeIndex === cards.length - 1;
+    next.disabled = activeIndex === lastIndex;
   };
 
   const goTo = (index) => {
-    const boundedIndex = Math.max(0, Math.min(index, cards.length - 1));
+    const boundedIndex = Math.max(0, Math.min(index, maxIndex()));
     cards[boundedIndex].scrollIntoView({
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
       block: "nearest",
@@ -217,6 +224,8 @@
       update(nearest.index);
     });
   }, { passive: true });
+
+  window.addEventListener("resize", () => update(activeIndex));
 
   update(0);
 }());
