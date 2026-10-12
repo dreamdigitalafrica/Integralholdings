@@ -7,7 +7,9 @@
 .integral-template-home .wow { visibility: hidden; }
 .integral-template-home .wow.animated { visibility: visible; }
 
-.template-hero { display: flex; flex-direction: column; justify-content: space-between; min-height: 1145px; background: #fbfbfa url('/adina/hero.jpg') center / cover no-repeat; padding: 150px 0 100px; }
+.template-hero { display: flex; flex-direction: column; justify-content: space-between; min-height: 1145px; background: #fbfbfa url('/integral/home-hero.jpg') center / cover no-repeat; padding: 150px 0 100px; position: relative; isolation: isolate; }
+.template-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.template-hero::before { content: ''; position: absolute; inset: 0; background: rgba(255, 255, 255, .42); z-index: -1; }
 .template-hero-marquee { display: flex; align-items: center; height: 525px; overflow: hidden; width: 100%; white-space: nowrap; mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%); }
 .template-hero-track { display: flex; width: max-content; animation: template-marquee 42s linear infinite; }
 .template-hero-track span { flex: none; padding-right: .32em; color: #20282d; font-size: clamp(220px, 18vw, 350px); line-height: 1.2; font-weight: 700; animation: template-word-fade 7s ease-in-out infinite; }
@@ -199,6 +201,7 @@
   .template-counter .td-counter-count-wrap { margin-left: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .template-hero-video { display: none; }
   .template-hero-track, .template-hero-track span, .template-brand-track { animation: none; }
   .integral-template-home .wow { visibility: visible; }
 }

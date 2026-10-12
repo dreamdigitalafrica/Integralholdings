@@ -29,6 +29,7 @@ function useTemplateReveal() {
 
 function Hero() {
   return <section className="td-hero-area td-hero-spacing bg-position template-hero" aria-labelledby="home-title">
+    <video className="template-hero-video" autoPlay loop muted playsInline preload="none" poster="/integral/home-hero.jpg" aria-hidden="true"><source src="/integral/home-hero-light.mp4" type="video/mp4" /></video>
     <div className="td-hero-text-slider mb-70 template-hero-marquee" aria-hidden="true"><div className="template-hero-track"><span>Building Legacies</span><span>Building Legacies</span><span>Building Legacies</span></div></div>
     <div className="td-hero-bottom"><div className="container"><div className="row align-items-end">
       <div className="col-lg-9 mb-30"><div className="td-hero-achive wow fadeInLeft" data-wow-duration="1s"><h1 id="home-title" className="td-hero-achive-title">Securing<br /><span className="template-hero-arrow" aria-hidden="true">↗</span>the future<span className="td-title-border">.</span></h1></div></div>
@@ -52,7 +53,7 @@ function About() {
 
 function Services() {
   const [active, setActive] = useState(1);
-  return <section id="subsidiaries" className="td-service-area fix bg-position mb-130 p-relative template-services" aria-label="Sectors"><div className="container-fluid g-0"><div className="service__slider-8"><div id="service-bg-img" className={`service-img-${active + 1}`}>{sectors.map((item, index) => <div key={item.label} className={`service-bg service-img-${index + 1}`} style={{ backgroundImage: `url(/adina/service-0${index + 1}.jpg)` }} />)}</div></div>
+  return <section id="subsidiaries" className="td-service-area fix bg-position mb-130 p-relative template-services" aria-label="Sectors"><div className="container-fluid g-0"><div className="service__slider-8"><div id="service-bg-img" className={`service-img-${active + 1}`}>{sectors.map((item, index) => <div key={item.label} className={`service-bg service-img-${index + 1}`} style={{ backgroundImage: `url(${item.image})` }} />)}</div></div>
     <div className="row gx-0 row-cols-xl-5 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">{sectors.map((item, index) => <div className="col td-service-border service__item-8" key={item.label} onMouseEnter={() => setActive(index)} onFocus={() => setActive(index)}><div className="td-service-wrap p-relative"><span className={`td-service-cetagory td-service-cetagory-${index + 1}`}>Sectors</span><h2 className="td-service-number">0{index + 1}</h2><div className="td-service-content"><h3 className="td-service-title"><Link to={item.path}>{item.label}</Link></h3><div className="td-service-content-inner"><p className="td-service-content-para mb-45">{item.summary}</p><Link className="td-btn td-btn-2 td-left-right" to={item.path}>Explore <Arrow /></Link></div></div></div></div>)}</div>
   </div></section>;
 }
