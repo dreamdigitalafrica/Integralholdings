@@ -1,0 +1,9 @@
+@font-face { font-family: Integral Icons Light; src: url('../fonts/fa-light-300.woff2') format('woff2'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: Integral Icons Brands; src: url('../fonts/fa-brands-400.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+.fa-light::before { font-family: Integral Icons Light; font-style: normal; font-weight: 300; }
+.fa-brands::before { font-family: Integral Icons Brands; font-style: normal; font-weight: 400; }
+.fa-magnifying-glass::before { content: '\f002'; }
+.fa-globe::before { content: '\f0ac'; }
+.fa-linkedin-in::before { content: '\f0e1'; }
+.fa-twitter::before { content: '\f099'; }
+.fa-facebook-f::before { content: '\f39e'; }

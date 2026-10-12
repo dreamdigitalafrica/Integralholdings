@@ -8,7 +8,7 @@ const NextLink = ({ to, children }) => <Link className="integral-next-link" to={
 
 export const AboutPage = () => <Layout header={1} footer={1}>
   <PageHero eyebrow="The Group" title="About Integral Holdings" description="Building legacies. Securing the future." image="/integral/about-hero-towers.jpg" />
-  <section className="integral-page-statement"><div className="container"><span className="td-section-title-pre">One Group. Six Strategic Sectors.</span><h2>Building across the sectors that shape everyday life.</h2><p>Integral Holdings Ltd is a diversified Nigerian holding company established to build, develop and manage businesses across sectors fundamental to economic growth and long-term development.</p><p>Each subsidiary maintains a specialised focus while benefiting from the strategic direction, corporate identity and long-term investment philosophy of the wider Group.</p></div></section>
+  <section className="integral-page-statement"><div className="container"><span className="td-section-title-pre">Sectors</span><h2>Building across the sectors that shape everyday life.</h2><p>Integral Holdings Ltd is a diversified Nigerian holding company established to build, develop and manage businesses across sectors fundamental to economic growth and long-term development.</p><p>Each subsidiary maintains a specialised focus while benefiting from the strategic direction, corporate identity and long-term investment philosophy of the wider Group.</p></div></section>
   <section className="integral-page-image-band"><img src="/integral/about-platform-construction.jpg" alt="A modern built environment" loading="lazy" /><div><span className="td-section-title-pre">Portfolio platform</span><h2>Structured for essential sectors.</h2><p>Commercial ambition meets innovation, excellence, professionalism, transparency and people-oriented development.</p></div></section>
   <section className="integral-page-values"><div className="container"><span className="td-section-title-pre">Group philosophy</span><h2>Built for long-term value creation.</h2><div className="integral-page-value-grid">{[
     ["Strategic investment", "Developing opportunities capable of creating sustainable commercial and economic value."],
@@ -24,7 +24,7 @@ export const AboutPage = () => <Layout header={1} footer={1}>
 export const LeadershipPage = () => <Layout header={1} footer={1}>
   <PageHero eyebrow="The Group" title="Leadership" description="The people behind Integral's direction and day-to-day execution." image="/integral/leadership-office-exterior.jpg" />
   <section className="integral-page-statement integral-page-statement-compact"><div className="container"><span className="td-section-title-pre">Our people</span><h2>Leadership grounded in responsibility.</h2><p>Our leadership team brings commercial judgment and functional expertise to the businesses in the Integral portfolio.</p></div></section>
-  <section className="integral-leadership-page"><div className="container">{leaders.map((person, index) => <article className="integral-leadership-profile" key={person.name}><img src={person.image} alt={person.name} loading={index ? "lazy" : "eager"} /><div><span className="td-section-title-pre">0{index + 1} / {person.role}</span><h2>{person.name}</h2><p>{person.bio}</p></div></article>)}</div></section>
+  <section className="integral-leadership-page"><div className="container">{leaders.map((person, index) => <article id={`leader-${index + 1}`} className="integral-leadership-profile" key={person.name}><img src={person.image} alt={person.name} loading={index ? "lazy" : "eager"} /><div><span className="td-section-title-pre">0{index + 1} / {person.role}</span><h2>{person.name}</h2><p>{person.bio}</p></div></article>)}</div></section>
   <NextLink to="/about.html">Learn about Integral Holdings.</NextLink>
 </Layout>;
 
@@ -51,7 +51,7 @@ export const SubsidiaryPage = ({ id }) => {
 
 export const UpdatesPage = () => <Layout header={1} footer={1}><PageHero eyebrow="From the Group" title="Updates" description="Perspectives on the businesses and principles shaping Integral Holdings." image="/integral/about-hero-towers.jpg" /><section className="integral-page-updates"><div className="container">{[
   ["A platform for essential sectors", "Integral Holdings is preparing a multi-sector operating platform with focused businesses across energy, infrastructure, engineering, property, agriculture and mobility."],
-  ["Building legacies across six strategic sectors", "Each subsidiary brings a specialised sector focus to a shared long-term investment philosophy."],
+  ["Building legacies across the portfolio", "Each subsidiary brings a specialised sector focus to a shared long-term investment philosophy."],
   ["Professional standards for a growing portfolio", "Planning, accountability and dependable delivery remain central to the Group's direction."],
 ].map(([title, text], index) => <article key={title}><span>0{index + 1} / Integral Holdings</span><h2>{title}</h2><p>{text}</p></article>)}</div></section><NextLink to="/about.html">Discover the Group.</NextLink></Layout>;
 

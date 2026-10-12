@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { HomeOne } from "./pages/home/HomeOne";
+import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
 import { AboutPage, CareersPage, LeadershipPage, SubsidiaryPage, UpdatesPage } from "./pages/IntegralPages";
 import { subsidiaries } from "./content";
 
