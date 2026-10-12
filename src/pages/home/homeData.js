@@ -22,7 +22,7 @@ export const works = [
 export const filters = ["All", "Energy", "Built environment", "Mobility", "Growth"];
 
 export const updates = [
-  { title: "A platform for essential sectors", category: "Integral", image: "/integral/home-news-01.jpg" },
-  { title: "Building legacies", category: "Perspective", image: "/integral/home-news-02.jpg" },
-  { title: "The people behind the work", category: "Leadership", image: "/integral/home-news-03.jpg" },
+  { title: "Focused businesses. Shared ambition.", summary: "Specialist teams. One long-term outlook.", category: "Group", image: "/integral/home-news-business.jpg" },
+  { title: "Building for the long term", summary: "Progress takes more than a plan.", category: "Perspective", image: "/integral/home-news-02.jpg" },
+  { title: "The people behind the work", summary: "Direction is shaped by people who deliver.", category: "Leadership", image: "/integral/home-news-leadership.jpg" },
 ];

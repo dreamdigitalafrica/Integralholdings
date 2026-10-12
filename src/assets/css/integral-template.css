@@ -8,7 +8,6 @@
 .integral-template-home .wow.animated { visibility: visible; }
 
 .template-hero { display: flex; flex-direction: column; justify-content: space-between; min-height: 1145px; background: #fbfbfa url('/integral/home-hero-poster.jpg') center / cover no-repeat; padding: 150px 0 100px; position: relative; isolation: isolate; }
-.template-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .template-hero::before { content: ''; position: absolute; inset: 0; background: rgba(255, 255, 255, .42); z-index: -1; }
 .template-hero-marquee { display: flex; align-items: center; height: 525px; overflow: hidden; width: 100%; white-space: nowrap; mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%); }
 .template-hero-track { display: flex; width: max-content; animation: template-marquee 42s linear infinite; }
@@ -55,9 +54,7 @@
 
 .template-standards { padding: 10px 0 145px; }
 .template-standards .td-awards-title { font-size: 32px; }
-.template-standards .td-awards-meta { gap: 20px; }
-.template-standards .td-awards-meta span { max-width: 320px; font-size: 14px; line-height: 1.5; }
-.template-standards .td-awards-meta > span:last-child { color: #9a9fa2; font-size: 26px; }
+.template-standards .td-awards-meta span { display: block; max-width: 360px; font-size: 14px; line-height: 1.5; }
 
 .template-portfolio { background: #fff; }
 .template-portfolio .td-portfolio-title-wrap { margin-bottom: 75px; }
@@ -105,8 +102,6 @@
 
 .template-counter .td-counter-thumb { min-height: 590px; }
 .template-counter .td-counter-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.template-counter .td-counter-logo { display: grid !important; place-items: center; }
-.template-counter .td-counter-logo span { font-size: 72px; font-weight: 700; }
 .template-counter .td-counter-content { padding-top: 95px; }
 .template-counter .td-counter-count-wrap { padding-top: 95px; }
 
@@ -201,7 +196,6 @@
   .template-counter .td-counter-count-wrap { margin-left: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .template-hero-video { display: none; }
   .template-hero-track, .template-hero-track span, .template-brand-track { animation: none; }
   .integral-template-home .wow { visibility: visible; }
 }

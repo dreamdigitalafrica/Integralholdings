@@ -29,7 +29,6 @@ function useTemplateReveal() {
 
 function Hero() {
   return <section className="td-hero-area td-hero-spacing bg-position template-hero" aria-labelledby="home-title">
-    <video className="template-hero-video" autoPlay loop muted playsInline preload="none" poster="/integral/home-hero-poster.jpg" aria-hidden="true"><source src="/integral/home-hero-light.mp4" type="video/mp4" /></video>
     <div className="td-hero-text-slider mb-70 template-hero-marquee" aria-hidden="true"><div className="template-hero-track"><span>Building Legacies</span><span>Building Legacies</span><span>Building Legacies</span></div></div>
     <div className="td-hero-bottom"><div className="container"><div className="row align-items-end">
       <div className="col-lg-9 mb-30"><div className="td-hero-achive wow fadeInLeft" data-wow-duration="1s"><h1 id="home-title" className="td-hero-achive-title">Securing<br /><span className="template-hero-arrow" aria-hidden="true">↗</span>the future<span className="td-title-border">.</span></h1></div></div>
@@ -60,7 +59,7 @@ function Services() {
 
 function Standards() {
   return <section className="td-awards-area template-standards" aria-labelledby="standards-title"><div className="container"><div className="td-awards-title-wrap mb-60 text-center wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Our standards</span><h2 id="standards-title" className="td-section-title">What guides our work</h2></div>
-    {values.map((item, index) => <div className="td-awards-wrapper p-relative wow fadeInUp" key={item.title} data-wow-duration="1s"><div className="row align-items-center"><div className="col-lg-8 col-md-8 mb-20"><div className="td-awards-content d-flex align-items-center"><span>0{index + 1}</span><h3 className="td-awards-title">{item.title}</h3></div></div><div className="col-lg-4 col-md-4 mb-20"><div className="td-awards-meta d-flex justify-content-between"><span>{item.text}</span><Arrow /></div></div></div></div>)}
+    {values.map((item, index) => <div className="td-awards-wrapper p-relative wow fadeInUp" key={item.title} data-wow-duration="1s"><div className="row align-items-center"><div className="col-lg-8 col-md-8 mb-20"><div className="td-awards-content d-flex align-items-center"><span>0{index + 1}</span><h3 className="td-awards-title">{item.title}</h3></div></div><div className="col-lg-4 col-md-4 mb-20"><div className="td-awards-meta"><span>{item.text}</span></div></div></div></div>)}
   </div></section>;
 }
 
