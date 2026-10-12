@@ -1,7 +1,7 @@
 export const panels = [
-  { number: "01", title: "Purpose", image: "/integral/home-about-01.jpg", heading: "A considered approach to growth.", text: "Businesses shaped around real needs and long-term value." },
-  { number: "02", title: "People", image: "/integral/home-about-02.jpg", heading: "People make progress possible.", text: "Experienced teams working across complementary disciplines." },
-  { number: "03", title: "Progress", image: "/integral/home-about-03.jpg", heading: "Built for what comes next.", text: "Focused execution across essential parts of everyday life." },
+  { number: "01", title: "Property", image: "/integral/home-about-01.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
+  { number: "02", title: "Construction", image: "/integral/home-service-infrastructure.jpg", heading: "Built with purpose.", text: "Project delivery grounded in planning, quality and practical execution.", path: "/construction.html" },
+  { number: "03", title: "Mobility", image: "/integral/home-about-mobility.jpg", heading: "Vehicles for real needs.", text: "Considered sourcing and support for people and business.", path: "/automobiles.html" },
 ];
 
 export const sectors = [
@@ -9,7 +9,7 @@ export const sectors = [
   { label: "Infrastructure", path: "/construction.html", image: "/integral/home-service-infrastructure.jpg", summary: "Construction and engineering for lasting outcomes." },
   { label: "Mobility", path: "/automobiles.html", image: "/integral/home-service-mobility.jpg", summary: "Practical movement for people and business." },
   { label: "Property", path: "/real-estate.html", image: "/integral/home-service-property.jpg", summary: "Places designed for living and investment." },
-  { label: "Agriculture", path: "/agriculture.html", image: "/integral/home-service-agriculture.jpg", summary: "Productive land and stronger value chains." },
+  { label: "Agriculture", path: "/agriculture.html", image: "/integral/sector-farms.jpg", summary: "Productive land and stronger value chains." },
 ];
 
 export const works = [

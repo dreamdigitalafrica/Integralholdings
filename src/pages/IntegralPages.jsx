@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Layout } from "../layouts/Layout";
-import { leaders, subsidiaries, values } from "../content";
+import { subsidiaries, values } from "../content";
 import { AutosCarousel } from "../components/AutosCarousel";
 
 const PageHero = ({ eyebrow, title, description, image, video }) => <section className="integral-page-hero" style={{ backgroundImage: `url(${image})` }}>{video && <video className="integral-page-hero-video" autoPlay loop muted playsInline preload="none" poster={image} aria-hidden="true"><source src={video} type="video/mp4" /></video>}<div className="container"><span className="td-section-title-pre">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>;
 const NextLink = ({ to, children }) => <Link className="integral-next-link" to={to}>{children}<span aria-hidden="true">↗</span></Link>;
 
 export const AboutPage = () => <Layout header={1} footer={1}>
-  <PageHero eyebrow="The Group" title="About Integral Holdings" description="Building legacies. Securing the future." image="/integral/home-hero.jpg" />
+  <PageHero eyebrow="The Group" title="About Integral Holdings" description="Building legacies. Securing the future." image="/integral/home-hero-poster.jpg" />
   <section className="integral-page-statement"><div className="container"><span className="td-section-title-pre">Sectors</span><h2>Building across the sectors that shape everyday life.</h2><p>Integral Holdings Ltd is a diversified Nigerian holding company established to build, develop and manage businesses across sectors fundamental to economic growth and long-term development.</p><p>Each subsidiary maintains a specialised focus while benefiting from the strategic direction, corporate identity and long-term investment philosophy of the wider Group.</p></div></section>
   <section className="integral-page-image-band"><img src="/integral/home-service-infrastructure.jpg" alt="Construction work in progress" loading="lazy" /><div><span className="td-section-title-pre">Portfolio platform</span><h2>Structured for essential sectors.</h2><p>Commercial ambition meets innovation, excellence, professionalism, transparency and people-oriented development.</p></div></section>
   <section className="integral-page-values"><div className="container"><span className="td-section-title-pre">Group philosophy</span><h2>Built for long-term value creation.</h2><div className="integral-page-value-grid">{[
@@ -20,13 +20,6 @@ export const AboutPage = () => <Layout header={1} footer={1}>
   <section className="integral-page-mission"><article><span className="td-section-title-pre">Vision</span><h2>To be a leading contributor to exponential development in Nigeria and Sub-Saharan Africa.</h2></article><article><span className="td-section-title-pre">Mission</span><h2>Leveraging our expertise and brand integrity to optimise our investments through commitment to quality and effective delivery.</h2></article></section>
   <section className="integral-page-values"><div className="container"><span className="td-section-title-pre">Core values</span><h2>Principles that guide how the Group builds.</h2><div className="integral-page-value-grid">{values.map((value) => <article key={value.title}><h3>{value.title}</h3><p>{value.text}</p></article>)}</div></div></section>
   <NextLink to="/leadership.html">Meet the leadership shaping the Group.</NextLink>
-</Layout>;
-
-export const LeadershipPage = () => <Layout header={1} footer={1}>
-  <PageHero eyebrow="The Group" title="Leadership" description="The people behind Integral's direction and day-to-day execution." image="/integral/home-about-02.jpg" />
-  <section className="integral-page-statement integral-page-statement-compact"><div className="container"><span className="td-section-title-pre">Our people</span><h2>Leadership grounded in responsibility.</h2><p>Our leadership team brings commercial judgment and functional expertise to the businesses in the Integral portfolio.</p></div></section>
-  <section className="integral-leadership-page"><div className="container">{leaders.map((person, index) => <article id={`leader-${index + 1}`} className="integral-leadership-profile" key={person.name}><img src={person.image} alt={person.name} loading={index ? "lazy" : "eager"} /><div><span className="td-section-title-pre">0{index + 1} / {person.role}</span><h2>{person.name}</h2><p>{person.bio}</p></div></article>)}</div></section>
-  <NextLink to="/about.html">Learn about Integral Holdings.</NextLink>
 </Layout>;
 
 const crestImages = ["crest-1-01.jpg", "crest-1-02.jpg", "crest-1-03.jpg", "crest-1-04.jpg", "crest-1-05.jpg", "crest-1-06.jpg"];

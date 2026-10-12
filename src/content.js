@@ -50,7 +50,7 @@ export const subsidiaries = [
     name: "84th Farms",
     category: "Agriculture",
     path: "/agriculture.html",
-    image: asset("home-service-agriculture.jpg"),
+    image: asset("sector-farms.jpg"),
     summary: "Building agricultural value through productive land use and resilient operations.",
     intro: "84th Farms and Agro Limited reflects Integral Holdings' belief in agriculture as both an economic opportunity and a fundamental development sector.",
     detail: "Its direction centres on productive land use, resilient operations and stronger pathways between production and commercial markets.",

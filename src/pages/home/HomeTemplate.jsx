@@ -29,7 +29,7 @@ function useTemplateReveal() {
 
 function Hero() {
   return <section className="td-hero-area td-hero-spacing bg-position template-hero" aria-labelledby="home-title">
-    <video className="template-hero-video" autoPlay loop muted playsInline preload="none" poster="/integral/home-hero.jpg" aria-hidden="true"><source src="/integral/home-hero-light.mp4" type="video/mp4" /></video>
+    <video className="template-hero-video" autoPlay loop muted playsInline preload="none" poster="/integral/home-hero-poster.jpg" aria-hidden="true"><source src="/integral/home-hero-light.mp4" type="video/mp4" /></video>
     <div className="td-hero-text-slider mb-70 template-hero-marquee" aria-hidden="true"><div className="template-hero-track"><span>Building Legacies</span><span>Building Legacies</span><span>Building Legacies</span></div></div>
     <div className="td-hero-bottom"><div className="container"><div className="row align-items-end">
       <div className="col-lg-9 mb-30"><div className="td-hero-achive wow fadeInLeft" data-wow-duration="1s"><h1 id="home-title" className="td-hero-achive-title">Securing<br /><span className="template-hero-arrow" aria-hidden="true">↗</span>the future<span className="td-title-border">.</span></h1></div></div>
@@ -39,12 +39,12 @@ function Hero() {
 }
 
 function About() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(1);
   return <section className="td-about-area fix pt-145 pb-120 template-about" aria-labelledby="home-about-title"><div className="container"><div className="row">
     <div className="col-xl-6 col-lg-7 col-md-12 mb-30"><div className="row-custom-wrapper wow fadeInLeft" data-wow-duration="1s"><div className="row-custom">
       {panels.map((item, index) => <div key={item.number} className={`col-custom ${active === index ? "active" : ""}`} role="button" tabIndex={0} aria-expanded={active === index} onClick={() => setActive(index)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setActive(index); } }}>
         <div className="td-panel-item"><div className="td-panel-content"><span>{item.number}.</span><h3 className="td-panel-title">{item.title}</h3></div></div>
-        <div className="td-panel-item-2"><div className="td-panel-content-2"><div className="td-panel-thumb"><img className="w-100" src={item.image} alt="" loading="lazy" /></div><div className="td-panel-content-inner fix p-relative"><span className="td-panel-shape">{item.number}</span><h3 className="td-panel-title-2 mb-10">{item.heading}</h3><p>{item.text}</p><Link className="td-btn td-left-right" to="/about.html">Read More <Arrow /></Link></div></div></div>
+        <div className="td-panel-item-2"><div className="td-panel-content-2"><div className="td-panel-thumb"><img className="w-100" src={item.image} alt="" loading="lazy" /></div><div className="td-panel-content-inner fix p-relative"><span className="td-panel-shape">{item.number}</span><h3 className="td-panel-title-2 mb-10">{item.heading}</h3><p>{item.text}</p><Link className="td-btn td-left-right" to={item.path}>Read More <Arrow /></Link></div></div></div>
       </div>)}
     </div></div></div>
     <div className="col-xl-6 col-lg-5 mb-30"><div className="td-about-content-wrap p-relative ml-45 wow fadeInRight" data-wow-duration="1s"><span className="template-about-watermark" aria-hidden="true">I</span><span className="td-section-title-pre mb-10">The Group</span><h2 id="home-about-title" className="td-section-title td-about-right-space">Focused businesses. Shared ambition.</h2><p className="td-about-para pr-10">Integral Holdings brings complementary businesses together to build value across essential sectors.</p></div></div>
