@@ -5,7 +5,6 @@ import { subsidiaries } from "../../content";
 const companyLinks = [
   { label: "About", path: "/about.html" },
   { label: "Leadership", path: "/leadership.html" },
-  { label: "Updates", path: "/updates.html" },
   { label: "Careers", path: "/careers.html" },
 ];
 
@@ -17,7 +16,7 @@ export const HeaderOne = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const results = [...companyLinks, ...subsidiaries.map((item) => ({ label: item.name, path: item.path }))].filter((item) => item.label.toLowerCase().includes(query.trim().toLowerCase())).slice(0, 6);
+  const results = [{ label: "Insights", path: "/updates.html" }, ...companyLinks, ...subsidiaries.map((item) => ({ label: item.name, path: item.path }))].filter((item) => item.label.toLowerCase().includes(query.trim().toLowerCase())).slice(0, 6);
 
   useEffect(() => { setOpen(false); setDesktopGroup(""); }, [location.pathname]);
   useEffect(() => {
@@ -42,7 +41,7 @@ export const HeaderOne = () => {
     <div className="td-header-bottom integral-header-main"><div className="container container-1750"><div className="integral-header-inner">
       <form className="integral-header-search" role="search" onSubmit={(event) => { event.preventDefault(); if (query.trim() && results[0]) { navigate(results[0].path); setQuery(""); } }}><button type="submit" aria-label="Search"><i className="fa-light fa-magnifying-glass" aria-hidden="true" /></button><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search here..." aria-label="Search Integral" />{query && <div className="integral-search-results">{results.length ? results.map((item) => <Link key={item.path} to={item.path} onClick={() => setQuery("")}>{item.label}</Link>) : <span>No matching pages</span>}</div>}</form>
       <Link className="integral-header-logo" to="/" aria-label="Integral Holdings home"><img src="/integral/integral-logo-supplied.png" alt="Integral" /></Link>
-      <nav className="integral-desktop-nav" aria-label="Primary navigation"><div className={`integral-nav-dropdown ${desktopGroup === "sectors" ? "is-open" : ""}`}><button type="button" aria-expanded={desktopGroup === "sectors"} onClick={() => setDesktopGroup(desktopGroup === "sectors" ? "" : "sectors")}>Sectors <span aria-hidden="true">⌄</span></button><div className="integral-nav-submenu">{subsidiaries.map((item) => <Link key={item.id} to={item.path}>{item.name}</Link>)}</div></div><div className={`integral-nav-dropdown ${desktopGroup === "company" ? "is-open" : ""}`}><button type="button" aria-expanded={desktopGroup === "company"} onClick={() => setDesktopGroup(desktopGroup === "company" ? "" : "company")}>Company <span aria-hidden="true">⌄</span></button><div className="integral-nav-submenu">{companyLinks.map((item) => <Link key={item.path} to={item.path}>{item.label}</Link>)}</div></div></nav>
+      <nav className="integral-desktop-nav" aria-label="Primary navigation"><div className={`integral-nav-dropdown ${desktopGroup === "sectors" ? "is-open" : ""}`}><button type="button" aria-expanded={desktopGroup === "sectors"} onClick={() => setDesktopGroup(desktopGroup === "sectors" ? "" : "sectors")}>Sectors <span aria-hidden="true">⌄</span></button><div className="integral-nav-submenu">{subsidiaries.map((item) => <Link key={item.id} to={item.path}>{item.name}</Link>)}</div></div><div className={`integral-nav-dropdown ${desktopGroup === "company" ? "is-open" : ""}`}><button type="button" aria-expanded={desktopGroup === "company"} onClick={() => setDesktopGroup(desktopGroup === "company" ? "" : "company")}>Company <span aria-hidden="true">⌄</span></button><div className="integral-nav-submenu">{companyLinks.map((item) => <Link key={item.path} to={item.path}>{item.label}</Link>)}</div></div><Link to="/updates.html" onClick={() => setDesktopGroup("")}>Insights</Link></nav>
       <button type="button" className="integral-menu-toggle" onClick={() => setOpen(true)} aria-label="Open menu" aria-expanded={open}><span /><span /><span /></button>
     </div></div></div>
     <div className={`integral-mobile-menu ${open ? "is-open" : ""}`} role="dialog" aria-modal="true" aria-label="Navigation" aria-hidden={!open}>
@@ -54,6 +53,7 @@ export const HeaderOne = () => {
         <div className={`integral-mobile-sub ${mobileGroup === "sectors" ? "is-open" : ""}`} aria-hidden={mobileGroup !== "sectors"}>{subsidiaries.map((item) => <Link key={item.id} to={item.path} onClick={() => setOpen(false)}>{item.name}</Link>)}</div>
         <button type="button" className="integral-mobile-main" onClick={() => setMobileGroup(mobileGroup === "company" ? "" : "company")} aria-expanded={mobileGroup === "company"}>Company <span aria-hidden="true">⌄</span></button>
         <div className={`integral-mobile-sub ${mobileGroup === "company" ? "is-open" : ""}`} aria-hidden={mobileGroup !== "company"}>{companyLinks.map((item) => <Link key={item.path} to={item.path} onClick={() => setOpen(false)}>{item.label}</Link>)}</div>
+        <Link className="integral-mobile-main" to="/updates.html" onClick={() => setOpen(false)}>Insights</Link>
       </div>
     </div>
   </header>;

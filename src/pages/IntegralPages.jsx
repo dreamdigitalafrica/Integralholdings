@@ -83,7 +83,7 @@ export const AutosPage = () => {
 </main></Layout>;
 };
 
-export const UpdatesPage = () => <Layout header={1} footer={1}><PageHero eyebrow="From the Group" title="Updates" description="Perspectives on the businesses and principles shaping Integral Holdings." image="/integral/home-news-business.jpg" /><section className="integral-page-updates"><div className="container">{[
+export const UpdatesPage = () => <Layout header={1} footer={1}><PageHero eyebrow="Insights" title="Business insights" description="Perspectives on the businesses and principles shaping Integral Holdings." image="/integral/home-news-business.jpg" /><section className="integral-page-updates"><div className="container">{[
   ["Focused businesses. Shared ambition.", "Integral Holdings brings specialist businesses together across energy, construction, mobility, property, agriculture and engineering. Each is focused on its own work, with a shared commitment to sound decisions and dependable delivery."],
   ["Building for the long term", "Planning, clear accountability and careful execution connect the Group's ambitions to outcomes that last."],
   ["The people behind the work", "Leaders and teams bring sector knowledge and practical judgment to the everyday work of building the Group."],

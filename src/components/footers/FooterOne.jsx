@@ -9,7 +9,7 @@ export const FooterOne = () => <footer className="td-footer-area integral-footer
       <Link to="/#subsidiaries">Sectors</Link>
       <Link to="/about.html">About</Link>
       <Link to="/leadership.html">Leadership</Link>
-      <Link to="/updates.html">Updates</Link>
+      <Link to="/updates.html">Insights</Link>
       <Link to="/careers.html">Careers</Link>
       <span>Nigeria</span>
     </nav>
