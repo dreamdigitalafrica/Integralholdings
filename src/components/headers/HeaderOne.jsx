@@ -51,9 +51,9 @@ export const HeaderOne = () => {
         <form className="integral-mobile-search" role="search" onSubmit={(event) => { event.preventDefault(); if (query.trim() && results[0]) { navigate(results[0].path); setOpen(false); setQuery(""); } }}><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search Integral" aria-label="Search Integral" /><button type="submit" aria-label="Search"><i className="fa-light fa-magnifying-glass" aria-hidden="true" /></button></form>
         {query && <div className="integral-mobile-results">{results.map((item) => <Link key={item.path} to={item.path} onClick={() => { setOpen(false); setQuery(""); }}>{item.label}</Link>)}</div>}
         <button type="button" className="integral-mobile-main" onClick={() => setMobileGroup(mobileGroup === "sectors" ? "" : "sectors")} aria-expanded={mobileGroup === "sectors"}>Sectors <span aria-hidden="true">⌄</span></button>
-        {mobileGroup === "sectors" && <div className="integral-mobile-sub">{subsidiaries.map((item) => <Link key={item.id} to={item.path} onClick={() => setOpen(false)}>{item.name}</Link>)}</div>}
+        <div className={`integral-mobile-sub ${mobileGroup === "sectors" ? "is-open" : ""}`} aria-hidden={mobileGroup !== "sectors"}>{subsidiaries.map((item) => <Link key={item.id} to={item.path} onClick={() => setOpen(false)}>{item.name}</Link>)}</div>
         <button type="button" className="integral-mobile-main" onClick={() => setMobileGroup(mobileGroup === "company" ? "" : "company")} aria-expanded={mobileGroup === "company"}>Company <span aria-hidden="true">⌄</span></button>
-        {mobileGroup === "company" && <div className="integral-mobile-sub">{companyLinks.map((item) => <Link key={item.path} to={item.path} onClick={() => setOpen(false)}>{item.label}</Link>)}</div>}
+        <div className={`integral-mobile-sub ${mobileGroup === "company" ? "is-open" : ""}`} aria-hidden={mobileGroup !== "company"}>{companyLinks.map((item) => <Link key={item.path} to={item.path} onClick={() => setOpen(false)}>{item.label}</Link>)}</div>
       </div>
     </div>
   </header>;

@@ -10,14 +10,19 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 function useTemplateReveal() {
   useEffect(() => {
     const elements = document.querySelectorAll(".integral-template-home .wow");
+    const reveal = (element) => {
+      element.style.animationDuration = element.dataset.wowDuration || "0.8s";
+      element.style.animationDelay = element.dataset.wowDelay || "0s";
+      element.classList.add("animated");
+    };
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !window.IntersectionObserver) {
-      elements.forEach((element) => element.classList.add("animated"));
+      elements.forEach(reveal);
       return undefined;
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animated");
+          reveal(entry.target);
           observer.unobserve(entry.target);
         }
       });
@@ -38,7 +43,7 @@ function Hero() {
 }
 
 function About() {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(2);
   return <section className="td-about-area fix pt-145 pb-120 template-about" aria-labelledby="home-about-title"><div className="container"><div className="row">
     <div className="col-xl-6 col-lg-7 col-md-12 mb-30"><div className="row-custom-wrapper wow fadeInLeft" data-wow-duration="1s"><div className="row-custom">
       {panels.map((item, index) => <div key={item.number} className={`col-custom ${active === index ? "active" : ""}`} role="button" tabIndex={0} aria-expanded={active === index} onClick={() => setActive(index)} onKeyDown={(event) => { if (event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) { event.preventDefault(); setActive(index); } }}>
