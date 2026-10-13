@@ -1,28 +1,33 @@
 export const panels = [
-  { number: "01", title: "Property", image: "/integral/home-about-01.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
-  { number: "02", title: "Construction", image: "/integral/home-service-infrastructure.jpg", heading: "Built with purpose.", text: "Project delivery grounded in planning, quality and practical execution.", path: "/construction.html" },
-  { number: "03", title: "Mobility", image: "/integral/home-about-mobility.jpg", heading: "Vehicles for real needs.", text: "Considered sourcing and support for people and business.", path: "/automobiles.html" },
+  { number: "01", title: "Property", image: "/integral/editorial/property.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
+  { number: "02", title: "Construction", image: "/integral/editorial/construction.jpg", heading: "Built with purpose.", text: "Project delivery grounded in planning, quality and practical execution.", path: "/construction.html" },
+  { number: "03", title: "Mobility", image: "/integral/editorial/mobility.jpg", heading: "Vehicles for real needs.", text: "Considered sourcing and support for people and business.", path: "/automobiles.html" },
 ];
 
 export const sectors = [
-  { label: "Energy", path: "/oil-gas.html", image: "/integral/home-service-energy.jpg", summary: "Energy interests that support industry and growth." },
-  { label: "Infrastructure", path: "/construction.html", image: "/integral/home-service-infrastructure.jpg", summary: "Construction and engineering for lasting outcomes." },
-  { label: "Mobility", path: "/automobiles.html", image: "/integral/home-service-mobility.jpg", summary: "Practical movement for people and business." },
-  { label: "Property", path: "/real-estate.html", image: "/integral/home-service-property.jpg", summary: "Places designed for living and investment." },
-  { label: "Agriculture", path: "/agriculture.html", image: "/integral/sector-farms.jpg", summary: "Productive land and stronger value chains." },
+  { label: "Energy", path: "/oil-gas.html", image: "/integral/editorial/energy.jpg", summary: "Energy interests that support industry and growth." },
+  { label: "Infrastructure", path: "/construction.html", image: "/integral/editorial/construction.jpg", summary: "Construction and engineering for lasting outcomes." },
+  { label: "Mobility", path: "/automobiles.html", image: "/integral/editorial/mobility.jpg", summary: "Practical movement for people and business." },
+  { label: "Property", path: "/real-estate.html", image: "/integral/editorial/real-estate.jpg", summary: "Places designed for living and investment." },
+  { label: "Agriculture", path: "/agriculture.html", image: "/integral/editorial/meeting.jpg", summary: "Productive land and stronger value chains." },
 ];
 
 export const works = [
-  { title: "Vision and direction", category: "Group", filter: "Energy", image: "/integral/home-portfolio-01.jpg", path: "/about.html" },
-  { title: "Working together", category: "People", filter: "Built environment", image: "/integral/home-portfolio-02.jpg", path: "/leadership.html" },
-  { title: "A wider perspective", category: "Strategy", filter: "Mobility", image: "/integral/home-portfolio-03.jpg", path: "/about.html" },
-  { title: "Built for progress", category: "Operations", filter: "Growth", image: "/integral/home-portfolio-04.jpg", path: "/about.html" },
+  { title: "Made for the long term.", category: "Our work", filter: "Our work", image: "/integral/editorial/property.jpg", path: "/real-estate.html" },
+  { title: "Built to deliver.", category: "Our work", filter: "Our work", image: "/integral/editorial/construction.jpg", path: "/construction.html" },
+  { title: "Systems that move.", category: "Our work", filter: "Our work", image: "/integral/editorial/mobility.jpg", path: "/automobiles.html" },
+  { title: "Progress takes people.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/teamwork.jpg", path: "/leadership.html" },
+  { title: "Work that holds together.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/people.jpg", path: "/leadership.html" },
+  { title: "Leadership in action.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/boardroom.jpg", path: "/leadership.html" },
+  { title: "Planning with purpose.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/planning.jpg", path: "/about.html" },
+  { title: "Capital in motion.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/insight.jpg", path: "/about.html" },
+  { title: "Space to decide.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/office.jpg", path: "/about.html" },
 ];
 
-export const filters = ["All", "Energy", "Built environment", "Mobility", "Growth"];
+export const filters = ["Our work", "Our success stories", "Our business cases"];
 
 export const updates = [
-  { title: "Focused businesses. Shared ambition.", summary: "Specialist teams. One long-term outlook.", category: "Group", image: "/integral/home-news-business.jpg" },
-  { title: "Building for the long term", summary: "Progress takes more than a plan.", category: "Perspective", image: "/integral/home-news-02.jpg" },
-  { title: "The people behind the work", summary: "Direction is shaped by people who deliver.", category: "Leadership", image: "/integral/home-news-leadership.jpg" },
+  { title: "The work starts with clarity.", summary: "A considered view of where we build next.", category: "Our work", image: "/integral/editorial/insight.jpg" },
+  { title: "Execution is a shared practice.", summary: "Good outcomes depend on disciplined teams.", category: "Our business cases", image: "/integral/editorial/planning.jpg" },
+  { title: "People make the difference.", summary: "The people behind each lasting result.", category: "Our success stories", image: "/integral/editorial/people.jpg" },
 ];
