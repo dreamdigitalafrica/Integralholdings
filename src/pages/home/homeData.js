@@ -33,7 +33,7 @@ export const works = [
 export const filters = ["Business", "Strategy", "Branding", "Marketing", "Planning"];
 
 export const updates = [
-  { title: "The work starts with clarity.", summary: "A considered view of where we build next.", category: "Our work", image: "/integral/editorial/insight.jpg" },
-  { title: "Execution is a shared practice.", summary: "Good outcomes depend on disciplined teams.", category: "Our business cases", image: "/integral/editorial/planning.jpg" },
-  { title: "People make the difference.", summary: "The people behind each lasting result.", category: "Our success stories", image: "/integral/editorial/people.jpg" },
+  { title: "The work starts with clarity.", tags: ["Strategy", "Direction"], image: "/integral/editorial/insight.jpg" },
+  { title: "Execution is a shared practice.", tags: ["Operations", "Delivery"], image: "/integral/editorial/planning.jpg" },
+  { title: "People make the difference.", tags: ["Leadership", "Culture"], image: "/integral/editorial/people.jpg" },
 ];
