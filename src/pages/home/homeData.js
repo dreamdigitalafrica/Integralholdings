@@ -13,18 +13,19 @@ export const sectors = [
 ];
 
 export const works = [
-  { title: "Made for the long term.", category: "Our work", filter: "Our work", image: "/integral/editorial/property.jpg", path: "/real-estate.html" },
-  { title: "Built to deliver.", category: "Our work", filter: "Our work", image: "/integral/editorial/construction.jpg", path: "/construction.html" },
-  { title: "Systems that move.", category: "Our work", filter: "Our work", image: "/integral/editorial/mobility.jpg", path: "/automobiles.html" },
-  { title: "Progress takes people.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/teamwork.jpg", path: "/leadership.html" },
-  { title: "Work that holds together.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/people.jpg", path: "/leadership.html" },
-  { title: "Leadership in action.", category: "Our success stories", filter: "Our success stories", image: "/integral/editorial/boardroom.jpg", path: "/leadership.html" },
-  { title: "Planning with purpose.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/planning.jpg", path: "/about.html" },
-  { title: "Capital in motion.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/insight.jpg", path: "/about.html" },
-  { title: "Space to decide.", category: "Our business cases", filter: "Our business cases", image: "/integral/editorial/office.jpg", path: "/about.html" },
+  { title: "Investing in lasting value.", category: "Business", filter: "Business", image: "/integral/editorial/property.jpg", path: "/real-estate.html" },
+  { title: "Diversified to perform.", category: "Business", filter: "Business", image: "/integral/editorial/energy.jpg", path: "/oil-gas.html" },
+  { title: "Focused decisions.", category: "Strategy", filter: "Strategy", image: "/integral/editorial/insight.jpg", path: "/about.html" },
+  { title: "Insight that moves.", category: "Strategy", filter: "Strategy", image: "/integral/editorial/planning.jpg", path: "/about.html" },
+  { title: "A clearer point of view.", category: "Branding", filter: "Branding", image: "/integral/editorial/real-estate.jpg", path: "/about.html" },
+  { title: "Identity with intent.", category: "Branding", filter: "Branding", image: "/integral/editorial/boardroom.jpg", path: "/about.html" },
+  { title: "Stories that travel.", category: "Marketing", filter: "Marketing", image: "/integral/editorial/people.jpg", path: "/leadership.html" },
+  { title: "Momentum, shared.", category: "Marketing", filter: "Marketing", image: "/integral/editorial/teamwork.jpg", path: "/leadership.html" },
+  { title: "Built from the ground up.", category: "Planning", filter: "Planning", image: "/integral/editorial/construction.jpg", path: "/construction.html" },
+  { title: "Movement with purpose.", category: "Planning", filter: "Planning", image: "/integral/editorial/mobility.jpg", path: "/automobiles.html" },
 ];
 
-export const filters = ["Our work", "Our success stories", "Our business cases"];
+export const filters = ["Business", "Strategy", "Branding", "Marketing", "Planning"];
 
 export const updates = [
   { title: "The work starts with clarity.", summary: "A considered view of where we build next.", category: "Our work", image: "/integral/editorial/insight.jpg" },
