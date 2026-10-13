@@ -145,6 +145,9 @@
   .template-portfolio-item { flex-basis: calc((100% - 40px) / 2); }
   .template-counter .td-counter-content, .template-counter .td-counter-count-wrap { padding-top: 45px; }
 }
+@media (min-width: 576px) and (max-width: 991px) {
+  .template-services .service__item-8:last-child { width: 100%; }
+}
 @media (max-width: 767px) {
   .integral-template-home .td-section-title { font-size: 42px; }
   .template-hero { min-height: 560px; padding: 100px 0 45px; }
