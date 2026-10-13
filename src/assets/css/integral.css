@@ -555,6 +555,35 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
 .integral-autos-process-grid span { display: block; min-height: 76px; color: #171a20; font-size: 52px; font-weight: 300; }
 .integral-autos-process-grid h3 { margin: 24px 0 0; color: #171a20; font-size: clamp(24px, 1.75vw, 34px); font-weight: 600; }
 .integral-autos-process-grid p { max-width: 290px; margin: 18px 0 0; color: #555c67; font-size: 17px; line-height: 1.52; }
+
+/* A restrained, motion-led Autos page. The media holder mirrors the theme's video position without reintroducing a heavyweight video asset. */
+.integral-autos-hero { min-height: min(760px, 76svh); }
+.integral-autos-hero-shade { background: linear-gradient(90deg, rgba(12, 20, 31, .82), rgba(12, 20, 31, .35) 56%, rgba(12, 20, 31, .08)); }
+.integral-autos-hero-content { align-items: flex-start; justify-content: flex-end; width: min(1320px, 100%); margin: 0 auto; padding: 140px clamp(24px, 6vw, 116px) 84px; text-align: left; }
+.integral-autos-hero-content > span { margin-bottom: 22px; color: #d8e4ff; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.integral-autos-hero-content h1 { max-width: 740px; font-size: clamp(54px, 6.2vw, 104px); }
+.integral-autos-hero-content > p { max-width: 530px; margin-top: 22px; font-size: clamp(17px, 1.3vw, 21px); line-height: 1.45; }
+.integral-autos-hero-content > a { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 15px 18px; background: #fff; color: #171a20; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: background-color .2s ease, transform .2s ease; }
+.integral-autos-hero-content > a:hover, .integral-autos-hero-content > a:focus-visible { background: #dbe6ff; color: #171a20; transform: translateY(-2px); }
+.integral-autos-hero-content > a span { font-size: 20px; line-height: .7; }
+.integral-autos-motion { padding: clamp(56px, 8vw, 120px) clamp(24px, 6vw, 116px) 0; background: #fff; }
+.integral-autos-motion-frame { position: relative; min-height: clamp(370px, 52vw, 700px); overflow: hidden; background: #1e2b3a; }
+.integral-autos-motion-frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 22, 35, .42), transparent 48%); pointer-events: none; }
+.integral-autos-motion-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.035); }
+.integral-autos-motion.is-visible .integral-autos-motion-frame img { animation: integral-autos-media-drift 12s cubic-bezier(.33, 1, .68, 1) both; }
+@keyframes integral-autos-media-drift { from { transform: scale(1.075) translateX(-1.2%); } to { transform: scale(1.035) translateX(1.2%); } }
+.integral-autos-motion-frame span { position: absolute; z-index: 1; left: 30px; bottom: 26px; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.integral-autos-intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .65fr); gap: clamp(40px, 10vw, 180px); align-items: end; padding: clamp(90px, 11vw, 170px) clamp(24px, 6vw, 116px); }
+.integral-autos-intro h2, .integral-autos-services h2 { max-width: 780px; margin: 18px 0 0; color: #171a20; font-size: clamp(42px, 5.4vw, 88px); font-weight: 600; line-height: 1.03; text-wrap: balance; }
+.integral-autos-intro > p { max-width: 460px; margin: 0; color: #555c67; font-size: clamp(18px, 1.4vw, 23px); line-height: 1.48; }
+.integral-autos-services { padding: 0 clamp(24px, 6vw, 116px) clamp(90px, 10vw, 150px); }
+.integral-autos-services-heading { padding: clamp(72px, 8vw, 112px) 0 50px; border-top: 1px solid #dfe3e5; }
+.integral-autos-services-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #dfe3e5; }
+.integral-autos-services-list article { min-height: 290px; padding: 30px clamp(20px, 2.4vw, 44px) 24px; border-right: 1px solid #dfe3e5; }
+.integral-autos-services-list article:first-child { border-left: 1px solid #dfe3e5; }
+.integral-autos-services-list article > span { color: #3f61c3; font-size: 13px; font-weight: 700; }
+.integral-autos-services-list h3 { margin: 74px 0 0; color: #171a20; font-size: clamp(25px, 2.1vw, 38px); font-weight: 600; line-height: 1.1; }
+.integral-autos-services-list p { max-width: 300px; margin: 17px 0 0; color: #555c67; font-size: 16px; line-height: 1.5; }
 @media (max-width: 991px) {
   .integral-autos-card { flex-basis: calc((100vw - 2 * clamp(24px, 6vw, 116px) - 24px) / 2); }
   .integral-autos-intro-band, .integral-autos-editorial { grid-template-columns: 1fr; }
@@ -562,6 +591,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
   .integral-autos-intro-band .integral-autos-kicker { margin-bottom: 0; }
   .integral-autos-editorial-reverse .integral-autos-editorial-media { order: initial; }
   .integral-autos-process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .integral-autos-intro { grid-template-columns: 1fr; gap: 30px; }
+  .integral-autos-services-list { grid-template-columns: 1fr; }
+  .integral-autos-services-list article { min-height: 0; padding: 32px 0 36px; border-right: 0; border-bottom: 1px solid #dfe3e5; }
+  .integral-autos-services-list article:first-child { border-left: 0; }
+  .integral-autos-services-list h3 { margin-top: 38px; }
 }
 @media (max-width: 767px) {
   .integral-autos-hero { min-height: 560px; }
@@ -572,6 +606,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
   .integral-autos-editorial-media { min-height: 390px; }
   .integral-autos-editorial-copy { min-height: 420px; padding: 70px 8%; }
   .integral-autos-process { padding: 80px 0 90px; }
+  .integral-autos-hero { min-height: 610px; }
+  .integral-autos-hero-content { padding-bottom: 68px; }
+  .integral-autos-motion-frame { min-height: 410px; }
 }
 @media (max-width: 575px) {
   .integral-autos-card { flex-basis: calc(100vw - 76px); }
@@ -579,9 +616,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
   .integral-autos-card-content h3 { font-size: 31px; }
   .integral-autos-process-grid { grid-template-columns: 1fr; }
   .integral-autos-process-grid article { min-height: 270px; }
+  .integral-autos-motion { padding-top: 42px; }
+  .integral-autos-motion-frame { min-height: 340px; }
+  .integral-autos-motion-frame img { object-position: 58% center; }
+  .integral-autos-intro { padding-top: 78px; padding-bottom: 78px; }
+  .integral-autos-services-heading { padding: 70px 0 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .integral-autos-live-reveal { opacity: 1; transform: none; }
   .integral-autos-live-reveal.is-visible { animation: none; }
   .integral-autos-card img, .integral-autos-editorial-media img, .integral-autos-fleet > img { transition: none; }
+  .integral-autos-motion.is-visible .integral-autos-motion-frame img { animation: none; }
 }
