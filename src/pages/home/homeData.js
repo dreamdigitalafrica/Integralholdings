@@ -15,14 +15,19 @@ export const sectors = [
 export const works = [
   { title: "Investing in lasting value.", category: "Business", filter: "Business", image: "/integral/editorial/property.jpg", path: "/real-estate.html" },
   { title: "Diversified to perform.", category: "Business", filter: "Business", image: "/integral/editorial/energy.jpg", path: "/oil-gas.html" },
+  { title: "Building for tomorrow.", category: "Business", filter: "Business", image: "/integral/editorial/construction.jpg", path: "/construction.html" },
   { title: "Focused decisions.", category: "Strategy", filter: "Strategy", image: "/integral/editorial/insight.jpg", path: "/about.html" },
   { title: "Insight that moves.", category: "Strategy", filter: "Strategy", image: "/integral/editorial/planning.jpg", path: "/about.html" },
+  { title: "A shared direction.", category: "Strategy", filter: "Strategy", image: "/integral/editorial/boardroom.jpg", path: "/about.html" },
   { title: "A clearer point of view.", category: "Branding", filter: "Branding", image: "/integral/editorial/real-estate.jpg", path: "/about.html" },
   { title: "Identity with intent.", category: "Branding", filter: "Branding", image: "/integral/editorial/boardroom.jpg", path: "/about.html" },
+  { title: "One group. Shared values.", category: "Branding", filter: "Branding", image: "/integral/editorial/teamwork.jpg", path: "/about.html" },
   { title: "Stories that travel.", category: "Marketing", filter: "Marketing", image: "/integral/editorial/people.jpg", path: "/leadership.html" },
   { title: "Momentum, shared.", category: "Marketing", filter: "Marketing", image: "/integral/editorial/teamwork.jpg", path: "/leadership.html" },
+  { title: "Connecting people and places.", category: "Marketing", filter: "Marketing", image: "/integral/editorial/office.jpg", path: "/real-estate.html" },
   { title: "Built from the ground up.", category: "Planning", filter: "Planning", image: "/integral/editorial/construction.jpg", path: "/construction.html" },
   { title: "Movement with purpose.", category: "Planning", filter: "Planning", image: "/integral/editorial/mobility.jpg", path: "/automobiles.html" },
+  { title: "Planning for growth.", category: "Planning", filter: "Planning", image: "/integral/sector-farms.jpg", path: "/agriculture.html" },
 ];
 
 export const filters = ["Business", "Strategy", "Branding", "Marketing", "Planning"];
