@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../layouts/Layout";
 import { subsidiaries, values } from "../content";
@@ -6,6 +7,36 @@ import { AutosCarousel } from "../components/AutosCarousel";
 
 const PageHero = ({ eyebrow, title, description, image, video }) => <section className="integral-page-hero" style={{ backgroundImage: `url(${image})` }}>{video && <video className="integral-page-hero-video" autoPlay loop muted playsInline preload="none" poster={image} aria-hidden="true"><source src={video} type="video/mp4" /></video>}<div className="container"><span className="td-section-title-pre">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>;
 const NextLink = ({ to, children }) => <Link className="integral-next-link" to={to}>{children}<span aria-hidden="true">↗</span></Link>;
+
+function useAutosReveals() {
+  useEffect(() => {
+    const items = Array.from(document.querySelectorAll(".integral-autos-page .integral-autos-live-reveal"));
+    const reveal = (item) => item.classList.add("is-visible");
+    const revealInView = () => items.forEach((item) => {
+      if (item.classList.contains("is-visible")) return;
+      const { top, bottom } = item.getBoundingClientRect();
+      if (top < window.innerHeight * .9 && bottom > 0) reveal(item);
+    });
+
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      items.forEach(reveal);
+      return undefined;
+    }
+
+    revealInView();
+    if (typeof window.IntersectionObserver !== "function") {
+      window.addEventListener("scroll", revealInView, { passive: true });
+      window.addEventListener("resize", revealInView);
+      return () => { window.removeEventListener("scroll", revealInView); window.removeEventListener("resize", revealInView); };
+    }
+
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); }
+    }), { threshold: .08, rootMargin: "0px 0px -40px" });
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+}
 
 export const AboutPage = () => <Layout header={1} footer={1}>
   <PageHero eyebrow="The Group" title="About Integral Holdings" description="Building legacies. Securing the future." image="/integral/home-hero-poster.jpg" />
@@ -37,6 +68,19 @@ export const SubsidiaryPage = ({ id }) => {
     {id === "realty" && <section id="crest" className="integral-collection"><div className="container"><span className="td-section-title-pre">Completed projects</span><h2 className="td-section-title">Crest 1.0</h2><p>A completed residential development by 84th Luxury Realty, presented through selected site and interior views.</p><div className="integral-collection-grid">{crestImages.map((image, index) => <img key={image} src={`/integral/${image}`} alt={`Crest 1.0 project view ${index + 1}`} loading="lazy" />)}</div></div></section>}
     <NextLink to="/">Explore the Integral portfolio.</NextLink>
   </Layout>;
+};
+
+export const AutosPage = () => {
+  useAutosReveals();
+  return <Layout header={1} footer={1}><main className="integral-autos-page">
+  <section className="integral-autos-hero" aria-labelledby="autos-title"><img src="/integral/autos-custom-suv.jpg" alt="Dark SUV in a contemporary city setting" /><div className="integral-autos-hero-shade" /><div className="integral-autos-hero-content integral-autos-live-reveal"><h1 id="autos-title">84th Autos</h1><p>Considered mobility for people and business.</p><div className="integral-autos-hero-actions"><a href="#autos-collection">Explore services</a><a href="#autos-process">Our approach</a></div></div></section>
+  <AutosCarousel />
+  <section className="integral-autos-intro-band integral-autos-live-reveal" aria-labelledby="autos-intro-title"><p className="integral-autos-kicker">Automobiles &amp; Mobility</p><h2 id="autos-intro-title">A clearer way to move.</h2><p>84th Autos brings vehicle sourcing, fleet supply and practical ownership support together in one focused mobility business.</p></section>
+  <section className="integral-autos-editorial integral-autos-live-reveal" id="autos-sourcing" aria-labelledby="autos-sourcing-title"><div className="integral-autos-editorial-media"><img src="/integral/autos-custom-suv.jpg" alt="Dark SUV in an urban setting" loading="lazy" /></div><div className="integral-autos-editorial-copy"><p className="integral-autos-kicker">01 / Vehicle sourcing</p><h2 id="autos-sourcing-title">Find the right fit.</h2><p>We are building a vehicle sourcing experience grounded in clear requirements, considered options and transparent coordination from selection through delivery.</p><a href="#autos-process">How we work <span aria-hidden="true">→</span></a></div></section>
+  <section className="integral-autos-editorial integral-autos-editorial-reverse integral-autos-live-reveal" id="autos-advisory" aria-labelledby="autos-advisory-title"><div className="integral-autos-editorial-media"><img src="/integral/autos-custom-sedan.jpg" alt="White executive sedan at dusk" loading="lazy" /></div><div className="integral-autos-editorial-copy"><p className="integral-autos-kicker">02 / Ownership support</p><h2 id="autos-advisory-title">Confidence beyond purchase.</h2><p>Our advisory approach considers the full ownership journey, including practical vehicle choices, support needs and the demands of everyday use.</p><a href="#autos-process">How we work <span aria-hidden="true">→</span></a></div></section>
+  <section className="integral-autos-fleet integral-autos-live-reveal" id="autos-fleet" aria-labelledby="autos-fleet-title"><img src="/integral/autos-custom-fleet.jpg" alt="SUV and van fleet outside a modern building" loading="lazy" /><div><p className="integral-autos-kicker">03 / Fleet solutions</p><h2 id="autos-fleet-title">Business in motion.</h2><p>Coordinated vehicle supply and practical support for organisations, project teams and commercial operations.</p></div></section>
+  <section className="integral-autos-process" id="autos-process" aria-labelledby="autos-process-title"><div className="integral-autos-section-head integral-autos-live-reveal"><div><span className="td-section-title-pre">The 84th Autos approach</span><h2 id="autos-process-title">Built around the journey</h2></div></div><div className="integral-autos-process-grid">{[["Understand", "We begin with the intended use, budget and ownership priorities."], ["Source", "Options are assessed against suitability, availability and value."], ["Coordinate", "Clear communication connects decisions, documentation and delivery."], ["Support", "Practical guidance helps keep the vehicle useful beyond handover."]].map(([title, text], index) => <article className="integral-autos-live-reveal" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+</main></Layout>;
 };
 
 export const UpdatesPage = () => <Layout header={1} footer={1}><PageHero eyebrow="From the Group" title="Updates" description="Perspectives on the businesses and principles shaping Integral Holdings." image="/integral/home-news-business.jpg" /><section className="integral-page-updates"><div className="container">{[

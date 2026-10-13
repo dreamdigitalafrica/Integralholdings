@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const vehicles = [
-  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions."],
-  ["Executive mobility", "Automotive advisory", "Thoughtful support beyond the vehicle."],
-  ["Fleet solutions", "Business mobility", "Reliable movement for growing operations."],
-  ["Project vehicles", "Project mobility", "Practical choices for demanding work."],
-  ["Everyday mobility", "Vehicle sourcing", "Vehicles suited to the daily journey."],
-  ["Group transport", "Business mobility", "Coordinated movement for teams."],
+  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions.", "autos-custom-suv.jpg", "autos-sourcing"],
+  ["Executive mobility", "Automotive advisory", "Thoughtful support beyond the vehicle.", "autos-custom-sedan.jpg", "autos-advisory"],
+  ["Fleet solutions", "Business mobility", "Reliable movement for growing operations.", "autos-custom-fleet.jpg", "autos-fleet"],
+  ["Project vehicles", "Project mobility", "Practical choices for demanding work.", "autos-custom-pickup.jpg", "autos-fleet"],
+  ["Everyday mobility", "Vehicle sourcing", "Vehicles suited to the daily journey.", "autos-custom-crossover.jpg", "autos-sourcing"],
+  ["Group transport", "Business mobility", "Coordinated movement for teams.", "autos-custom-minibus.jpg", "autos-fleet"],
 ];
 
 export function AutosCarousel() {
@@ -47,13 +47,13 @@ export function AutosCarousel() {
     };
   }, [metrics]);
 
-  return <section className="integral-autos-collection" aria-labelledby="autos-collection-title">
-    <div className="container integral-autos-heading"><span className="td-section-title-pre">Our approach</span><h2 id="autos-collection-title">Mobility for every journey</h2></div>
+  return <section className="integral-autos-collection" id="autos-collection" aria-labelledby="autos-collection-title">
+    <div className="integral-autos-section-head integral-autos-live-reveal"><div><span className="td-section-title-pre">Our approach</span><h2 id="autos-collection-title">Mobility for every journey</h2></div><p>Explore the services shaping 84th Autos. Vehicle images are concept visuals representing our mobility focus.</p></div>
     <div className="integral-autos-carousel">
       <div className="integral-autos-track" ref={track} tabIndex={0} aria-label="Mobility services" onKeyDown={(event) => { if (event.key === "ArrowRight") { event.preventDefault(); goTo(active + 1); } if (event.key === "ArrowLeft") { event.preventDefault(); goTo(active - 1); } }}>
-        {vehicles.map(([title, category, description], index) => <article className="integral-autos-card" key={title} aria-label={title}>
-          <img src={`/integral/autos-photo-0${index + 1}.jpg`} alt={`Vehicle for ${title.toLowerCase()}`} loading={index < 3 ? "eager" : "lazy"} />
-          <a className="integral-autos-more" href="#autos-capabilities" aria-label={`Learn more about ${title}`}>+</a>
+        {vehicles.map(([title, category, description, image, target], index) => <article className="integral-autos-card" key={title} aria-label={title}>
+          <img src={`/integral/${image}`} alt={`Concept image for ${title.toLowerCase()}`} loading={index < 3 ? "eager" : "lazy"} />
+          <a className="integral-autos-more" href={`#${target}`} aria-label={`Learn more about ${title}`}>+</a>
           <div className="integral-autos-card-content"><p>0{index + 1} / {category}</p><h3>{title}</h3><span>{description}</span></div>
         </article>)}
       </div>

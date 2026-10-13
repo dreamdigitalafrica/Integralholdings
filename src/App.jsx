@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
-import { AboutPage, CareersPage, SubsidiaryPage, UpdatesPage } from "./pages/IntegralPages";
+import { AboutPage, AutosPage, CareersPage, SubsidiaryPage, UpdatesPage } from "./pages/IntegralPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
 import { subsidiaries } from "./content";
 
@@ -28,7 +28,8 @@ function App() {
     <Route path="/updates" element={<UpdatesPage />} />
     <Route path="/careers.html" element={<CareersPage />} />
     <Route path="/careers" element={<CareersPage />} />
-    {subsidiaries.map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
+    <Route path="/automobiles.html" element={<AutosPage />} />
+    {subsidiaries.filter((item) => item.id !== "autos").map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
     <Route path="*" element={<HomeOne />} />
   </Routes>;
 }

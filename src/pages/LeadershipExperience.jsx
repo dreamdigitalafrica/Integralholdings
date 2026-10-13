@@ -69,7 +69,7 @@ export function LeadershipPage() {
   const nameButton = (index) => <button id={`leader-${index + 1}`} className="integral-directory-name" type="button" onClick={() => setSelected(index)} key={leaders[index].name} aria-label={`View ${leaders[index].name}'s profile`}>{profiles[index].shortName.map((line) => <span key={line}>{line}</span>)}</button>;
 
   return <Layout header={1} footer={1}>
-    <section className="integral-governance-hero" aria-labelledby="governance-title"><div className="container"><span className="integral-governance-kicker">The Group</span><h1 id="governance-title">Leadership</h1><p>The people behind Integral&apos;s direction and day-to-day execution.</p></div></section>
+    <section className="integral-governance-hero" aria-labelledby="governance-title"><div className="container"><h1 id="governance-title">Corporate Governance</h1></div></section>
     <section className="integral-leadership-directory" aria-label="Integral leadership directory">
       <div className="integral-directory-column"><h2>Leadership</h2><div className="integral-directory-names"><div>{nameButton(0)}<Link className="integral-founder-directory-link" to="/founder.html">Founder profile <span aria-hidden="true">↗</span></Link></div></div></div>
       <div className="integral-directory-column"><h2>Department Heads</h2><div className="integral-directory-names integral-directory-grid">{[1, 2, 3].map(nameButton)}</div></div>
