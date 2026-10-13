@@ -1,15 +1,15 @@
 export const panels = [
-  { number: "01", title: "Property", image: "/integral/editorial/property.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
+  { number: "01", title: "Realty", image: "/integral/editorial/property.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
   { number: "02", title: "Construction", image: "/integral/editorial/construction.jpg", heading: "Built with purpose.", text: "Project delivery grounded in planning, quality and practical execution.", path: "/construction.html" },
-  { number: "03", title: "Mobility", image: "/integral/editorial/mobility.jpg", heading: "Vehicles for real needs.", text: "Considered sourcing and support for people and business.", path: "/automobiles.html" },
+  { number: "03", title: "Automobile", image: "/integral/autos-custom-suv.jpg", heading: "Your next drive starts here.", text: "Vehicle sourcing, fleet supply and ownership support from 84th Autos.", path: "/automobiles.html" },
 ];
 
 export const sectors = [
   { label: "Energy", path: "/oil-gas.html", image: "/integral/editorial/energy.jpg", summary: "Energy interests that support industry and growth." },
   { label: "Infrastructure", path: "/construction.html", image: "/integral/editorial/construction.jpg", summary: "Construction and engineering for lasting outcomes." },
-  { label: "Mobility", path: "/automobiles.html", image: "/integral/editorial/mobility.jpg", summary: "Practical movement for people and business." },
-  { label: "Property", path: "/real-estate.html", image: "/integral/editorial/real-estate.jpg", summary: "Places designed for living and investment." },
-  { label: "Agriculture", path: "/agriculture.html", image: "/integral/editorial/meeting.jpg", summary: "Productive land and stronger value chains." },
+  { label: "Automobile", path: "/automobiles.html", image: "/integral/autos-custom-suv.jpg", summary: "Vehicle sourcing, fleet supply and ownership support." },
+  { label: "Realty", path: "/real-estate.html", image: "/integral/editorial/real-estate.jpg", summary: "Places designed for living and investment." },
+  { label: "Agriculture", path: "/agriculture.html", image: "/integral/sector-farms.jpg", summary: "Productive land and stronger value chains." },
 ];
 
 export const works = [

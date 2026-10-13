@@ -1,7 +1,7 @@
 .integral-template-home { overflow: hidden; color: #20282d; }
 .integral-template-home .td-section-title { font-size: 64px; line-height: 1.16; font-weight: 500; }
 .integral-template-home .td-section-title-pre { color: #686d70; font-size: 16px; font-weight: 400; text-transform: none; }
-.integral-template-home .td-btn { gap: 12px; padding: 19px 24px; font-size: 14px; font-weight: 600; }
+.integral-template-home .td-btn { gap: 10px; padding: 12px 18px; min-height: 44px; font-size: 14px; font-weight: 600; }
 .integral-template-home .td-btn > span { font-size: 17px; line-height: 1; }
 .integral-template-home .td-grey-bg { background: #f5f7f8; }
 .integral-template-home .wow { visibility: hidden; }
@@ -51,6 +51,7 @@
 .template-about .td-about-content-wrap .td-about-para { margin-top: auto; max-width: 600px; font-size: 17px; line-height: 1.65; }
 
 .template-services .service__slider-8 { position: absolute; inset: 0; }
+.template-services .service__item-8 { background-position: center; background-size: cover; }
 .template-services .td-service-border { min-height: 720px; }
 .template-services .td-service-wrap { height: 100%; }
 .template-services .td-service-cetagory { text-transform: none; }
@@ -129,6 +130,13 @@
   .template-portfolio-viewport { margin-right: 0; }
 }
 @media (max-width: 1199px) {
+  .template-services .service__slider-8 { display: none; }
+  .template-services .service__item-8 { background-image: linear-gradient(rgba(32, 40, 45, .25), rgba(32, 40, 45, .65)), var(--sector-image); }
+  .template-services .service__item-8:first-child { background-position: 60% center; }
+  .template-services .service__item-8:last-child { background-position: 25% center; }
+  .template-services .td-service-cetagory { display: none; }
+  .template-services .td-service-content { transform: none; }
+  .template-services .td-service-content-inner { opacity: 1; visibility: visible; }
   .template-hero { min-height: 960px; }
   .template-hero-marquee { height: 410px; }
   .template-about .td-about-content-wrap { margin-left: 25px; }

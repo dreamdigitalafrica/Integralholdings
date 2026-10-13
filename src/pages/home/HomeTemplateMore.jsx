@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CountUp from "react-countup";
 import { leaders, subsidiaries } from "../../content";
 import { updates } from "./homeData";
 
@@ -9,7 +10,7 @@ function Brands() {
 }
 
 function Group() {
-  return <section className="td-counter-area fix p-relative template-counter" aria-label="About Integral"><div className="container-fluid g-0"><div className="row gx-0"><div className="col-xl-4 col-lg-6"><div className="td-counter-thumb p-relative"><img className="w-100" src="/integral/editorial/people.jpg" alt="Business leaders walking together" loading="lazy" /></div></div><div className="col-xl-5 col-lg-6 mb-40"><div className="td-counter-content ml-110 mr-150"><p className="mb-45">We develop businesses with <span>purpose</span>, drawing on complementary expertise and a shared commitment to <span>quality</span>.</p><p className="mb-35">Our focus is on dependable execution and enduring value for the people and places we serve.</p><Link className="td-btn td-btn-3 td-left-right" to="/about.html">About Integral <Arrow /></Link></div></div><div className="col-xl-3 col-lg-6 mb-40"><div className="td-counter-count-wrap"><div className="td-counter-single td-counter-single-border mb-35"><h2 className="td-counter-count">04</h2><span className="td-counter-count-para">Group leaders</span></div><div className="td-counter-single"><h2 className="td-counter-count">01</h2><span className="td-counter-count-para">Shared ambition</span></div></div></div></div></div></section>;
+  return <section className="td-counter-area fix p-relative template-counter" aria-label="About Integral"><div className="container-fluid g-0"><div className="row gx-0"><div className="col-xl-4 col-lg-6"><div className="td-counter-thumb p-relative"><img className="w-100" src="/integral/editorial/people.jpg" alt="Business leaders walking together" loading="lazy" /></div></div><div className="col-xl-5 col-lg-6 mb-40"><div className="td-counter-content ml-110 mr-150"><p className="mb-45">We develop businesses with <span>purpose</span>, drawing on complementary expertise and a shared commitment to <span>quality</span>.</p><p className="mb-35">Our focus is on dependable execution and enduring value for the people and places we serve.</p><Link className="td-btn td-btn-3 td-left-right" to="/about.html">About Integral <Arrow /></Link></div></div><div className="col-xl-3 col-lg-6 mb-40"><div className="td-counter-count-wrap"><div className="td-counter-single td-counter-single-border mb-35"><h2 className="td-counter-count"><CountUp end={4} duration={1} enableScrollSpy scrollSpyOnce /></h2><span className="td-counter-count-para">Group leaders</span></div><div className="td-counter-single"><h2 className="td-counter-count"><CountUp end={1} duration={1} enableScrollSpy scrollSpyOnce /></h2><span className="td-counter-count-para">Shared ambition</span></div></div></div></div></div></section>;
 }
 
 function Team() {
