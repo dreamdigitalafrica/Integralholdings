@@ -11,7 +11,7 @@ const profiles = [
       "Moshe Douglas Teki is the Founder and Chief Executive Officer of Integral Holdings Ltd, a business leader and entrepreneur with extensive experience across construction, fabrication, oil and gas, automobiles and agriculture.",
       "He provides strategic direction for the Group, bringing together sector knowledge, commercial judgement and a purposeful approach to business development. He holds a first degree in Quantity Surveying with Second-Class Honours (Upper Division).",
       "A registered quantity surveyor and Fellow of the Nigerian Institute of Quantity Surveyors (FNIQS), he brings a professional grounding in cost planning, resource management and the commercial dimensions of project delivery to his leadership responsibilities.",
-      "His vision for Integral Holdings is to develop enduring enterprises that create commercial value while contributing to infrastructure, industry, employment and economic development.",
+      "His vision for Integral Holdings is to build legacies that create commercial value while contributing to infrastructure, industry, employment and economic development.",
     ],
   },
   {
@@ -82,6 +82,6 @@ export function FounderPage() {
   const founder = profiles[0];
   return <Layout header={1} footer={1}><main className="integral-founder-page">
     <div className="integral-founder-intro"><div className="integral-founder-portrait"><img src={leaders[0].image} alt="Moshe Douglas Teki" /></div><div className="integral-founder-heading"><span className="td-section-title-pre">Founder & Chief Executive Officer</span><h1>Moshe Douglas Teki</h1><p>FNIQS, RQS</p></div></div>
-    <section className="integral-founder-story" aria-labelledby="founder-story-title"><div><span className="td-section-title-pre">Leadership</span><h2 id="founder-story-title">Building enduring enterprises.</h2></div><div>{founder.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<Link to="/leadership.html" className="integral-founder-back">← Leadership directory</Link></div></section>
+    <section className="integral-founder-story" aria-labelledby="founder-story-title"><div><span className="td-section-title-pre">Leadership</span><h2 id="founder-story-title">Building legacies.</h2></div><div>{founder.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<Link to="/leadership.html" className="integral-founder-back">← Leadership directory</Link></div></section>
   </main></Layout>;
 }
