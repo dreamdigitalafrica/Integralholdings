@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../../layouts/Layout";
 import { values } from "../../content";
@@ -8,17 +8,45 @@ import { HomeTemplateMore } from "./HomeTemplateMore";
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 function useTemplateReveal() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const elements = document.querySelectorAll(".integral-template-home .wow");
     const reveal = (element) => {
       element.style.animationDuration = element.dataset.wowDuration || "0.8s";
       element.style.animationDelay = element.dataset.wowDelay || "0s";
       element.classList.add("animated");
     };
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !window.IntersectionObserver) {
+
+    const revealInView = () => {
+      elements.forEach((element) => {
+        if (element.classList.contains("animated")) return;
+        const { top, bottom } = element.getBoundingClientRect();
+        if (top < window.innerHeight * 0.94 && bottom > 0) reveal(element);
+      });
+    };
+
+    const reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
       elements.forEach(reveal);
       return undefined;
     }
+
+    revealInView();
+    if (typeof window.IntersectionObserver !== "function") {
+      const pollForVisibleSections = window.setInterval(() => {
+        revealInView();
+        if (Array.from(elements).every((element) => element.classList.contains("animated"))) {
+          window.clearInterval(pollForVisibleSections);
+        }
+      }, 180);
+      window.addEventListener("scroll", revealInView, { passive: true });
+      window.addEventListener("resize", revealInView);
+      return () => {
+        window.clearInterval(pollForVisibleSections);
+        window.removeEventListener("scroll", revealInView);
+        window.removeEventListener("resize", revealInView);
+      };
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

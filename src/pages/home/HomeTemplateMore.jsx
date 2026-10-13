@@ -5,15 +5,6 @@ import { updates } from "./homeData";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
-function Perspectives() {
-  const [selected, setSelected] = useState(0);
-  const leader = leaders[selected];
-  return <section className="td-testimonial-area td-grey-bg pb-140 p-relative template-perspective" aria-labelledby="perspective-title">
-    <div className="container-fluid d-none d-md-block"><div className="td-testimonial-bg-text text-center"><h2>Perspective</h2></div></div>
-    <div className="td-testimonial-main td-testimonial-transparet"><div className="container"><div className="template-perspective-content" key={leader.name}><span className="td-section-title-pre">The people behind Integral</span><h2 id="perspective-title" className="td-testimonial-avatar-title">{leader.name}</h2><span className="td-testimonial-avatar-designation">{leader.role}</span><p>{leader.bio}</p></div><div className="template-perspective-avatars" aria-label="Select a leader">{leaders.map((person, index) => <button type="button" className={selected === index ? "active" : ""} key={person.name} aria-label={`Show ${person.name}`} aria-current={selected === index ? "true" : undefined} onClick={() => setSelected(index)}><img src={person.image} alt="" loading="lazy" /></button>)}</div></div></div>
-  </section>;
-}
-
 function Brands() {
   return <section className="td-brands-area td-grey-bg pb-50 template-brands" aria-label="Integral businesses"><div className="template-brand-track">{[...subsidiaries, ...subsidiaries].map((item, index) => <Link className="td-brand-single-logo" key={`${item.id}-${index}`} to={item.path}>{item.name}</Link>)}</div></section>;
 }
@@ -43,4 +34,4 @@ function News() {
   return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">From the Group</span><h2 id="news-title" className="td-section-title">Latest perspectives</h2></div><div className="template-news-grid">{updates.map((item, index) => <article className="template-news-column wow fadeInUp" data-wow-duration="1s" key={item.title}>{index !== 1 && <Link className="template-news-quote" to="/updates.html"><span>Integral / {item.category}</span><h3>{item.summary}</h3><b aria-hidden="true">“</b></Link>}<Link className="template-news-story" to="/updates.html"><img src={item.image} alt="" loading="lazy" /><span>Integral / {item.category}</span><h3>{item.title}</h3><Arrow /></Link>{index === 1 && <Link className="template-news-quote" to="/updates.html"><span>Integral / Perspective</span><h3>Securing the future. Building legacies.</h3><b aria-hidden="true">“</b></Link>}</article>)}</div></div></section>;
 }
 
-export const HomeTemplateMore = () => <><Perspectives /><Brands /><Film /><Group /><Team /><News /></>;
+export const HomeTemplateMore = () => <><Brands /><Film /><Group /><Team /><News /></>;
