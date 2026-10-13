@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const vehicles = [
-  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions.", "autos-custom-suv.jpg", "autos-sourcing"],
-  ["Executive mobility", "Automotive advisory", "Thoughtful support beyond the vehicle.", "autos-custom-sedan.jpg", "autos-advisory"],
-  ["Fleet solutions", "Business mobility", "Reliable movement for growing operations.", "autos-custom-fleet.jpg", "autos-fleet"],
-  ["Project vehicles", "Project mobility", "Practical choices for demanding work.", "autos-custom-pickup.jpg", "autos-fleet"],
-  ["Everyday mobility", "Vehicle sourcing", "Vehicles suited to the daily journey.", "autos-custom-crossover.jpg", "autos-sourcing"],
-  ["Group transport", "Business mobility", "Coordinated movement for teams.", "autos-custom-minibus.jpg", "autos-fleet"],
+  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions.", "autos-models.webp", "autos-sourcing"],
+  ["Executive mobility", "Automotive advisory", "Thoughtful support beyond the vehicle.", "autos-white-suv.webp", "autos-advisory"],
+  ["Fleet solutions", "Business mobility", "Reliable movement for growing operations.", "autos-city-cars.webp", "autos-fleet"],
+  ["Project vehicles", "Project mobility", "Practical choices for demanding work.", "autos-salvage.webp", "autos-fleet"],
+  ["Everyday mobility", "Vehicle sourcing", "Vehicles suited to the daily journey.", "autos-charge-blue.webp", "autos-sourcing"],
+  ["Group transport", "Business mobility", "Coordinated movement for teams.", "autos-city-bikes.webp", "autos-fleet"],
 ];
 
 export function AutosCarousel() {
@@ -48,7 +48,7 @@ export function AutosCarousel() {
   }, [metrics]);
 
   return <section className="integral-autos-collection" id="autos-collection" aria-labelledby="autos-collection-title">
-    <div className="integral-autos-section-head integral-autos-live-reveal"><div><span className="td-section-title-pre">Our approach</span><h2 id="autos-collection-title">Mobility for every journey</h2></div><p>Explore the services shaping 84th Autos. Vehicle images are concept visuals representing our mobility focus.</p></div>
+    <div className="integral-autos-section-head integral-autos-live-reveal"><div><span className="td-section-title-pre">Our approach</span><h2 id="autos-collection-title">Mobility for every journey</h2></div><p>Explore the services shaping 84th Autos, from individual sourcing to fleet and project mobility.</p></div>
     <div className="integral-autos-carousel">
       <div className="integral-autos-track" ref={track} tabIndex={0} aria-label="Mobility services" onKeyDown={(event) => { if (event.key === "ArrowRight") { event.preventDefault(); goTo(active + 1); } if (event.key === "ArrowLeft") { event.preventDefault(); goTo(active - 1); } }}>
         {vehicles.map(([title, category, description, image, target], index) => <article className="integral-autos-card" key={title} aria-label={title}>

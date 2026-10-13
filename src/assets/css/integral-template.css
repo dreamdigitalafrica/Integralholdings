@@ -78,7 +78,7 @@
 .template-portfolio-viewport { margin-right: calc((1320px - 100vw) / 2); overflow: hidden; }
 .template-portfolio-track { display: flex; gap: 40px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .template-portfolio-track::-webkit-scrollbar { display: none; }
-.template-portfolio-item { flex: 0 0 calc((100% - 80px) / 3); min-width: 0; scroll-snap-align: start; }
+.template-portfolio-item { flex: 0 0 calc((100% - 80px) / 2.5); min-width: 0; scroll-snap-align: start; }
 .template-portfolio-item img { display: block; aspect-ratio: 1.06; object-fit: cover; transition: transform .4s ease; }
 .template-portfolio-item:hover img { transform: scale(1.02); }
 .template-portfolio-item .td-portfolio-cetagory span { display: inline-block; padding: 5px 13px; border: 1px solid #d8dcdd; border-radius: 25px; font-size: 12px; }

@@ -28,7 +28,7 @@ export const subsidiaries = [
     name: "84th Autos",
     category: "Mobility",
     path: "/automobiles.html",
-    image: asset("autos-photo-02.jpg"),
+    image: asset("autos-showroom.webp"),
     summary: "Considered mobility for people and business, from vehicle sourcing to fleet support.",
     intro: "84th Autos brings vehicle sourcing, fleet supply and practical ownership support together in one focused mobility business.",
     detail: "Our approach considers the full ownership journey, with clear requirements, considered options and transparent coordination.",
