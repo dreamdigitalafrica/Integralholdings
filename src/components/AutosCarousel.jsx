@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const vehicles = [
-  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions.", "autos-models.webp", "autos-sourcing"],
+  ["Personal sourcing", "Vehicle commerce", "Careful selection. Clear decisions.", "autos-showroom.webp", "autos-sourcing"],
+  ["Choice and value", "Vehicle sourcing", "Options that match the way you move.", "autos-models.webp", "autos-sourcing"],
   ["Executive mobility", "Automotive advisory", "Thoughtful support beyond the vehicle.", "autos-white-suv.webp", "autos-advisory"],
   ["Fleet solutions", "Business mobility", "Reliable movement for growing operations.", "autos-city-cars.webp", "autos-fleet"],
   ["Project vehicles", "Project mobility", "Practical choices for demanding work.", "autos-salvage.webp", "autos-fleet"],
-  ["Everyday mobility", "Vehicle sourcing", "Vehicles suited to the daily journey.", "autos-charge-blue.webp", "autos-sourcing"],
-  ["Group transport", "Business mobility", "Coordinated movement for teams.", "autos-city-bikes.webp", "autos-fleet"],
+  ["Alternative mobility", "Everyday movement", "Flexible choices for changing cities.", "autos-city-bikes.webp", "autos-fleet"],
 ];
 
 export function AutosCarousel() {
@@ -52,7 +52,7 @@ export function AutosCarousel() {
     <div className="integral-autos-carousel">
       <div className="integral-autos-track" ref={track} tabIndex={0} aria-label="Mobility services" onKeyDown={(event) => { if (event.key === "ArrowRight") { event.preventDefault(); goTo(active + 1); } if (event.key === "ArrowLeft") { event.preventDefault(); goTo(active - 1); } }}>
         {vehicles.map(([title, category, description, image, target], index) => <article className="integral-autos-card" key={title} aria-label={title}>
-          <img src={`/integral/${image}`} alt={`Concept image for ${title.toLowerCase()}`} loading={index < 3 ? "eager" : "lazy"} />
+          <img src={`/integral/${image}`} alt={`Automobile photograph for ${title.toLowerCase()}`} loading={index < 3 ? "eager" : "lazy"} />
           <a className="integral-autos-more" href={`#${target}`} aria-label={`Learn more about ${title}`}>+</a>
           <div className="integral-autos-card-content"><p>0{index + 1} / {category}</p><h3>{title}</h3><span>{description}</span></div>
         </article>)}
