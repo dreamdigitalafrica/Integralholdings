@@ -16,21 +16,12 @@ function Team() {
 }
 
 function News() {
-  const columns = [
-    [
-      { type: "quote dark", category: "Integral / Perspective", title: "A considered view of where we build next." },
-      { type: "story", category: "Integral / Our work", title: "Building capability across the Group.", image: "/integral/home-news-business.jpg", alt: "Business team gathered in an office" },
-    ],
-    [
-      { type: "story", category: "Integral / Business cases", title: "Execution is a shared practice.", image: "/integral/editorial/office.jpg", alt: "Contemporary business workspace" },
-      { type: "quote light", category: "Integral / Perspective", title: "Clear decisions create room for lasting value." },
-    ],
-    [
-      { type: "quote dark", category: "Integral / Our success stories", title: "The people behind each lasting result." },
-      { type: "story", category: "Integral / People", title: "Progress is built together.", image: "/integral/editorial/people.jpg", alt: "Business professionals walking together" },
-    ],
+  const stories = [
+    { category: "The Group", title: "Building businesses for the long term", text: "How a focused portfolio connects investment, execution and lasting value.", image: "/integral/editorial/office.jpg", alt: "Bright workspace with business planning materials", path: "/about.html" },
+    { category: "Automobiles", title: "A practical approach to fleet decisions", text: "From the right vehicle mix to maintenance planning, every choice affects uptime.", image: "/integral/editorial/mobility.jpg", alt: "Urban transport infrastructure at dusk", path: "/automobiles.html" },
+    { category: "People", title: "The people behind the work", text: "Meet the leaders bringing sector experience and accountability to the Group.", image: "/integral/editorial/people.jpg", alt: "Two business professionals walking together", path: "/leadership.html" },
   ];
-  return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Insights</span><h2 id="news-title" className="td-section-title">Latest insights</h2></div><div className="template-news-grid">{columns.map((column, columnIndex) => <div className="template-news-column" key={`column-${columnIndex}`}>{column.map((item) => <article className={`template-news-card template-news-card-${item.type.replace(" ", "-")} wow fadeInUp`} data-wow-duration="1s" key={item.title}><Link to="/updates.html">{item.type.includes("story") ? <><div className="template-news-image"><img src={item.image} alt={item.alt} loading="lazy" /></div><div className="template-news-story-content"><p>{item.category}</p><h3>{item.title}</h3><span className="template-news-arrow" aria-hidden="true">↗</span></div></> : <><p>{item.category}</p><span className="template-news-quote" aria-hidden="true">“</span><h3>{item.title}</h3></>}</Link></article>)}</div>)}</div></div></section>;
+  return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Insights</span><h2 id="news-title" className="td-section-title">Ideas behind the work</h2></div><div className="template-news-grid">{stories.map((story) => <article className="template-news-card wow fadeInUp" data-wow-duration="1s" key={story.title}><Link to={story.path}><div className="template-news-image"><img src={story.image} alt={story.alt} loading="lazy" /></div><div className="template-news-story-content"><p>{story.category}</p><h3>{story.title}</h3><span>{story.text}</span><span className="template-news-arrow" aria-hidden="true">↗</span></div></Link></article>)}</div></div></section>;
 }
 
 export const HomeTemplateMore = () => <><Brands /><Group /><Team /><News /></>;
