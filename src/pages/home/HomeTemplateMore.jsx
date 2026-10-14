@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { leaders, subsidiaries } from "../../content";
-import { updates } from "./homeData";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -17,7 +16,21 @@ function Team() {
 }
 
 function News() {
-  return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Insights</span><h2 id="news-title" className="td-section-title">Business insights</h2></div><div className="template-news-viewport"><div className="template-news-track">{updates.map((item) => <article className="template-news-card wow fadeInUp" data-wow-duration="1s" key={item.title}><Link to="/updates.html"><img src={item.image} alt="" loading="lazy" /><div className="template-news-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{item.title}</h3></Link></article>)}</div></div></div></section>;
+  const columns = [
+    [
+      { type: "quote dark", category: "Integral / Perspective", title: "A considered view of where we build next." },
+      { type: "story", category: "Integral / Our work", title: "Building capability across the Group.", image: "/integral/home-news-business.jpg", alt: "Business team gathered in an office" },
+    ],
+    [
+      { type: "story", category: "Integral / Business cases", title: "Execution is a shared practice.", image: "/integral/editorial/office.jpg", alt: "Contemporary business workspace" },
+      { type: "quote light", category: "Integral / Perspective", title: "Clear decisions create room for lasting value." },
+    ],
+    [
+      { type: "quote dark", category: "Integral / Our success stories", title: "The people behind each lasting result." },
+      { type: "story", category: "Integral / People", title: "Progress is built together.", image: "/integral/editorial/people.jpg", alt: "Business professionals walking together" },
+    ],
+  ];
+  return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Insights</span><h2 id="news-title" className="td-section-title">Latest insights</h2></div><div className="template-news-grid">{columns.map((column, columnIndex) => <div className="template-news-column" key={`column-${columnIndex}`}>{column.map((item) => <article className={`template-news-card template-news-card-${item.type.replace(" ", "-")} wow fadeInUp`} data-wow-duration="1s" key={item.title}><Link to="/updates.html">{item.type.includes("story") ? <><div className="template-news-image"><img src={item.image} alt={item.alt} loading="lazy" /></div><div className="template-news-story-content"><p>{item.category}</p><h3>{item.title}</h3><span className="template-news-arrow" aria-hidden="true">↗</span></div></> : <><p>{item.category}</p><span className="template-news-quote" aria-hidden="true">“</span><h3>{item.title}</h3></>}</Link></article>)}</div>)}</div></div></section>;
 }
 
 export const HomeTemplateMore = () => <><Brands /><Group /><Team /><News /></>;
