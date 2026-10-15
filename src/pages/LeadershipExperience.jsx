@@ -71,10 +71,10 @@ export function LeadershipPage() {
   return <Layout header={1} footer={1}>
     <section className="integral-governance-hero" aria-labelledby="governance-title"><div className="container"><h1 id="governance-title">Corporate Governance</h1></div></section>
     <section className="integral-leadership-directory" aria-label="Integral leadership directory">
-      <div className="integral-directory-column"><h2>Leadership</h2><div className="integral-directory-names"><div>{nameButton(0)}<Link className="integral-founder-directory-link" to="/founder.html">Founder profile <span aria-hidden="true">↗</span></Link></div></div></div>
+      <div className="integral-directory-column"><h2>Leadership</h2><div className="integral-directory-names"><div>{nameButton(0)}<Link className="integral-founder-directory-link" to="/founder.html">Founder profile</Link></div></div></div>
       <div className="integral-directory-column"><h2>Department Heads</h2><div className="integral-directory-names integral-directory-grid">{[1, 2, 3].map(nameButton)}</div></div>
     </section>
-    {person && <div className="integral-profile-modal" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className="integral-profile-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title"><button ref={closeButton} className="integral-profile-close" type="button" onClick={() => setSelected(null)} aria-label="Close profile">×</button><img src={person.image} alt={person.name} /><div className="integral-profile-copy"><span className="td-section-title-pre">{person.role}</span><h2 id="profile-title">{person.displayName}</h2>{person.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{selected === 0 && <Link className="integral-profile-full" to="/founder.html">View full profile <span aria-hidden="true">↗</span></Link>}</div></section></div>}
+    {person && <div className="integral-profile-modal" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}><section className="integral-profile-panel" role="dialog" aria-modal="true" aria-labelledby="profile-title"><button ref={closeButton} className="integral-profile-close" type="button" onClick={() => setSelected(null)} aria-label="Close profile">×</button><img src={person.image} alt={person.name} /><div className="integral-profile-copy"><span className="td-section-title-pre">{person.role}</span><h2 id="profile-title">{person.displayName}</h2>{person.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{selected === 0 && <Link className="integral-profile-full" to="/founder.html">View full profile</Link>}</div></section></div>}
   </Layout>;
 }
 
@@ -82,6 +82,6 @@ export function FounderPage() {
   const founder = profiles[0];
   return <Layout header={1} footer={1}><main className="integral-founder-page">
     <div className="integral-founder-intro"><div className="integral-founder-portrait"><img src={leaders[0].image} alt="Moshe Douglas Teki" /></div><div className="integral-founder-heading"><span className="td-section-title-pre">Founder & Chief Executive Officer</span><h1>Moshe Douglas Teki</h1><p>FNIQS, RQS</p></div></div>
-    <section className="integral-founder-story" aria-labelledby="founder-story-title"><div><span className="td-section-title-pre">Leadership</span><h2 id="founder-story-title">Building legacies.</h2></div><div>{founder.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<Link to="/leadership.html" className="integral-founder-back">← Leadership directory</Link></div></section>
+    <section className="integral-founder-story" aria-labelledby="founder-story-title"><div><span className="td-section-title-pre">Leadership</span><h2 id="founder-story-title">Building legacies.</h2></div><div>{founder.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<Link to="/leadership.html" className="integral-founder-back">Leadership directory</Link></div></section>
   </main></Layout>;
 }

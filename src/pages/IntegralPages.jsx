@@ -1,41 +1,11 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../layouts/Layout";
 import { subsidiaries, values } from "../content";
 
 const PageHero = ({ eyebrow, title, description, image }) => <section className="integral-page-hero" style={{ backgroundImage: `url(${image})` }}><div className="container"><span className="td-section-title-pre">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>;
-const NextLink = ({ to, children }) => <Link className="integral-next-link" to={to}>{children}<span aria-hidden="true">↗</span></Link>;
-
-function useAutosReveals() {
-  useEffect(() => {
-    const items = Array.from(document.querySelectorAll(".integral-autos-page .integral-autos-live-reveal"));
-    const reveal = (item) => item.classList.add("is-visible");
-    const revealInView = () => items.forEach((item) => {
-      if (item.classList.contains("is-visible")) return;
-      const { top, bottom } = item.getBoundingClientRect();
-      if (top < window.innerHeight * .9 && bottom > 0) reveal(item);
-    });
-
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
-      items.forEach(reveal);
-      return undefined;
-    }
-
-    revealInView();
-    if (typeof window.IntersectionObserver !== "function") {
-      window.addEventListener("scroll", revealInView, { passive: true });
-      window.addEventListener("resize", revealInView);
-      return () => { window.removeEventListener("scroll", revealInView); window.removeEventListener("resize", revealInView); };
-    }
-
-    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) { reveal(entry.target); observer.unobserve(entry.target); }
-    }), { threshold: .08, rootMargin: "0px 0px -40px" });
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, []);
-}
+const NextLink = ({ to, children }) => <Link className="integral-next-link" to={to}>{children}</Link>;
 
 export const AboutPage = () => <Layout header={1} footer={1}>
   <PageHero eyebrow="The Group" title="About Integral Holdings" description="Building legacies. Securing the future." image="/integral/editorial/teamwork.jpg" />
@@ -69,7 +39,6 @@ export const SubsidiaryPage = ({ id }) => {
 };
 
 export const AutosPage = () => {
-  useAutosReveals();
   const [activeService, setActiveService] = useState(0);
   const accessServices = [
     { name: "Sales", title: "Choose for the way you drive.", description: "Vehicle selection begins with intended use, operating conditions and ownership cost. Compare the options, confirm the purchase terms and know what happens at handover.", image: "/integral/autos-showroom.webp", alt: "Vehicles on display in a showroom" },
@@ -83,7 +52,8 @@ export const AutosPage = () => {
   <section className="autos-v2-selector autos-v2-shell" id="autos-services" aria-labelledby="autos-services-title"><div className="autos-v2-section-heading integral-autos-live-reveal"><span className="autos-v2-eyebrow">Vehicle access</span><h2 id="autos-services-title">Choose what moves you.</h2></div><div className="autos-v2-selector-grid"><div className="autos-v2-selector-options" role="group" aria-label="Vehicle services">{accessServices.map((service, index) => <button key={service.name} type="button" aria-pressed={activeService === index} onClick={() => setActiveService(index)}><span>0{index + 1}</span>{service.name}</button>)}<div className="autos-v2-selector-copy" aria-live="polite"><h3>{selected.title}</h3><p>{selected.description}</p></div></div><div className="autos-v2-selector-image" key={selected.image}><img src={selected.image} alt={selected.alt} loading="lazy" /></div></div></section>
   <section className="autos-v2-technical" aria-labelledby="autos-technical-title"><div className="autos-v2-shell autos-v2-technical-grid"><div className="autos-v2-technical-image"><img src="/integral/autos-models.webp" alt="Selection of car models on a studio display" loading="lazy" /></div><div className="autos-v2-technical-content"><span className="autos-v2-eyebrow">Technical capability</span><h2 id="autos-technical-title">Built around the brief.</h2><p>Technical work starts with what the vehicle needs to carry, connect or withstand, then moves to a defined scope and a clear standard for handover.</p><div className="autos-v2-technical-list"><article><h3>Fabrication</h3><p>Vehicle bodies and components specified for fit, function and working conditions.</p></article><article><h3>Coupling</h3><p>Integrating bodies, equipment and components against an agreed configuration.</p></article><article><h3>Manufacturing</h3><p>Assembly work planned from intended use through component selection and delivery.</p></article><article><h3>Repairs</h3><p>Fault diagnosis and repair coordination with attention to safe, dependable operation.</p></article></div></div></div></section>
   <section className="autos-v2-focus autos-v2-shell" aria-labelledby="autos-focus-title"><div className="autos-v2-section-heading integral-autos-live-reveal"><span className="autos-v2-eyebrow">On the road</span><h2 id="autos-focus-title">Support beyond supply.</h2></div><div className="autos-v2-focus-grid"><article className="integral-autos-live-reveal"><img src="/integral/autos-workshop.webp" alt="Cars being serviced in an automobile workshop" loading="lazy" /><span>Service &amp; repairs</span><h3>Less guesswork in the workshop.</h3><p>Understand the fault, agree the work and return the vehicle to service with the right checks in place.</p></article><article className="integral-autos-live-reveal"><img src="/integral/autos-charge-yellow.webp" alt="Electric vehicle connected to a charging point" loading="lazy" /><span>Changing mobility</span><h3>New options, considered properly.</h3><p>Evaluate an electric vehicle against the driving pattern and charging access it will actually have.</p></article></div></section>
-  <section className="autos-v2-business" aria-labelledby="autos-business-title"><img src="/integral/autos-fuel.webp" alt="Fuel nozzles at a filling station" loading="lazy" /><div className="autos-v2-business-shade" /><div className="autos-v2-shell autos-v2-business-content"><span className="autos-v2-eyebrow">Work with 84th Autos</span><h2 id="autos-business-title">Do business with 84th Autos.</h2><p>From one vehicle to a working fleet, bring us the brief. We will help define the next practical step.</p><Link to="/about.html">Explore the Group</Link></div></section>
+  <section className="autos-v2-road" aria-labelledby="autos-road-title"><video autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src="/integral/autos-blue-road.mp4" type="video/mp4" /></video><div className="autos-v2-road-shade" /><div className="autos-v2-shell autos-v2-road-content"><span className="autos-v2-eyebrow">84th Autos</span><h2 id="autos-road-title">Ready for the road ahead.</h2></div></section>
+  <section className="autos-v2-contact autos-v2-shell" aria-labelledby="autos-contact-title"><div><span className="autos-v2-eyebrow">Contact us</span><h2 id="autos-contact-title">Let&apos;s talk about what you need.</h2><p>Vehicle sales, rental, fleet support or technical work. Start with the brief and we&apos;ll take it from there.</p></div><div className="autos-v2-contact-actions"><a className="autos-v2-contact-number" href="tel:+2348084738009">+234 808 473 8009</a><div><a href="tel:+2348084738009">Call us</a><a href="https://wa.me/2348084738009?text=Hello%2084th%20Autos%2C%20I%27d%20like%20to%20discuss%20a%20vehicle%20requirement." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></section>
 </main></Layout>;
 };
 
