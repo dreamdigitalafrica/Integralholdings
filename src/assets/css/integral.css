@@ -716,22 +716,23 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
 .autos-v2-focus-grid article > span { display: block; margin-top: 22px; color: #5d6870; font-size: 12px; font-weight: 600; text-transform: uppercase; }
 .autos-v2-focus-grid h3 { margin: 10px 0 9px; font-size: 26px; font-weight: 550; }
 .autos-v2-focus-grid p { max-width: 500px; margin: 0; color: #58646d; font-size: 15px; line-height: 1.6; }
-.autos-v2-road { position: relative; display: flex; align-items: end; min-height: min(660px, 56vw); overflow: hidden; background: #314755 url('/integral/autos-blue-road-poster.jpg') center / cover no-repeat; color: #fff; }
-.autos-v2-road video, .autos-v2-road-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
-.autos-v2-road video { object-fit: cover; object-position: center; }
-.autos-v2-road-shade { background: linear-gradient(0deg, #0c1823ae, #0c182320 55%); }
-.autos-v2-road-content { position: relative; z-index: 1; padding-block: 80px; }
-.autos-v2-road .autos-v2-eyebrow { color: #e0ecf4; }
-.autos-v2-road h2 { max-width: 690px; margin: 14px 0 0; color: #fff; font-size: clamp(36px, 3.2vw, 50px); font-weight: 550; line-height: 1.1; }
-.autos-v2-contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .7fr); gap: clamp(40px, 8vw, 130px); align-items: end; padding-block: 100px 110px; }
-.autos-v2-contact h2 { max-width: 620px; margin: 14px 0 0; font-size: clamp(36px, 3.2vw, 50px); font-weight: 550; line-height: 1.1; }
-.autos-v2-contact p { max-width: 490px; margin: 18px 0 0; color: #58646d; font-size: 15px; line-height: 1.6; }
-.autos-v2-contact-actions { padding-bottom: 4px; }
-.autos-v2-contact-number { display: block; width: fit-content; margin-bottom: 25px; color: #20282d; font-size: clamp(24px, 2.1vw, 32px); font-weight: 550; line-height: 1.25; }
-.autos-v2-contact-actions > div { display: flex; flex-wrap: wrap; gap: 10px; }
-.autos-v2-contact-actions > div a { display: inline-flex; align-items: center; justify-content: center; min-width: 120px; padding: 13px 19px; border: 1px solid #20282d; color: #20282d; font-size: 13px; font-weight: 650; transition: background-color .2s, color .2s; }
-.autos-v2-contact-actions > div a:last-child { background: #20282d; color: #fff; }
-.autos-v2-contact-actions > div a:hover { background: #2b5097; border-color: #2b5097; color: #fff; }
+.autos-v2-road { position: relative; width: 100%; height: clamp(280px, 34vw, 460px); overflow: hidden; background: #314755 url('/integral/autos-blue-road-poster.jpg') center / cover no-repeat; }
+.autos-v2-road video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.autos-v2-contact { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(40px, 8vw, 130px); align-items: start; padding-block: 90px 110px; }
+.autos-v2-contact h2 { margin: 14px 0 0; font-size: clamp(36px, 3.2vw, 50px); font-weight: 550; line-height: 1.1; }
+.autos-v2-contact-icons { display: flex; gap: 10px; margin-top: 36px; }
+.autos-v2-contact-icons a { display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid #cbd2d6; color: #20282d; font-size: 19px; transition: background-color .2s, border-color .2s, color .2s; }
+.autos-v2-contact-icons a:hover, .autos-v2-contact-icons a:focus-visible { background: #244788; border-color: #244788; color: #fff; }
+.autos-v2-contact-form { display: grid; gap: 20px; }
+.autos-v2-contact-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.autos-v2-contact-form label { display: grid; gap: 8px; color: #30383d; font-size: 13px; font-weight: 600; }
+.autos-v2-contact-form input, .autos-v2-contact-form select, .autos-v2-contact-form textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid #d5dbde; border-radius: 0; outline: none; background: #f5f6f6; color: #20282d; font: inherit; font-size: 15px; }
+.autos-v2-contact-form textarea { min-height: 110px; resize: vertical; }
+.autos-v2-contact-form input:focus, .autos-v2-contact-form select:focus, .autos-v2-contact-form textarea:focus { border-color: #244788; background: #fff; }
+.autos-v2-contact-submit { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+.autos-v2-contact-submit label { width: min(190px, 48%); }
+.autos-v2-contact-submit button { min-height: 48px; padding: 10px 24px; border: 1px solid #20282d; background: #20282d; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color .2s, border-color .2s; }
+.autos-v2-contact-submit button:hover, .autos-v2-contact-submit button:focus-visible { background: #244788; border-color: #244788; }
 @media (max-width: 991px) { .autos-v2-selector-grid { grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr); gap: 32px; } .autos-v2-technical-grid { gap: 42px; } }
 @media (max-width: 767px) {
   .autos-v2-shell { width: min(100% - 40px, 560px); }
@@ -758,10 +759,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
   .autos-v2-technical-list { gap: 22px; }
   .autos-v2-focus-grid { gap: 44px; }
   .autos-v2-focus-grid h3 { font-size: 23px; }
-  .autos-v2-road { min-height: 500px; }
-  .autos-v2-road-content { padding-block: 70px; }
+  .autos-v2-road { height: clamp(230px, 62vw, 360px); }
   .autos-v2-contact { grid-template-columns: 1fr; gap: 35px; padding-block: 72px 82px; }
   .autos-v2-contact h2 { font-size: 36px; }
 }
-@media (max-width: 430px) { .autos-v2-technical-list { grid-template-columns: 1fr; } }
+@media (max-width: 430px) { .autos-v2-technical-list { grid-template-columns: 1fr; } .autos-v2-contact-row { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .autos-v2-selector-image { animation: none; } .autos-v2-road video { display: none; } }

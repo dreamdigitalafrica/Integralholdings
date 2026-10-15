@@ -77,7 +77,7 @@ function About() {
         <div className="td-panel-item-2"><div className="td-panel-content-2"><div className="td-panel-thumb"><img className="w-100" src={item.image} alt="" loading="lazy" /></div><div className="td-panel-content-inner fix p-relative"><span className="td-panel-shape">{item.number}</span><h3 className="td-panel-title-2 mb-10">{item.heading}</h3><p>{item.text}</p><Link className="td-btn td-left-right" to={item.path}>Read More</Link></div></div></div>
       </div>)}
     </div></div></div>
-    <div className="col-xl-6 col-lg-5 mb-30"><div className="td-about-content-wrap p-relative ml-45 wow fadeInRight" data-wow-duration="1s"><span className="template-about-watermark" aria-hidden="true">I</span><span className="td-section-title-pre mb-10">Our services</span><h2 id="home-about-title" className="td-section-title td-about-right-space">Focused businesses. Shared ambition.</h2><p className="td-about-para pr-10">Integral Holdings brings complementary businesses together to build value across essential sectors.</p></div></div>
+    <div className="col-xl-6 col-lg-5 mb-30"><div className="td-about-content-wrap p-relative ml-45 wow fadeInRight" data-wow-duration="1s"><span className="template-about-watermark" aria-hidden="true">I</span><span className="td-section-title-pre mb-10">Our services</span><h2 id="home-about-title" className="td-section-title td-about-right-space">One group. Six businesses.</h2><p className="td-about-para pr-10">From energy and construction to vehicles, property, agriculture and engineering, each business has its own brief and a clear responsibility to deliver.</p></div></div>
   </div></div></section>;
 }
 
