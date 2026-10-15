@@ -6,6 +6,7 @@ const companyLinks = [
   { label: "About", path: "/about.html" },
   { label: "Leadership", path: "/leadership.html" },
   { label: "Careers", path: "/careers.html" },
+  { label: "Contact", path: "/contact.html" },
 ];
 
 export const HeaderOne = () => {

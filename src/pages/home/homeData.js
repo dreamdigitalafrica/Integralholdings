@@ -8,7 +8,7 @@ export const sectors = [
   { label: "Energy", path: "/oil-gas.html", image: "/integral/editorial/energy.jpg", summary: "Energy interests that support industry and growth." },
   { label: "Infrastructure", path: "/construction.html", image: "/integral/editorial/construction.jpg", summary: "Construction and engineering for lasting outcomes." },
   { label: "Automobile", path: "/automobiles.html", image: "/integral/autos-ev-studio.webp", summary: "Sales, rental, fleet management and technical services." },
-  { label: "Realty", path: "/real-estate.html", image: "/integral/home-service-property.jpg", summary: "Places designed for living and investment." },
+  { label: "Realty", path: "/real-estate.html", image: "/integral/realty-sector-stock.jpg", summary: "Places designed for living and investment." },
   { label: "Agriculture", path: "/agriculture.html", image: "/integral/sector-farms.jpg", summary: "Productive land and stronger value chains." },
 ];
 

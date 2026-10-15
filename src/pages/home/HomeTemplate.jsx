@@ -89,9 +89,7 @@ function Services() {
 }
 
 function Standards() {
-  return <section className="td-awards-area template-standards" aria-labelledby="standards-title"><div className="container"><div className="td-awards-title-wrap mb-60 text-center wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Our standards</span><h2 id="standards-title" className="td-section-title">What guides our work</h2></div>
-    {values.map((item, index) => <div className="td-awards-wrapper p-relative wow fadeInUp" key={item.title} data-wow-duration="1s"><div className="row align-items-center"><div className="col-lg-8 col-md-8 mb-20"><div className="td-awards-content d-flex align-items-center"><span>0{index + 1}</span><h3 className="td-awards-title">{item.title}</h3></div></div><div className="col-lg-4 col-md-4 mb-20"><div className="td-awards-meta"><span>{item.text}</span></div></div></div></div>)}
-  </div></section>;
+  return <section className="td-awards-area template-standards" aria-labelledby="standards-title"><div className="container template-standards-layout"><div className="template-standards-intro wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre">Our standards</span><h2 id="standards-title" className="td-section-title">What guides our work</h2><p>Clear principles for the decisions we make and the work we deliver.</p></div><div className="template-standards-grid">{values.map((item, index) => <article className="template-standard wow fadeInUp" key={item.title} data-wow-duration="1s"><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div></div></section>;
 }
 
 function Portfolio() {

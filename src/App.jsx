@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
-import { AboutPage, AutosPage, CareersPage, SubsidiaryPage, UpdatesPage } from "./pages/IntegralPages";
+import { AboutPage, AutosPage, CareersPage, SubsidiaryPage } from "./pages/IntegralPages";
+import { ContactPage, UpdatesPage } from "./pages/EditorialPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
 import { subsidiaries } from "./content";
 
@@ -26,6 +27,8 @@ function App() {
     <Route path="/founder" element={<FounderPage />} />
     <Route path="/updates.html" element={<UpdatesPage />} />
     <Route path="/updates" element={<UpdatesPage />} />
+    <Route path="/contact.html" element={<ContactPage />} />
+    <Route path="/contact" element={<ContactPage />} />
     <Route path="/careers.html" element={<CareersPage />} />
     <Route path="/careers" element={<CareersPage />} />
     <Route path="/automobiles.html" element={<AutosPage />} />
