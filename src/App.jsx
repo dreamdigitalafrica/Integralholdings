@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
 import { AboutPage, AutosPage, SubsidiaryPage } from "./pages/IntegralPages";
 import { CareersPage } from "./pages/CareersPage";
+import { RealtyPage } from "./pages/RealtyPage";
 import { BlogDetailsPage, ContactPage, UpdatesPage } from "./pages/EditorialPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
 import { subsidiaries } from "./content";
@@ -34,7 +35,9 @@ function App() {
     <Route path="/careers.html" element={<CareersPage />} />
     <Route path="/careers" element={<CareersPage />} />
     <Route path="/automobiles.html" element={<AutosPage />} />
-    {subsidiaries.filter((item) => item.id !== "autos").map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
+    <Route path="/real-estate.html" element={<RealtyPage />} />
+    <Route path="/real-estate" element={<RealtyPage />} />
+    {subsidiaries.filter((item) => item.id !== "autos" && item.id !== "realty").map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
     <Route path="*" element={<HomeOne />} />
   </Routes>;
 }

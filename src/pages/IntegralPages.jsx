@@ -22,7 +22,6 @@ export const AboutPage = () => <Layout header={1} footer={1}>
   <NextLink to="/leadership.html">Meet the leadership shaping the Group.</NextLink>
 </Layout>;
 
-const crestImages = ["crest-1-01.jpg", "crest-1-02.jpg", "crest-1-03.jpg", "crest-1-04.jpg", "crest-1-05.jpg", "crest-1-06.jpg"];
 export const SubsidiaryPage = ({ id }) => {
   const item = subsidiaries.find((entry) => entry.id === id);
   if (!item) return null;
@@ -33,7 +32,6 @@ export const SubsidiaryPage = ({ id }) => {
     {id === "autos" && <section className="integral-page-values"><div className="container"><span className="td-section-title-pre">The 84th Autos approach</span><h2>Built around the journey.</h2><div className="integral-page-value-grid">{[
       ["Understand", "We begin with intended use, budget and ownership priorities."], ["Source", "Options are assessed against suitability, availability and value."], ["Coordinate", "Clear communication connects decisions, documentation and delivery."], ["Support", "Practical guidance helps keep the vehicle useful beyond handover."],
     ].map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>}
-    {id === "realty" && <section id="crest" className="integral-collection"><div className="container"><span className="td-section-title-pre">Completed projects</span><h2 className="td-section-title">Crest 1.0</h2><p>A completed residential development by 84th Luxury Realty, presented through selected site and interior views.</p><div className="integral-collection-grid">{crestImages.map((image, index) => <img key={image} src={`/integral/${image}`} alt={`Crest 1.0 project view ${index + 1}`} loading="lazy" />)}</div></div></section>}
     <NextLink to="/">Explore the Integral portfolio.</NextLink>
   </Layout>;
 };
