@@ -13,6 +13,7 @@ import "./assets/css/integral-template.css";
 import "./assets/css/careers.css";
 import "./assets/css/realty.css";
 import "./assets/css/construction.css";
+import "./assets/css/farms.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>

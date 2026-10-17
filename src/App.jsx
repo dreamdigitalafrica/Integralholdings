@@ -5,6 +5,7 @@ import { AboutPage, AutosPage, SubsidiaryPage } from "./pages/IntegralPages";
 import { CareersPage } from "./pages/CareersPage";
 import { RealtyPage } from "./pages/RealtyPage";
 import { ConstructionPage } from "./pages/ConstructionPage";
+import { FarmsPage } from "./pages/FarmsPage";
 import { BlogDetailsPage, ContactPage, UpdatesPage } from "./pages/EditorialPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
 import { subsidiaries } from "./content";
@@ -40,7 +41,9 @@ function App() {
     <Route path="/real-estate" element={<RealtyPage />} />
     <Route path="/construction.html" element={<ConstructionPage />} />
     <Route path="/construction" element={<ConstructionPage />} />
-    {subsidiaries.filter((item) => !["autos", "realty", "construction"].includes(item.id)).map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
+    <Route path="/agriculture.html" element={<FarmsPage />} />
+    <Route path="/agriculture" element={<FarmsPage />} />
+    {subsidiaries.filter((item) => !["autos", "realty", "construction", "farms"].includes(item.id)).map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
     <Route path="*" element={<HomeOne />} />
   </Routes>;
 }
