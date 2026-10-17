@@ -12,6 +12,7 @@ import "./assets/css/integral.css";
 import "./assets/css/integral-template.css";
 import "./assets/css/careers.css";
 import "./assets/css/realty.css";
+import "./assets/css/construction.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
