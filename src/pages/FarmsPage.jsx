@@ -67,7 +67,7 @@ export const FarmsPage = () => {
 
     <main className="farms-page" id="main-content">
       <section className="farms-hero" aria-labelledby="farms-title">
-        <img src="/integral/farm-hero-greenhouse.jpg" alt="Rows of young plants growing inside a greenhouse" fetchPriority="high" />
+        <img src="/integral/africa/zaria-greenhouse.jpg" alt="Farmer inspecting crops in a greenhouse in Zaria, Nigeria" fetchPriority="high" />
         <div className="farms-hero-shade" />
         <div className="farms-hero-heading"><span>Agriculture / Integral Holdings</span><h1 id="farms-title">84th Farms</h1><p>Feed. Farming. Food. Training.</p></div>
         <a className="farms-hero-action" href="#overview">Explore the farm</a>
@@ -80,7 +80,7 @@ export const FarmsPage = () => {
 
       <section className="farms-production farms-reveal" id="operations" aria-labelledby="farms-production-title">
         <div className="farms-production-heading"><span className="farms-kicker">Production</span><h2 id="farms-production-title">More than the harvest</h2><p>Feed supports animal production. Greenhouse farming brings crops into a controlled growing environment. Agro-food processing moves produce toward its next use.</p></div>
-        <div className="farms-production-image"><img src="/integral/farm-processing.jpg" alt="Workers sorting tomatoes on a food processing line" loading="lazy" /></div>
+        <div className="farms-production-image"><img src="/integral/africa/african-spice-processing.jpg" alt="African women preparing and sifting food ingredients" loading="lazy" /></div>
         <div className="farms-production-lines">
           <article><span>01</span><h3>Feed manufacturing</h3><p>Producing feed for the needs of farm animals.</p></article>
           <article><span>02</span><h3>Greenhouse farming</h3><p>Growing crops in a managed environment.</p></article>
@@ -98,7 +98,7 @@ export const FarmsPage = () => {
       </section>
 
       <section className="farms-academy farms-reveal" id="academy" aria-labelledby="farms-academy-title">
-        <img src="/integral/farm-academy-group.jpg" alt="Farm workers standing together in a harvested field" loading="lazy" />
+        <img src="/integral/africa/nigerian-cassava-team.jpg" alt="Nigerian farmers together in a cassava field" loading="lazy" />
         <div className="farms-academy-shade" />
         <div className="farms-academy-copy"><span className="farms-kicker">Academy of Agriculture</span><h2 id="farms-academy-title">Learn the work of agriculture</h2><p>Training for people ready to develop practical farming skills.</p><button type="button" onClick={() => dialogRef.current?.showModal()}>Enroll now</button></div>
       </section>

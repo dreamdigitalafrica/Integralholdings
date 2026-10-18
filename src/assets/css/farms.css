@@ -17,7 +17,7 @@
 .farms-hero { position: relative; display: flex; flex-direction: column; align-items: center; min-height: min(900px, 100svh); padding: 116px 24px 46px; overflow: hidden; text-align: center; background: #667a43; }
 .farms-hero > img, .farms-academy > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .farms-hero > img { object-position: center 43%; animation: farms-image-in 1.2s ease-out both; }
-.farms-hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #ffffffa0 0%, #ffffff20 28%, transparent 58%, #101c16aa 100%); }
+.farms-hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #fffffff0 0%, #ffffffbf 30%, #ffffff32 55%, #101c16aa 100%); }
 .farms-hero-heading { position: relative; z-index: 1; color: #171a20; }
 .farms-hero-heading > span { font-size: 13px; font-weight: 650; }
 .farms-hero h1 { margin: 6px 0 5px; color: #171a20; font-size: clamp(40px, 4.2vw, 58px); font-weight: 650; line-height: 1.08; }

@@ -7,7 +7,7 @@
 .integral-template-home .wow { visibility: hidden; }
 .integral-template-home .wow.animated { visibility: visible; }
 
-.template-hero { display: flex; flex-direction: column; justify-content: space-between; min-height: 1145px; background: #fbfbfa url('/integral/editorial/home-hero.jpg') center / cover no-repeat; padding: 150px 0 100px; position: relative; isolation: isolate; }
+.template-hero { display: flex; flex-direction: column; justify-content: space-between; min-height: 1145px; background: #fbfbfa url('/integral/africa/lagos-coast.jpg') center / cover no-repeat; padding: 150px 0 100px; position: relative; isolation: isolate; }
 .template-hero::before { content: ''; position: absolute; inset: 0; background: rgba(255, 255, 255, .42); z-index: -1; }
 .template-hero-marquee { display: flex; align-items: center; height: 525px; overflow: hidden; width: 100%; white-space: nowrap; mask-image: linear-gradient(90deg, transparent 0%, #000 7%, #000 93%, transparent 100%); }
 .template-hero-track { display: flex; width: max-content; animation: template-marquee 36s linear infinite; will-change: transform; }

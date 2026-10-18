@@ -4,9 +4,9 @@ import { FooterOne } from "../components/footers/FooterOne";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
 
 const stages = [
-  { title: "Planning", image: "/integral/editorial/planning.jpg", alt: "Planning workspace", text: "A project begins with the site, the intended use and a workable development brief." },
+  { title: "Planning", image: "/integral/africa/lagos-collaboration.jpg", alt: "Colleagues reviewing a plan in Lagos", text: "A project begins with the site, the intended use and a workable development brief." },
   { title: "On site", image: "/integral/editorial/construction.jpg", alt: "Construction work in progress", text: "Construction brings the design, contractors and delivery programme together on site." },
-  { title: "Handover", image: "/integral/realty-sector-stock.jpg", alt: "Residential building", text: "The final checks, documentation and transition to use deserve the same attention as the build." },
+  { title: "Handover", image: "/integral/africa/lagos-residential.jpg", alt: "Residential building in Lagos", text: "The final checks, documentation and transition to use deserve the same attention as the build." },
 ];
 
 const services = [
@@ -47,7 +47,7 @@ export const RealtyPage = () => {
     </header>
     <main className="realty-page" id="main-content">
       <section className="realty-hero" aria-labelledby="realty-title">
-        <img src="/integral/editorial/real-estate.jpg" alt="Contemporary architecture" />
+        <img src="/integral/africa/lagos-coast.jpg" alt="Residential and commercial buildings in Lagos" />
         <div className="realty-hero-content">
           <span>Integral Holdings / Property</span>
           <h1 id="realty-title">84th Luxury Realty</h1>
@@ -57,7 +57,7 @@ export const RealtyPage = () => {
       </section>
 
       <section className="realty-feature realty-wrap realty-reveal" id="approach" aria-labelledby="realty-approach-title">
-        <img className="realty-feature-media" src="/integral/editorial/property.jpg" alt="Commercial architecture at dusk" loading="lazy" />
+        <img className="realty-feature-media" src="/integral/africa/lagos-office-tower.jpg" alt="Commercial architecture in Lagos" loading="lazy" />
         <div className="realty-feature-copy"><h2 id="realty-approach-title">Built for the way people use space.</h2><p>84th Luxury Realty develops and manages property with a clear brief: what the site can support, who the space is for and what it must deliver over time.</p></div>
         <div className="realty-principles">
           <article><span>01</span><h3>Understand the site</h3><p>Location, access and context shape the first decisions.</p></article>
@@ -83,7 +83,7 @@ export const RealtyPage = () => {
         <div className="realty-wrap"><img className="realty-feature-media" src="/integral/home-office-interior.jpg" alt="Contemporary interior space" loading="lazy" /><div className="realty-feature-copy"><span className="realty-kicker">What we do</span><h2 id="realty-services-title">Property, beyond the build.</h2><p>Development is one part of the work. Sales, marketing and ongoing management give each property a life after construction.</p></div><div className="realty-tabs realty-service-tabs" role="tablist" aria-label="Property services">{services.map((service, index) => <button key={service.title} type="button" role="tab" aria-selected={activeService === index} aria-controls="realty-service-panel" onClick={() => setActiveService(index)}><span>{service.title}</span><small>{service.text}</small></button>)}</div><div className="realty-tab-panel" role="tabpanel" id="realty-service-panel" aria-live="polite"><strong>{services[activeService].title}</strong><p>{services[activeService].text}</p></div></div>
       </section>
 
-      <section className="realty-final" aria-labelledby="realty-final-title"><img src="/integral/realty-contact-stock.jpg" alt="Modern buildings at dusk" loading="lazy" /><div><h2 id="realty-final-title">Find out what comes next.</h2><p>Ask about a property or discuss a development brief with 84th Luxury Realty.</p><div className="realty-actions"><Link to="/contact.html">Contact us</Link><a href="#completed">View completed work</a></div></div></section>
+      <section className="realty-final" aria-labelledby="realty-final-title"><img src="/integral/africa/lagos-coast.jpg" alt="Residential and commercial buildings in Lagos" loading="lazy" /><div><h2 id="realty-final-title">Find out what comes next.</h2><p>Ask about a property or discuss a development brief with 84th Luxury Realty.</p><div className="realty-actions"><Link to="/contact.html">Contact us</Link><a href="#completed">View completed work</a></div></div></section>
     </main>
     <FooterOne />
     <ScrollToTopButton />
