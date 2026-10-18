@@ -1,6 +1,6 @@
-# Doytek Farms stock photography
+# 84th Farms stock photography
 
-The following Pexels photographs are illustrative stock images, not photographs of Doytek Farms facilities, staff or livestock. Pexels permits free use on websites; see https://www.pexels.com/license/.
+The following Pexels photographs are illustrative stock images, not photographs of 84th Farms facilities, staff or livestock. Pexels permits free use on websites; see https://www.pexels.com/license/.
 
 - `farm-hero-greenhouse.jpg`: https://www.pexels.com/photo/plants-in-greenhouse-16678080/
 - `farm-feed-silos.jpg`: https://www.pexels.com/photo/silos-in-a-factory-seen-from-above-10262726/

@@ -19,7 +19,7 @@ export const FarmsPage = () => {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Doytek Farms | Integral Holdings";
+    document.title = "84th Farms | Integral Holdings";
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
@@ -33,7 +33,7 @@ export const FarmsPage = () => {
   const submitEnrollment = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const subject = "Doytek Farms Academy enrollment enquiry";
+    const subject = "84th Farms Academy enrollment enquiry";
     const body = [
       `Name: ${data.get("name")}`,
       `Email: ${data.get("email")}`,
@@ -54,7 +54,7 @@ export const FarmsPage = () => {
 
   return <>
     <header className="farms-header">
-      <Link to="/" className="farms-brand" aria-label="Integral Holdings home"><img src="/integral/integral-logo-transparent.png" alt="Integral" /><span>Doytek Farms</span></Link>
+      <Link to="/" className="farms-brand" aria-label="Integral Holdings home"><img src="/integral/integral-logo-transparent.png" alt="Integral" /><span>84th Farms</span></Link>
       <nav className={menuOpen ? "is-open" : ""} aria-label="Farms navigation">
         <a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a>
         <a href="#operations" onClick={() => setMenuOpen(false)}>Operations</a>
@@ -69,12 +69,12 @@ export const FarmsPage = () => {
       <section className="farms-hero" aria-labelledby="farms-title">
         <img src="/integral/farm-hero-greenhouse.jpg" alt="Rows of young plants growing inside a greenhouse" fetchPriority="high" />
         <div className="farms-hero-shade" />
-        <div className="farms-hero-heading"><span>Agriculture / Integral Holdings</span><h1 id="farms-title">Doytek Farms</h1><p>Feed. Farming. Food. Training.</p></div>
+        <div className="farms-hero-heading"><span>Agriculture / Integral Holdings</span><h1 id="farms-title">84th Farms</h1><p>Feed. Farming. Food. Training.</p></div>
         <a className="farms-hero-action" href="#overview">Explore the farm</a>
       </section>
 
       <section className="farms-intro farms-reveal" id="overview" aria-labelledby="farms-overview-title">
-        <div className="farms-intro-copy"><span className="farms-kicker">Overview</span><h2 id="farms-overview-title">From input to output</h2><p>Doytek Farms brings feed manufacturing, livestock rearing, greenhouse growing and agro-food processing into one agricultural operation.</p><p>The Academy of Agriculture extends that work into practical training.</p></div>
+        <div className="farms-intro-copy"><span className="farms-kicker">Overview</span><h2 id="farms-overview-title">From input to output</h2><p>84th Farms brings feed manufacturing, livestock rearing, greenhouse growing and agro-food processing into one agricultural operation.</p><p>The Academy of Agriculture extends that work into practical training.</p></div>
         <img src="/integral/farm-feed-silos.jpg" alt="Aerial view of grain silos at an agricultural facility" loading="lazy" />
       </section>
 
