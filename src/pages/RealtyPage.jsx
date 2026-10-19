@@ -47,7 +47,7 @@ export const RealtyPage = () => {
     </header>
     <main className="realty-page" id="main-content">
       <section className="realty-hero" aria-labelledby="realty-title">
-        <img src="/integral/africa/lagos-coast.jpg" alt="Residential and commercial buildings in Lagos" />
+        <img src="/integral/crest-1-05.jpg" alt="Crest residential property with glass balconies" />
         <div className="realty-hero-content">
           <span>Integral Holdings / Property</span>
           <h1 id="realty-title">84th Luxury Realty</h1>
@@ -57,7 +57,7 @@ export const RealtyPage = () => {
       </section>
 
       <section className="realty-feature realty-wrap realty-reveal" id="approach" aria-labelledby="realty-approach-title">
-        <img className="realty-feature-media" src="/integral/africa/lagos-office-tower.jpg" alt="Commercial architecture in Lagos" loading="lazy" />
+        <img className="realty-feature-media" src="/integral/crest-1-01.jpg" alt="Crest interior with a chandelier and glass staircase" loading="lazy" />
         <div className="realty-feature-copy"><h2 id="realty-approach-title">Built for the way people use space.</h2><p>84th Luxury Realty develops and manages property with a clear brief: what the site can support, who the space is for and what it must deliver over time.</p></div>
         <div className="realty-principles">
           <article><span>01</span><h3>Understand the site</h3><p>Location, access and context shape the first decisions.</p></article>

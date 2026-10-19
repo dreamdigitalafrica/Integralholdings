@@ -54,7 +54,7 @@ export function AutosVideoFeature() {
 }
 
 const services = [
-  { title: "Sales", category: "Your next vehicle", image: "/integral/africa/autos-friends-driving.jpg", alt: "Friends enjoying a drive in a sedan", text: "Compare vehicles around your budget and how you drive." },
+  { title: "Sales", category: "Your next vehicle", image: "/integral/autos-showroom.webp", alt: "Cars displayed for sale in a showroom", text: "Compare vehicles around your budget and how you drive." },
   { title: "Rental", category: "For a trip or a project", image: "/integral/autos-white-suv.webp", alt: "White SUV parked outdoors", text: "The space you need, for the time you need it." },
   { title: "Fleet management", category: "For your business", image: "/integral/autos-city-cars.webp", alt: "Vehicles parked along a city street", text: "Vehicle allocation, maintenance and availability, coordinated." },
 ];
