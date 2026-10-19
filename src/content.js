@@ -61,7 +61,7 @@ export const subsidiaries = [
     name: "Doi-Teck Engineering",
     category: "Systems",
     path: "/engineering.html",
-    image: asset("africa/abuja-engineers.jpg"),
+    image: asset("engineers-industrial-site.jpg"),
     summary: "Connecting design thinking and technical systems with practical delivery.",
     intro: "Doi-Teck Engineering Limited extends the Group's capabilities into engineering, technical systems and infrastructure solutions.",
     detail: "Engineering provides the technical foundation through which ideas become practical, reliable and efficient systems.",

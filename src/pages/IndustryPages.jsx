@@ -90,7 +90,7 @@ export function MetricPage() {
       <p className="industry-scope">These areas form our development focus. Service scope and availability are confirmed for each enquiry.</p>
     </section>
     <section className="industry-reveal" id="standards">
-      <ImageFrame image="africa/abuja-engineers.jpg" alt="Engineering professionals reviewing drawings in Abuja" />
+      <ImageFrame image="engineers-industrial-site.jpg" alt="Two engineers reviewing a tablet at an industrial site" />
       <div className="industry-copy-split"><h2>Safety and quality, from the outset.</h2><p>Our approach starts with safe execution, quality assurance and responsible procurement. We are developing the systems for risk assessment, material traceability and clear project documentation that dependable energy services require.</p></div>
     </section>
     <section className="industry-reveal">
@@ -105,7 +105,7 @@ export function EngineeringPage() {
   return <IndustryShell name="DOI-TECK Engineering" links={[["Overview", "overview"], ["Engineering", "disciplines"], ["Approach", "approach"]]}>
     <Hero name="DOI-TECK Engineering" subtitle="Engineering and technical solutions." image="home-service-infrastructure.jpg" alt="Building structures and cranes on a construction site" pillars={[["Design", "Technical foundations"], ["Projects", "Engineering coordination"], ["Operations", "Practical support"]]} />
     <section className="industry-intro industry-reveal" id="overview"><h2>From ideas to working systems.</h2><p>DOI-TECK Engineering Limited extends Integral Holdings into engineering, technical systems and infrastructure solutions. Our focus is on translating project requirements into practical, reliable and efficient systems.</p><Link className="industry-button" to="/contact.html">Discuss a project</Link></section>
-    <div className="industry-inset industry-reveal"><ImageFrame image="africa/abuja-engineers.jpg" alt="Engineering professionals examining project drawings" /></div>
+    <div className="industry-inset industry-reveal"><ImageFrame image="engineers-industrial-site.jpg" alt="Two engineers discussing work at an industrial site" /></div>
     <section className="industry-inset industry-reveal" id="disciplines"><div className="industry-section-heading"><h2>Engineering across disciplines.</h2><p>Our planned capability spans design, technical consultancy and project support.</p></div><ImageTabs id="engineering-focus" items={engineeringAreas} /><p className="industry-scope">Specific capabilities and delivery scope are confirmed with our team before engagement.</p></section>
     <section className="industry-inset industry-reveal" id="approach"><div className="industry-section-heading"><h2>Defined around the project.</h2><p>A clear brief connects technical decisions to the work on site.</p></div><div className="industry-three-up">
       <article><ImageFrame image="africa/lagos-collaboration.jpg" alt="Colleagues reviewing a project on a laptop" /><h3>Understand the brief</h3><p>Establish the intended use, site conditions and technical requirements.</p></article>

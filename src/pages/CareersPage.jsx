@@ -5,7 +5,7 @@ import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopBu
 
 const sectors = [
   { name: "Energy", image: "/integral/home-service-energy.jpg", alt: "Energy facility", description: "Supply, logistics and infrastructure that keep industry moving.", path: "/oil-gas.html" },
-  { name: "Engineering", image: "/integral/africa/abuja-engineers.jpg", alt: "Engineers reviewing plans in Abuja", description: "Technical design, systems and execution for complex briefs.", path: "/engineering.html" },
+  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers at an industrial site", description: "Technical design, systems and execution for complex briefs.", path: "/engineering.html" },
   { name: "Construction", image: "/integral/home-service-infrastructure.jpg", alt: "Construction work in progress", description: "From project planning to civil works and delivery on site.", path: "/construction.html" },
   { name: "Automobiles", image: "/integral/autos-showroom.webp", alt: "Vehicles in a showroom", description: "Vehicles, fleets and technical services for everyday use.", path: "/automobiles.html" },
   { name: "Realty", image: "/integral/africa/lagos-residential.jpg", alt: "Residential development in Lagos", description: "Property development, management and investment.", path: "/real-estate.html" },
@@ -14,7 +14,7 @@ const sectors = [
 
 const departments = [
   { name: "Project delivery", image: "/integral/editorial/construction.jpg", alt: "Construction project", description: "Plan work, coordinate teams and follow a project through to handover.", path: "/construction.html" },
-  { name: "Engineering", image: "/integral/africa/abuja-engineers.jpg", alt: "Engineering team reviewing plans in Abuja", description: "Connect design, technical systems and practical execution.", path: "/engineering.html" },
+  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers reviewing a tablet at an industrial site", description: "Connect design, technical systems and practical execution.", path: "/engineering.html" },
   { name: "Automotive services", image: "/integral/africa/nigerian-mechanics.jpg", alt: "Nigerian vehicle technicians", description: "Work across vehicle specification, repairs and fleet support.", path: "/automobiles.html" },
   { name: "Business operations", image: "/integral/africa/lagos-collaboration.jpg", alt: "Colleagues working together in Lagos", description: "Keep the commercial and administrative work behind each business moving.", path: "/about.html" },
 ];
