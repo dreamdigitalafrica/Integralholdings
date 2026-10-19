@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { AutosShowcase, AutosVideoFeature, AutosServiceRail } from "../components/AutosShowcase";
 import { Link } from "react-router-dom";
 import { Layout } from "../layouts/Layout";
 import { subsidiaries, values } from "../content";
@@ -36,7 +36,6 @@ export const SubsidiaryPage = ({ id }) => {
   </Layout>;
 };
 export const AutosPage = () => {
-  const [activeService, setActiveService] = useState(0);
   const handleInquiry = (event) => {
     event.preventDefault();
     const fields = new FormData(event.currentTarget);
@@ -47,16 +46,10 @@ export const AutosPage = () => {
       window.location.href = `https://wa.me/2348084738009?text=${encodeURIComponent(message)}`;
     }
   };
-  const accessServices = [
-    { name: "Sales", title: "Choose for the way you drive.", description: "Vehicle selection begins with intended use, operating conditions and ownership cost. Compare the options, confirm the purchase terms and know what happens at handover.", image: "/integral/africa/autos-friends-driving.jpg", alt: "Friends enjoying a drive together" },
-    { name: "Rental", title: "The vehicle you need, for the time you need it.", description: "Access vehicles for a trip, a temporary assignment or a longer project. We match capacity and duration to the work, without treating every requirement as the same rental.", image: "/integral/autos-white-suv.webp", alt: "White SUV parked outdoors" },
-    { name: "Fleet management", title: "Keep your working vehicles working.", description: "Plan allocation, track use and coordinate maintenance around actual demand. A clear view of vehicle availability helps teams manage downtime before it disrupts operations.", image: "/integral/autos-city-cars.webp", alt: "Cars parked on a city street" },
-  ];
-  const selected = accessServices[activeService];
   return <Layout header={1} footer={1}><main className="integral-autos-page">
-  <section className="integral-autos-hero" aria-labelledby="autos-title"><img src="/integral/autos-red-city.webp" alt="Red car against contemporary city architecture" /><div className="integral-autos-hero-shade" /><div className="integral-autos-hero-content integral-autos-live-reveal"><span>84th Autos / Integral Holdings</span><h1 id="autos-title">84th Autos.</h1><p>Vehicles, technical work and fleet support shaped around the way you move.</p><div className="integral-autos-hero-actions"><a href="#autos-services">Explore services</a></div></div></section>
-  <section className="autos-v2-intro autos-v2-shell integral-autos-live-reveal"><span className="autos-v2-eyebrow">Automobiles &amp; mobility</span><div><h2>More than the keys.</h2><p>Buying or operating a vehicle is a sequence of decisions. We connect the right vehicle, the right technical scope and the support needed to keep it in service.</p></div><div className="autos-v2-pillars"><article><strong>01</strong><h3>Specify</h3><p>Start with the duty, the journey and the real operating conditions.</p></article><article><strong>02</strong><h3>Put to work</h3><p>Choose an ownership or access model that fits the assignment.</p></article><article><strong>03</strong><h3>Keep ready</h3><p>Plan servicing and repairs around vehicle availability.</p></article></div></section>
-  <section className="autos-v2-selector autos-v2-shell" id="autos-services" aria-labelledby="autos-services-title"><div className="autos-v2-section-heading integral-autos-live-reveal"><span className="autos-v2-eyebrow">Vehicle access</span><h2 id="autos-services-title">Choose what moves you.</h2></div><div className="autos-v2-selector-grid"><div className="autos-v2-selector-options" role="group" aria-label="Vehicle services">{accessServices.map((service, index) => <button key={service.name} type="button" aria-pressed={activeService === index} onClick={() => setActiveService(index)}><span>0{index + 1}</span>{service.name}</button>)}<div className="autos-v2-selector-copy" aria-live="polite"><h3>{selected.title}</h3><p>{selected.description}</p></div></div><div className="autos-v2-selector-image" key={selected.image}><img src={selected.image} alt={selected.alt} loading="lazy" /></div></div></section>
+  <AutosShowcase />
+  <AutosVideoFeature />
+  <AutosServiceRail />
   <section className="autos-v2-technical" aria-labelledby="autos-technical-title"><div className="autos-v2-shell autos-v2-technical-grid"><div className="autos-v2-technical-image"><img src="/integral/autos-models.webp" alt="Selection of car models on a studio display" loading="lazy" /></div><div className="autos-v2-technical-content"><span className="autos-v2-eyebrow">Technical capability</span><h2 id="autos-technical-title">Built around the brief.</h2><p>Technical work starts with what the vehicle needs to carry, connect or withstand, then moves to a defined scope and a clear standard for handover.</p><div className="autos-v2-technical-list"><article><h3>Fabrication</h3><p>Vehicle bodies and components specified for fit, function and working conditions.</p></article><article><h3>Coupling</h3><p>Integrating bodies, equipment and components against an agreed configuration.</p></article><article><h3>Manufacturing</h3><p>Assembly work planned from intended use through component selection and delivery.</p></article><article><h3>Repairs</h3><p>Fault diagnosis and repair coordination with attention to safe, dependable operation.</p></article></div></div></div></section>
   <section className="autos-v2-focus autos-v2-shell" aria-labelledby="autos-focus-title"><div className="autos-v2-section-heading integral-autos-live-reveal"><span className="autos-v2-eyebrow">On the road</span><h2 id="autos-focus-title">Support beyond supply.</h2></div><div className="autos-v2-focus-grid"><article className="integral-autos-live-reveal"><img src="/integral/africa/nigerian-mechanics.jpg" alt="Nigerian mechanics servicing a vehicle" loading="lazy" /><span>Service &amp; repairs</span><h3>Less guesswork in the workshop.</h3><p>Understand the fault, agree the work and return the vehicle to service with the right checks in place.</p></article><article className="integral-autos-live-reveal"><img src="/integral/autos-charge-yellow.webp" alt="Electric vehicle connected to a charging point" loading="lazy" /><span>Changing mobility</span><h3>New options, considered properly.</h3><p>Evaluate an electric vehicle against the driving pattern and charging access it will actually have.</p></article></div></section>
   <section className="autos-v2-road" aria-label="84th Autos on the road"><video autoPlay muted loop playsInline preload="metadata" poster="/integral/autos-blue-road-poster.jpg" aria-hidden="true"><source src="/integral/autos-blue-road.mp4" type="video/mp4" /></video></section>

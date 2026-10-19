@@ -15,6 +15,7 @@ import "./assets/css/realty.css";
 import "./assets/css/construction.css";
 import "./assets/css/farms.css";
 import "./assets/css/contact-band.css";
+import "./assets/css/autos-showcase.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
