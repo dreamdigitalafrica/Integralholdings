@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FooterOne } from "../components/footers/FooterOne";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
+import { ContactBand } from "../components/ContactBand";
 
 const livestock = [
   { name: "Poultry", image: "/integral/farm-poultry.jpg", alt: "Chickens in a poultry barn", copy: "Poultry rearing is part of the farm's livestock operation, supported by feed production and day-to-day husbandry." },
@@ -102,6 +103,7 @@ export const FarmsPage = () => {
         <div className="farms-academy-shade" />
         <div className="farms-academy-copy"><span className="farms-kicker">Academy of Agriculture</span><h2 id="farms-academy-title">Learn the work of agriculture</h2><p>Training for people ready to develop practical farming skills.</p><button type="button" onClick={() => dialogRef.current?.showModal()}>Enroll now</button></div>
       </section>
+      <ContactBand label="84th Farms" />
     </main>
 
     <dialog className="farms-dialog" ref={dialogRef} onClick={(event) => { if (event.target === dialogRef.current) dialogRef.current.close(); }} aria-labelledby="farms-dialog-title">

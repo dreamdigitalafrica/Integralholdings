@@ -48,7 +48,7 @@ export const AutosPage = () => {
     }
   };
   const accessServices = [
-    { name: "Sales", title: "Choose for the way you drive.", description: "Vehicle selection begins with intended use, operating conditions and ownership cost. Compare the options, confirm the purchase terms and know what happens at handover.", image: "/integral/autos-showroom.webp", alt: "Vehicles on display in a showroom" },
+    { name: "Sales", title: "Choose for the way you drive.", description: "Vehicle selection begins with intended use, operating conditions and ownership cost. Compare the options, confirm the purchase terms and know what happens at handover.", image: "/integral/africa/autos-friends-driving.jpg", alt: "Friends enjoying a drive together" },
     { name: "Rental", title: "The vehicle you need, for the time you need it.", description: "Access vehicles for a trip, a temporary assignment or a longer project. We match capacity and duration to the work, without treating every requirement as the same rental.", image: "/integral/autos-white-suv.webp", alt: "White SUV parked outdoors" },
     { name: "Fleet management", title: "Keep your working vehicles working.", description: "Plan allocation, track use and coordinate maintenance around actual demand. A clear view of vehicle availability helps teams manage downtime before it disrupts operations.", image: "/integral/autos-city-cars.webp", alt: "Cars parked on a city street" },
   ];

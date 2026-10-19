@@ -16,3 +16,4 @@ These are illustrative stock photographs, not photographs of Integral Holdings s
 - `abuja-engineers.jpg`: Abuja engineering team by Harrun Muhammad, https://www.pexels.com/photo/team-of-engineers-reviewing-construction-plans-37198880/
 - `zaria-greenhouse.jpg`: farmer in a Zaria greenhouse by Muhammad Zubair, https://www.pexels.com/photo/man-inspecting-plants-in-a-zaria-greenhouse-36937772/
 - `abuja-farmland.jpg`: cropland in Abuja by David Kwewum, https://www.pexels.com/photo/road-among-fields-20433340/
+- `autos-friends-driving.jpg`: friends enjoying a drive by cottonbro studio, https://www.pexels.com/photo/young-men-sitting-in-a-sedan-10400841/

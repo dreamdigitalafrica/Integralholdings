@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { leaders, subsidiaries } from "../../content";
+import { ContactBand } from "../../components/ContactBand";
 
 function Brands() {
   return <section className="td-brands-area td-grey-bg pb-50 template-brands" aria-label="Integral businesses"><div className="template-brand-track">{[...subsidiaries, ...subsidiaries].map((item, index) => <Link className="td-brand-single-logo" key={`${item.id}-${index}`} to={item.path}>{item.name}</Link>)}</div></section>;
@@ -31,4 +32,4 @@ function News() {
   return <section className="td-blog-area template-news" aria-labelledby="news-title"><div className="container"><div className="td-blog-title-wrap wow fadeInUp" data-wow-duration="1s"><span className="td-section-title-pre mb-10">Insights</span><h2 id="news-title" className="td-section-title">Business insights</h2></div><div className="template-news-grid">{columns.map((stories, index) => <div className="template-news-column" key={index}>{stories.map((story) => <article className={`template-news-card template-news-${story.kind}${story.light ? " is-light" : ""}`} key={story.title}><Link to={story.path}>{story.kind === "image" && <div className="template-news-image"><img src={story.image} alt={story.alt} loading="lazy" /></div>}<div className="template-news-story-content"><p>{story.category}</p><h3>{story.title}</h3></div></Link></article>)}</div>)}</div></div></section>;
 }
 
-export const HomeTemplateMore = () => <><Brands /><Group /><Team /><News /></>;
+export const HomeTemplateMore = () => <><Brands /><Group /><Team /><News /><ContactBand label="Integral Holdings" /></>;
