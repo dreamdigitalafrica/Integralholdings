@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
-import { AboutPage, AutosPage, SubsidiaryPage } from "./pages/IntegralPages";
+import { AboutPage, AutosPage } from "./pages/IntegralPages";
+import { MetricPage, EngineeringPage } from "./pages/IndustryPages";
 import { CareersPage } from "./pages/CareersPage";
 import { RealtyPage } from "./pages/RealtyPage";
 import { ConstructionPage } from "./pages/ConstructionPage";
 import { FarmsPage } from "./pages/FarmsPage";
 import { BlogDetailsPage, ContactPage, UpdatesPage } from "./pages/EditorialPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
-import { subsidiaries } from "./content";
 
 function App() {
   const { pathname, hash } = useLocation();
@@ -43,7 +43,10 @@ function App() {
     <Route path="/construction" element={<ConstructionPage />} />
     <Route path="/agriculture.html" element={<FarmsPage />} />
     <Route path="/agriculture" element={<FarmsPage />} />
-    {subsidiaries.filter((item) => !["autos", "realty", "construction", "farms"].includes(item.id)).map((item) => <Route key={item.id} path={item.path} element={<SubsidiaryPage id={item.id} />} />)}
+    <Route path="/oil-gas.html" element={<MetricPage />} />
+    <Route path="/oil-gas" element={<MetricPage />} />
+    <Route path="/engineering.html" element={<EngineeringPage />} />
+    <Route path="/engineering" element={<EngineeringPage />} />
     <Route path="*" element={<HomeOne />} />
   </Routes>;
 }
