@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
+import { imageSources } from "../imageSources";
 import { Link } from "react-router-dom";
 import "../assets/css/industry-pages.css";
 
@@ -36,14 +37,14 @@ function IndustryShell({ name, links, children }) {
 
 function Hero({ name, subtitle, image, alt, pillars }) {
   return <section className="industry-hero" aria-labelledby="industry-title">
-    <img src={media(image)} alt={alt} fetchPriority="high" />
+    <img src={media(image)} {...imageSources(media(image))} alt={alt} fetchPriority="high" />
     <div className="industry-hero-title"><h1 id="industry-title">{name}</h1><p>{subtitle}</p></div>
     <div className="industry-pillars">{pillars.map(([title, text]) => <div key={title}><strong>{title}</strong><span>{text}</span></div>)}</div>
   </section>;
 }
 
 function ImageFrame({ image, alt, className = "" }) {
-  return <div className={`industry-image ${className}`}><img src={media(image)} alt={alt} loading="lazy" /></div>;
+  return <div className={`industry-image ${className}`}><img src={media(image)} {...imageSources(media(image))} alt={alt} loading="lazy" /></div>;
 }
 
 function ImageTabs({ id, items }) {
@@ -69,7 +70,7 @@ function ImageTabs({ id, items }) {
 }
 
 const metricAreas = [
-  { title: "Field services", image: "editorial/energy.jpg", alt: "Industrial pipework and energy processing equipment", text: "Planned focus on well intervention, maintenance and technical support for field operations." },
+  { title: "Field services", image: "energy-towers-1600.webp", alt: "Industrial pipework and energy processing equipment", text: "Planned focus on well intervention, maintenance and technical support for field operations." },
   { title: "Infrastructure", image: "home-service-infrastructure.jpg", alt: "Structural works on a large construction site", text: "Pipeline, flowline, fabrication and construction support within a defined project scope." },
   { title: "Procurement", image: "africa/lagos-collaboration.jpg", alt: "Colleagues reviewing information together", text: "Sourcing, traceability and logistics aligned with project specifications and delivery schedules." },
 ];
@@ -83,7 +84,7 @@ const engineeringAreas = [
 
 export function MetricPage() {
   return <IndustryShell name="Metric Oil and Gas" links={[["Overview", "overview"], ["Focus", "focus"], ["Standards", "standards"]]}>
-    <Hero name="Metric Oil and Gas" subtitle="Oil, gas and energy." image="home-service-energy.jpg" alt="Energy processing facility with towers and pipework" pillars={[["Nigeria", "Our market"], ["Energy", "Our focus"], ["Integral", "Our Group"]]} />
+    <Hero name="Metric Oil and Gas" subtitle="Oil, gas and energy." image="energy-sunset-1600.webp" alt="Industrial structures and pipework in evening light" pillars={[["Nigeria", "Our market"], ["Energy", "Our focus"], ["Integral", "Our Group"]]} />
     <section className="industry-intro industry-reveal" id="overview"><h2>Energy services. Local understanding.</h2><p>Metric Oil and Gas Limited represents Integral Holdings in Nigeria&apos;s energy sector. We are developing technical, operational and procurement support for energy operators, contractors and industrial clients.</p><a className="industry-button" href="#focus">Explore our focus</a></section>
     <section id="focus" className="industry-reveal">
       <ImageTabs id="metric-focus" items={metricAreas} />
@@ -112,7 +113,7 @@ export function EngineeringPage() {
       <article><ImageFrame image="doiteck-building.jpg" alt="Building exterior supplied for DOI-TECK" /><h3>Coordinate the design</h3><p>Bring the disciplines together around a consistent project scope.</p></article>
       <article><ImageFrame image="africa/lagos-meeting.jpg" alt="Professionals reviewing information around a meeting table" /><h3>Support the work</h3><p>Keep technical information, responsibilities and project decisions aligned.</p></article>
     </div></section>
-    <section className="industry-support industry-reveal"><div><h2>Technical direction.<br />Practical context.</h2><p>Engineering sits alongside construction and the Group&apos;s other specialist businesses. Each brings a different perspective to how a project is planned, delivered and used.</p><Link className="industry-text-link" to="/construction.html">Explore DOI-TECK Construction</Link></div><ImageFrame image="home-office-interior.jpg" alt="Completed contemporary interior with glazed walls" /></section>
+    <section className="industry-support industry-reveal"><div><h2>Technical direction.<br />Practical context.</h2><p>Engineering sits alongside construction and the Group&apos;s other specialist businesses. Each brings a different perspective to how a project is planned, delivered and used.</p><Link className="industry-text-link" to="/construction.html">Explore DOI-TECK Construction</Link></div><ImageFrame image="modern-towers-1600.webp" alt="Modern architectural towers viewed from below" /></section>
     <section className="industry-contact industry-reveal"><h2>Work with DOI-TECK Engineering</h2><Link className="industry-button" to="/contact.html">Contact us</Link></section>
   </IndustryShell>;
 }

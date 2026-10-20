@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { imageSources } from "../imageSources";
 import { Link } from "react-router-dom";
 import { FooterOne } from "../components/footers/FooterOne";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
 
 const stages = [
-  { title: "Planning", image: "/integral/africa/lagos-collaboration.jpg", alt: "Colleagues reviewing a plan in Lagos", text: "A project begins with the site, the intended use and a workable development brief." },
+  { title: "Planning", image: "/integral/property-discussion-1600.webp", alt: "Business colleagues discussing property in a city", text: "A project begins with the site, the intended use and a workable development brief." },
   { title: "On site", image: "/integral/editorial/construction.jpg", alt: "Construction work in progress", text: "Construction brings the design, contractors and delivery programme together on site." },
   { title: "Handover", image: "/integral/africa/lagos-residential.jpg", alt: "Residential building in Lagos", text: "The final checks, documentation and transition to use deserve the same attention as the build." },
 ];
@@ -47,7 +48,7 @@ export const RealtyPage = () => {
     </header>
     <main className="realty-page" id="main-content">
       <section className="realty-hero" aria-labelledby="realty-title">
-        <img src="/integral/crest-1-05.jpg" alt="Crest residential property with glass balconies" />
+        <img src="/integral/realty-original-1800.webp" srcSet="/integral/realty-original-800.webp 800w, /integral/realty-original-1800.webp 1800w" sizes="100vw" fetchPriority="high" alt="Contemporary glass towers viewed from below" />
         <div className="realty-hero-content">
           <span>Integral Holdings / Property</span>
           <h1 id="realty-title">84th Luxury Realty</h1>
@@ -73,7 +74,7 @@ export const RealtyPage = () => {
 
       <section className="realty-stages realty-reveal" id="progress" aria-labelledby="realty-progress-title">
         <div className="realty-wrap"><div className="realty-section-heading"><span className="realty-kicker">In progress</span><h2 id="realty-progress-title">From plan to handover.</h2><p>Project-specific updates will appear here as they are released. These images show the stages of development, not announced properties.</p></div>
-          <div className="realty-stage-frame"><img key={stages[activeStage].image} src={stages[activeStage].image} alt={stages[activeStage].alt} loading="lazy" /></div>
+          <div className="realty-stage-frame"><img key={stages[activeStage].image} src={stages[activeStage].image} {...imageSources(stages[activeStage].image)} alt={stages[activeStage].alt} loading="lazy" /></div>
           <div className="realty-tabs" role="tablist" aria-label="Development stages">{stages.map((stage, index) => <button key={stage.title} type="button" role="tab" aria-selected={activeStage === index} aria-controls="realty-stage-panel" onClick={() => setActiveStage(index)}><span>{stage.title}</span><small>{stage.text}</small></button>)}</div>
           <div className="realty-tab-panel" role="tabpanel" id="realty-stage-panel" aria-live="polite"><strong>{stages[activeStage].title}</strong><p>{stages[activeStage].text}</p></div>
         </div>
