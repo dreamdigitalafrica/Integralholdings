@@ -1,0 +1,30 @@
+.cms-app{background:#f4f6f9;--cms-ink:#273344;--cms-muted:#758194;--cms-line:#e8ecf2}
+.cms-app .cms-sidebar{background:linear-gradient(155deg,#253f88 0%,#203571 48%,#14224a 100%);border:0;padding:24px 16px;width:248px}
+.cms-app .cms-brand{height:52px;padding:0 12px;margin-bottom:28px}
+.cms-app .cms-brand img{background:none;padding:0;border-radius:0;filter:brightness(0) invert(1);object-fit:contain}
+.cms-app .cms-brand .cms-logo-full{width:158px;height:auto;max-height:42px}
+.cms-app .cms-brand .cms-logo-mark{display:none;width:32px;height:32px}
+.cms-app .cms-nav-group>span{color:#b1bee0;text-transform:none;font-size:12px;padding:0 13px 7px}
+.cms-app .cms-nav-group a{color:#d3dcf3;gap:13px;padding:12px 14px;position:relative;border-radius:8px;font-size:14px}
+.cms-app .cms-nav-group a.active{background:linear-gradient(90deg,#4966c0,#304984);box-shadow:none;color:white}
+.cms-app .cms-nav-group a.active:after{content:'';position:absolute;right:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:#8bd6ff;box-shadow:0 0 8px #80c8ff}
+.cms-app .cms-nav-group a:hover{background:#ffffff12;color:#fff}
+.cms-app .cms-nav-group svg{flex-shrink:0;fill:currentColor;fill-opacity:.14}
+.cms-app .cms-workspace{margin-left:248px}
+.cms-app .cms-topbar{height:72px;padding:0 30px;gap:18px;border-bottom:1px solid #edf0f5;box-shadow:none}
+.cms-app .cms-topbar>span{flex:1;font-size:14px;font-weight:600;color:#354156}
+.cms-app .cms-collapse-toggle{border:0;background:transparent;padding:6px;color:#78869a}
+.cms-account-link{display:flex;gap:10px;align-items:center;font-size:12px}
+.cms-account-link>span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#eaf0f8;color:#48689b}
+.cms-account-link strong{font-weight:500}
+.cms-app .cms-main{padding-top:28px}.cms-app .cms-eyebrow{display:none}
+.cms-app .cms-stats>div{box-shadow:none;border:1px solid #edf0f5}
+.cms-app .cms-collection{box-shadow:none}.cms-app .cms-collection-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cms-app .cms-sidebar-bottom>a,.cms-app .cms-user small{color:#b9c7e7}
+.cms-app .cms-user{border-color:#ffffff20}.cms-app .cms-user>span{background:#ffffff20}
+@media(min-width:761px){.cms-app.cms-collapsed .cms-sidebar{width:78px;padding:24px 10px}.cms-app.cms-collapsed .cms-workspace{margin-left:78px}.cms-collapsed .cms-nav-label,.cms-collapsed .cms-nav-group>span,.cms-collapsed .cms-user>div,.cms-collapsed .cms-user>span{display:none}.cms-app.cms-collapsed .cms-brand{padding:0;justify-content:center}.cms-app.cms-collapsed .cms-logo-full{display:none}.cms-app.cms-collapsed .cms-logo-mark{display:block}.cms-collapsed .cms-nav-group a{justify-content:center;padding:13px}.cms-collapsed .cms-nav-group{margin-bottom:17px}.cms-collapsed .cms-sidebar-bottom>a,.cms-collapsed .cms-user{justify-content:center}.cms-collapsed .cms-sidebar-bottom>a{padding:12px}}
+@media(max-width:1200px){.cms-app .cms-collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.cms-app .cms-workspace{margin-left:0}.cms-app .cms-collapse-toggle{display:none}.cms-app .cms-topbar{padding:0 16px;gap:10px}.cms-account-link strong{display:none}.cms-app .cms-collection-grid{grid-template-columns:1fr}.cms-app .cms-sidebar{width:248px}}
+/* Clivax light palette and compact dashboard typography. */
+@font-face{font-family:IntegralAdmin;src:url('/integral/admin-inter-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:IntegralAdmin;src:url('/integral/admin-inter-medium.woff2') format('woff2');font-weight:500 700;font-display:swap}

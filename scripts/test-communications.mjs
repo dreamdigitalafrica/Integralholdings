@@ -1,0 +1,36 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try {
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8781/admin');
+ await page.getByRole('button',{name:'Explore local demo'}).click();
+ await page.getByRole('heading',{name:'Overview',exact:true}).waitFor();
+ await page.evaluate(()=>{const key='integral-admin-demo-v1',db=JSON.parse(localStorage.getItem(key));db.cms_inquiries=[{id:'test-inquiry',name:'Test customer',email:'test@example.invalid',phone:'',subject:'Fleet enquiry',message:'Please provide fleet options.',sector:'Automobiles',status:'new',read_at:null,notes:'',created_at:new Date().toISOString()}];localStorage.setItem(key,JSON.stringify(db));});
+ await page.getByRole('link',{name:'Inquiries',exact:true}).click();
+ await page.getByRole('button').filter({hasText:'Test customer'}).click();
+ await page.getByLabel('Internal notes').fill('Follow up tomorrow');
+ await page.getByLabel('Status',{exact:true}).selectOption('in_progress');
+ await page.getByRole('button',{name:'Save changes',exact:true}).click();
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('integral-admin-demo-v1')).cms_inquiries[0].notes==='Follow up tomorrow');
+ await page.screenshot({path:'/tmp/integral-inbox-desktop.png'});
+ await page.getByRole('link',{name:'Notifications',exact:true}).click();
+ await page.getByRole('button',{name:'Mark read'}).click();
+ await page.getByRole('heading',{name:'You are up to date'}).waitFor();
+ await page.getByRole('link',{name:'Calendar',exact:true}).click();
+ await page.getByRole('button',{name:'New event'}).click();
+ await page.getByLabel('Title',{exact:true}).fill('Operations meeting');
+ await page.getByRole('button',{name:'Save event',exact:true}).click();
+ await page.getByRole('button',{name:'Operations meeting',exact:true}).waitFor();
+ await page.getByRole('button',{name:'Operations meeting',exact:true}).click();
+ await page.getByLabel('Location',{exact:true}).fill('Boardroom');
+ await page.getByRole('button',{name:'Save event',exact:true}).click();
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('integral-admin-demo-v1')).cms_events[0].location==='Boardroom');
+ await page.screenshot({path:'/tmp/integral-calendar-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'/tmp/integral-calendar-mobile.png'});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ assert.deepEqual(errors,[]);
+ console.log('PASS: inquiry read/status/notes, notifications, event create/edit, mobile width');
+}finally{await browser.close();}

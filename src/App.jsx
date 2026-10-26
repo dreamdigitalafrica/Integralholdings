@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { HomeTemplate as HomeOne } from "./pages/home/HomeTemplate";
 import { AboutPage, AutosPage } from "./pages/IntegralPages";
@@ -9,6 +9,7 @@ import { ConstructionPage } from "./pages/ConstructionPage";
 import { FarmsPage } from "./pages/FarmsPage";
 import { BlogDetailsPage, ContactPage, UpdatesPage } from "./pages/EditorialPages";
 import { FounderPage, LeadershipPage } from "./pages/LeadershipExperience";
+const AdminApp = lazy(() => import('./admin/AdminApp'));
 
 function App() {
   const { pathname, hash } = useLocation();
@@ -21,6 +22,7 @@ function App() {
   }, [pathname, hash]);
 
   return <Routes>
+    <Route path="/admin/*" element={<Suspense fallback={<p role="status">Loading workspace...</p>}><AdminApp /></Suspense>} />
     <Route path="/" element={<HomeOne />} />
     <Route path="/index.html" element={<HomeOne />} />
     <Route path="/about.html" element={<AboutPage />} />

@@ -16,6 +16,7 @@ import "./assets/css/construction.css";
 import "./assets/css/farms.css";
 import "./assets/css/contact-band.css";
 import "./assets/css/autos-showcase.css";
+import "./assets/css/control-spacing.css";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
