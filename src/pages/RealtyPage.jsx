@@ -16,7 +16,20 @@ const services = [
   { title: "Management", text: "Property needs attention after completion. We look at the practical work of protecting its use and value." },
 ];
 
+const crestPhotos = [
+  { name: "front", label: "Front view", alt: "Crest 1.0 homes with white facades, timber-tone cladding and a black entrance gate" },
+  { name: "courtyard", label: "Courtyard", alt: "Crest 1.0 courtyard and covered entrance with a balcony above" },
+  { name: "facade", label: "Facade", alt: "Crest 1.0 facade overlooking the patterned paved courtyard" },
+];
+const crestImageProps = (photo) => ({
+  src: `/integral/crest-1-${photo.name}-20261027-1800.webp`,
+  srcSet: `/integral/crest-1-${photo.name}-20261027-800.webp 800w, /integral/crest-1-${photo.name}-20261027-1800.webp 1800w`,
+  sizes: "(max-width: 767px) calc(100vw - 40px), (max-width: 1252px) calc(100vw - 96px), 1156px",
+  alt: photo.alt,
+});
+
 export const RealtyPage = () => {
+  const [activeCrestPhoto, setActiveCrestPhoto] = useState(0);
   const [activeStage, setActiveStage] = useState(0);
   const [activeService, setActiveService] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +71,7 @@ export const RealtyPage = () => {
       </section>
 
       <section className="realty-feature realty-wrap realty-reveal" id="approach" aria-labelledby="realty-approach-title">
-        <img className="realty-feature-media" src="/integral/crest-1-01.jpg" alt="Crest interior with a chandelier and glass staircase" loading="lazy" />
+        <img className="realty-feature-media" {...crestImageProps(crestPhotos[2])} loading="lazy" decoding="async" />
         <div className="realty-feature-copy"><h2 id="realty-approach-title">Built for the way people use space.</h2><p>84th Luxury Realty develops and manages property with a clear brief: what the site can support, who the space is for and what it must deliver over time.</p></div>
         <div className="realty-principles">
           <article><span>01</span><h3>Understand the site</h3><p>Location, access and context shape the first decisions.</p></article>
@@ -68,7 +81,12 @@ export const RealtyPage = () => {
       </section>
 
       <section className="realty-feature realty-wrap realty-reveal" id="completed" aria-labelledby="realty-completed-title">
-        <img className="realty-feature-media" src="/integral/crest-1-06.jpg" alt="Crest 1.0 residential development exterior" loading="lazy" />
+        <div className="realty-crest-gallery" role="group" aria-label="Crest 1.0 project photos">
+          <img className="realty-feature-media" {...crestImageProps(crestPhotos[activeCrestPhoto])} loading="lazy" decoding="async" />
+          <div className="realty-crest-controls" aria-label="Choose a project photo">
+            {crestPhotos.map((photo, index) => <button key={photo.name} type="button" aria-label={photo.label} aria-pressed={activeCrestPhoto === index} onClick={() => setActiveCrestPhoto(index)}>{String(index + 1).padStart(2, "0")}</button>)}
+          </div>
+        </div>
         <div className="realty-feature-copy"><span className="realty-kicker">Completed project</span><h2 id="realty-completed-title">Crest 1.0</h2><p>A completed residential development by 84th Luxury Realty. Contact our team for project details.</p><div className="realty-inline-actions"><Link to="/contact.html">Enquire about Crest 1.0</Link><button type="button" disabled title="Project brochure is not available yet">View project brochure</button></div></div>
       </section>
 

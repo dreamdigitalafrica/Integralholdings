@@ -30,6 +30,11 @@
 .realty-actions a:nth-child(2):hover, .realty-actions a:nth-child(2):focus-visible { background: #e8eef4; color: #171a20; }
 .realty-feature { padding-top: 80px; padding-bottom: 70px; }
 .realty-feature-media { display: block; width: 100%; aspect-ratio: 1156 / 650; border-radius: 6px; object-fit: cover; background: #e8ecee; }
+.realty-crest-gallery { position: relative; }
+.realty-crest-controls { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; padding: 6px; border-radius: 8px; background: #171a20d9; }
+.realty-crest-controls button { width: 44px; height: 44px; border: 0; border-radius: 5px; background: transparent; color: #fff; font-size: 14px; cursor: pointer; }
+.realty-crest-controls button[aria-pressed="true"], .realty-crest-controls button:hover { background: #fff; color: #171a20; }
+.realty-crest-controls button:focus-visible { outline: 2px solid #f4b73f; outline-offset: 2px; }
 .realty-feature-copy { width: min(calc(100% - 96px), 960px); margin: 48px auto 0; }
 .realty-feature-copy h2, .realty-section-heading h2 { margin: 0 0 12px; color: #171a20; font-size: clamp(32px, 3.5vw, 44px); font-weight: 650; line-height: 1.14; }
 .realty-feature-copy p, .realty-section-heading p { max-width: 960px; margin: 0; color: #555d64; font-size: clamp(16px, 1.5vw, 18px); }
