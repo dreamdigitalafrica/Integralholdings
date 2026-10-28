@@ -25,7 +25,7 @@ function IndustryShell({ name, links, children }) {
   return <div className="industry-site" ref={root}>
     <a className="industry-skip" href="#industry-main">Skip to content</a>
     <header className="industry-header">
-      <Link className="industry-brand" to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand={brand} white /></Link>
+      <Link className="industry-brand" to="/" aria-label="Integral Holdings home"><img src={media("integral-logo-transparent.png")} alt="Integral" /><span>{name}</span></Link>
       <nav id="industry-navigation" className={menuOpen ? "is-open" : ""} aria-label={`${name} navigation`} onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}>
         {links.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
         <Link to="/contact.html">Contact</Link>

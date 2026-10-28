@@ -1,4 +1,3 @@
-import { SubsidiaryLogo } from "../components/SubsidiaryLogo";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FooterOne } from "../components/footers/FooterOne";
@@ -56,7 +55,7 @@ export const FarmsPage = () => {
 
   return <>
     <header className="farms-header">
-      <Link to="/" className="farms-brand" aria-label="Integral Holdings home"><SubsidiaryLogo brand="farms" white /></Link>
+      <Link to="/" className="farms-brand" aria-label="Integral Holdings home"><img src="/integral/integral-logo-transparent.png" alt="Integral" /><span>84th Farms</span></Link>
       <nav className={menuOpen ? "is-open" : ""} aria-label="Farms navigation">
         <a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a>
         <a href="#operations" onClick={() => setMenuOpen(false)}>Operations</a>

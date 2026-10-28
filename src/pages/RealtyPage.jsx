@@ -1,4 +1,3 @@
-import { SubsidiaryLogo } from "../components/SubsidiaryLogo";
 import { useEffect, useState } from "react";
 import { imageSources } from "../imageSources";
 import { Link } from "react-router-dom";
@@ -50,7 +49,7 @@ export const RealtyPage = () => {
 
   return <>
     <header className="realty-header">
-      <Link className="realty-brand" to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand="realty" white /></Link>
+      <Link className="realty-brand" to="/" aria-label="Integral Holdings home"><img src="/integral/integral-logo-transparent.png" alt="Integral" /><span>84th Luxury Realty</span></Link>
       <nav className={menuOpen ? "realty-nav is-open" : "realty-nav"} aria-label="Realty navigation">
         <a href="#approach" onClick={() => setMenuOpen(false)}>Approach</a>
         <a href="#completed" onClick={() => setMenuOpen(false)}>Completed</a>
