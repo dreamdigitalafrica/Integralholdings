@@ -1,3 +1,4 @@
+import { SubsidiaryLogo } from "../components/SubsidiaryLogo";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FooterOne } from "../components/footers/FooterOne";
@@ -23,7 +24,7 @@ export const ConstructionPage = () => {
   }, []);
 
   return <>
-    <header className="construction-header"><Link to="/" aria-label="Integral Holdings home"><img src="/integral/integral-logo-transparent.png" alt="Integral" /><span>Doi-Teck Construction</span></Link><nav className={menuOpen ? "is-open" : ""} aria-label="Construction navigation"><a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a><a href="#capabilities" onClick={() => setMenuOpen(false)}>Capabilities</a><a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a><Link to="/contact.html">Contact</Link></nav><button className="construction-menu" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button></header>
+    <header className="construction-header"><Link to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand="construction" white /><span>Doi-Teck Construction</span></Link><nav className={menuOpen ? "is-open" : ""} aria-label="Construction navigation"><a href="#overview" onClick={() => setMenuOpen(false)}>Overview</a><a href="#capabilities" onClick={() => setMenuOpen(false)}>Capabilities</a><a href="#work" onClick={() => setMenuOpen(false)}>Selected work</a><Link to="/contact.html">Contact</Link></nav><button className="construction-menu" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button></header>
     <main className="construction-page" id="main-content">
       <section className="construction-hero" aria-labelledby="construction-title"><img src="/integral/construction-hero-pexels.jpg" alt="Stock photograph of a high-rise building under construction with cranes" /><div className="construction-hero-shade" /><h1 id="construction-title">Doi-Teck Construction</h1><div className="construction-hero-footer"><div><strong>Port Harcourt</strong><span>Rivers State, Nigeria</span></div><div><strong>Civil</strong><span>Engineering</span></div><div><strong>Building</strong><span>Construction</span></div><Link to="/contact.html">Contact us</Link></div></section>
 

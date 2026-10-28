@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { SubsidiaryLogo } from "../components/SubsidiaryLogo";
 import { useEffect, useRef, useState } from "react";
 import { imageSources } from "../imageSources";
 import { Link } from "react-router-dom";
@@ -7,6 +8,7 @@ import "../assets/css/industry-pages.css";
 const media = (name) => `/integral/${name}`;
 
 function IndustryShell({ name, links, children }) {
+  const brand = name.startsWith("Metric") ? "metric" : "engineering";
   const [menuOpen, setMenuOpen] = useState(false);
   const root = useRef(null);
   useEffect(() => {
@@ -23,7 +25,7 @@ function IndustryShell({ name, links, children }) {
   return <div className="industry-site" ref={root}>
     <a className="industry-skip" href="#industry-main">Skip to content</a>
     <header className="industry-header">
-      <Link className="industry-brand" to="/" aria-label="Integral Holdings home"><img src={media("integral-logo-transparent.png")} alt="Integral" /><span>{name}</span></Link>
+      <Link className="industry-brand" to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand={brand} white /></Link>
       <nav id="industry-navigation" className={menuOpen ? "is-open" : ""} aria-label={`${name} navigation`} onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}>
         {links.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
         <Link to="/contact.html">Contact</Link>
@@ -31,7 +33,7 @@ function IndustryShell({ name, links, children }) {
       <button type="button" className="industry-menu" aria-controls="industry-navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "Close" : "Menu"}</button>
     </header>
     <main id="industry-main">{children}</main>
-    <footer className="industry-footer"><Link to="/">Integral Holdings</Link><span>{name}</span><Link to="/contact.html">Contact</Link><Link to="/careers.html">Careers</Link></footer>
+    <footer className="industry-footer subsidiary-footer"><Link to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand={brand} white /></Link><Link to="/contact.html">Contact</Link><Link to="/careers.html">Careers</Link></footer>
   </div>;
 }
 

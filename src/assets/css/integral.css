@@ -283,8 +283,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
 .integral-editorial-pages button:disabled { opacity: .35; cursor: default; }
 .integral-editorial-empty { padding: 25px 0; font-size: 17px; }
 
-.integral-contact-hero { background-image: linear-gradient(90deg, #18252ee0, #18252e87), url('/integral/africa/lagos-office-tower.jpg'); }
-.integral-contact-photo { height: 255px; background: url('/integral/africa/lagos-meeting.jpg') center 55% / cover no-repeat; }
+.integral-contact-hero { background-image: linear-gradient(90deg, #18252ee0, #18252e87), url('/integral/modern-towers-1600.webp'); }
+.integral-contact-photo { height: 255px; background: url('/integral/business-table-1600.webp') center 48% / cover no-repeat; }
 .integral-contact-content { padding: 105px 0 130px; }
 .integral-contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(55px, 9vw, 140px); }
 .integral-contact-kicker { color: #2b5097; font-size: 13px; text-transform: uppercase; }

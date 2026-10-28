@@ -1,10 +1,11 @@
+import { SubsidiaryLogo } from "../../components/SubsidiaryLogo";
 import { imageSources } from "../../imageSources";
 import { Link } from "react-router-dom";
 import { leaders, subsidiaries } from "../../content";
 import { ContactBand } from "../../components/ContactBand";
 
 function Brands() {
-  return <section className="td-brands-area td-grey-bg pb-50 template-brands" aria-label="Integral businesses"><div className="template-brand-track">{[...subsidiaries, ...subsidiaries].map((item, index) => <Link className="td-brand-single-logo" key={`${item.id}-${index}`} to={item.path}>{item.name}</Link>)}</div></section>;
+  return <section className="td-brands-area td-grey-bg pb-50 template-brands" aria-label="Integral businesses"><div className="template-brand-track">{[...subsidiaries, ...subsidiaries].map((item, index) => <Link className="td-brand-single-logo" key={`${item.id}-${index}`} to={item.path}><SubsidiaryLogo brand={item.id} /></Link>)}</div></section>;
 }
 
 function Group() {
