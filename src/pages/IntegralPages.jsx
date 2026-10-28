@@ -38,7 +38,7 @@ export const SubsidiaryPage = ({ id }) => {
 };
 export const AutosPage = () => {
   const {send:handleInquiry,busy,feedback,failed}=useInquiry("Automobiles");
-  return <Layout header={1} footer={1}><main className="integral-autos-page">
+  return <Layout headerContent={<Link className="autos-integral-logo" to="/" aria-label="Integral Holdings home"><img src="/integral/integral-logo-overlay.svg" alt="Integral" /></Link>}><main className="integral-autos-page">
   <AutosShowcase />
   <AutosVideoFeature />
   <AutosServiceRail />
