@@ -1,5 +1,5 @@
 export const panels = [
-  { number: "01", title: "Realty", image: "/integral/africa/lagos-office-tower.jpg", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
+  { number: "01", title: "Realty", image: "/integral/home-realty-crest.webp", heading: "Spaces built to last.", text: "Development, investment and property services for long-term value.", path: "/real-estate.html" },
   { number: "02", title: "Construction", image: "/integral/editorial/construction.jpg", heading: "Built with purpose.", text: "Project delivery grounded in planning, quality and practical execution.", path: "/construction.html" },
   { number: "03", title: "Automobile", image: "/integral/autos-red-city.webp", heading: "Vehicles for the work ahead.", text: "Sales, rental, fleet management and technical services from 84th Autos.", path: "/automobiles.html" },
 ];
