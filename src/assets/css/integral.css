@@ -169,7 +169,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--integral-blue);
 .integral-footer { padding: 88px 0 82px; background: #fff; border-top: 1px solid #e7eaeb; }
 .integral-footer-inner { text-align: center; }
 .integral-footer-brand { display: inline-block; }
-.integral-footer-brand img { display: block; width: 172px; height: auto; }
+.integral-footer-brand img { display: block; width: 128px; max-width: 100%; height: auto; }
+@media (max-width: 650px) { .integral-footer-brand img { width: 112px; } }
 .integral-footer-inner > p { margin: 28px 0 90px; color: #424a4e; font-size: 21px; line-height: 1.4; }
 .integral-footer-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 26px; color: #687174; font-size: 13px; font-weight: 600; }
 .integral-footer-nav a { color: inherit; }
