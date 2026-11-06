@@ -19,7 +19,7 @@ export default function Communications({section}) {
  },[section]);
  useEffect(()=>{load();const timer=setInterval(load,60000);return()=>clearInterval(timer);},[load]);
  async function save(table,record){try{await api.save(table,record);await load();return true;}catch(e){setError(e.message);return false;}}
- return <><div className="cms-page-heading"><div><span className="cms-eyebrow">Workspace</span><h1>{section==='calendar'?'Calendar':section==='notifications'?'Notifications':'Inquiries'}</h1></div><button title="Refresh" aria-label="Refresh" onClick={load}><RefreshCw size={18}/></button></div>{error&&<p className="cms-error" role="alert">{error}</p>}{loading?<p role="status">Loading...</p>:section==='calendar'?<Calendar rows={rows} save={save}/>:section==='notifications'?<Notifications rows={rows} receipts={receipts} save={save}/>:<Inbox rows={rows} save={save}/>}</>;
+ return <><div className="cms-page-heading"><div><span className="cms-eyebrow">Workspace</span><h1>{section==='calendar'?'Calendar':section==='notifications'?'Notifications':'Inquiries'}</h1></div><button title="Refresh" aria-label="Refresh" onClick={load}><RefreshCw size={18}/></button></div>{error&&<p className="cms-error" role="alert">{error}</p>}{loading?<div aria-busy="true" aria-label="Opening content" />:section==='calendar'?<Calendar rows={rows} save={save}/>:section==='notifications'?<Notifications rows={rows} receipts={receipts} save={save}/>:<Inbox rows={rows} save={save}/>}</>;
 }
 
 function Inbox({rows,save}) {

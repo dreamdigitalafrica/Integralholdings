@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { LayoutDashboard, FileText, BriefcaseBusiness, GraduationCap, Users, Image, LogOut, Search, Plus, ChevronLeft, ChevronRight, ExternalLink, Menu, X, Save, Eye, History, Upload, Download, Check, ShieldCheck, Settings2, LoaderCircle } from 'lucide-react';
 import DOMPurify from 'dompurify';
@@ -54,30 +54,55 @@ export default function AdminApp() {
   const toggleSidebar=()=>setCollapsed(value=>{localStorage.setItem('cms-sidebar-collapsed',String(!value));return !value;});
   const [authError,setAuthError] = useState(''); const [menu,setMenu] = useState(false); const [recovery,setRecovery] = useState(false);
   const navigate = useNavigate();
+  const navigateRef = useRef(navigate);
+  navigateRef.current = navigate;
   useEffect(() => {
     if (!supabase) return;
     let active = true;
+    let request = 0;
+    let currentUserId = null;
     async function load(session) {
       if (!active) return;
-      setUser(session?.user || null); setProfile(null);
-      if (session?.user) {
-        const { data, error } = await supabase.from('cms_staff').select('*').eq('id',session.user.id).eq('active',true).maybeSingle();
-        if (active) { setProfile(data); setAuthError(error?.message || (!data ? 'Your account has not been granted workspace access.' : '')); }
+      const version = ++request;
+      const nextUser = session?.user || null;
+      if (!nextUser) {
+        currentUserId = null;
+        setUser(null); setProfile(null); setAuthError(''); setAuthLoading(false);
+        return;
       }
-      if (active) setAuthLoading(false);
+      if (currentUserId !== nextUser.id) {
+        setAuthLoading(true); setProfile(null);
+      }
+      currentUserId = nextUser.id;
+      setUser(nextUser);
+      try {
+        const { data, error } = await supabase.from('cms_staff').select('*').eq('id',nextUser.id).eq('active',true).maybeSingle();
+        if (!active || version !== request) return;
+        setProfile(data);
+        setAuthError(error?.message || (!data ? 'Your account has not been granted workspace access.' : ''));
+      } catch (error) {
+        if (!active || version !== request) return;
+        setProfile(null); setAuthError(error.message);
+      } finally {
+        if (active && version === request) setAuthLoading(false);
+      }
     }
-    supabase.auth.getSession().then(({data}) => load(data.session));
+    supabase.auth.getSession().then(({data, error}) => {
+      if (!active || request) return;
+      if (error) { setAuthError(error.message); setAuthLoading(false); return; }
+      load(data.session);
+    });
     const { data } = supabase.auth.onAuthStateChange((event,session) => {
-      if (event === 'PASSWORD_RECOVERY') { setRecovery(true); navigate('/admin/settings'); }
+      if (event === 'PASSWORD_RECOVERY') { setRecovery(true); navigateRef.current('/admin/settings'); }
       setTimeout(() => load(session), 0);
     });
-    return () => { active=false; data.subscription.unsubscribe(); };
-  }, [navigate]);
+    return () => { active=false; request++; data.subscription.unsubscribe(); };
+  }, []);
   async function logout() {
     if (supabase) { const {error} = await supabase.auth.signOut(); if (error) { setAuthError(error.message); return; } }
     setProfile(null); setUser(null); navigate('/admin');
   }
-  if (authLoading) return <div className="cms-root cms-loading"><LoaderCircle className="cms-spin" /> Loading workspace</div>;
+  if (authLoading) return <div className="cms-root" aria-busy="true" aria-label="Opening workspace" />;
   if (!user) return <Login onDemo={() => { setUser({ id: 'demo' }); setProfile({ id: 'demo', name: 'Local administrator', role: 'admin' }); }} />;
   if (!profile) return <div className="cms-root cms-login"><div className="cms-login-box"><h1>Access required</h1><p role="alert">{authError}</p><button onClick={logout}>Sign out</button></div></div>;
   const canSee = key => ['overview','settings'].includes(key) || (key === 'team' ? profile.role === 'admin' : allowed(profile.role,key));
@@ -95,7 +120,7 @@ function Workspace({section,id,profile,recovery,onRecovered}) {
   useEffect(() => { load(); },[load]);
   if (section === 'settings') return <Settings recovery={recovery} onRecovered={onRecovered}/>;
   if (['calendar','notifications','inquiries'].includes(section)) return <Communications section={section}/>;
-  if (loading) return <div className="cms-loading"><LoaderCircle className="cms-spin"/> Loading content</div>;
+  if (loading) return <div aria-busy="true" aria-label="Opening content" />;
   if (error) return <div className="cms-error" role="alert">{error}<button onClick={load}>Retry</button></div>;
   if (section === 'overview' || !titles[section]) return <Overview rows={rows} profile={profile}/>;
   if (section === 'media') return <Media rows={rows} onRefresh={load}/>;
