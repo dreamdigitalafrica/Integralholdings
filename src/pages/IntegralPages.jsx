@@ -20,7 +20,7 @@ export const AboutPage = () => <Layout header={1} footer={1}>
   ].map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
   <section className="integral-page-mission"><article><span className="td-section-title-pre">Vision</span><h2>To be a leading contributor to exponential development in Nigeria and Sub-Saharan Africa.</h2></article><article><span className="td-section-title-pre">Mission</span><h2>Leveraging our expertise and brand integrity to optimise our investments through commitment to quality and effective delivery.</h2></article></section>
   <section className="integral-page-values"><div className="container"><span className="td-section-title-pre">Core values</span><h2>Principles that guide how the Group builds.</h2><div className="integral-page-value-grid">{values.map((value) => <article key={value.title}><h3>{value.title}</h3><p>{value.text}</p></article>)}</div></div></section>
-  <NextLink to="/leadership.html">Meet the leadership shaping the Group.</NextLink>
+  <NextLink to="/leadership">Meet the leadership shaping the Group.</NextLink>
 </Layout>;
 
 export const SubsidiaryPage = ({ id }) => {

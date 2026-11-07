@@ -28,12 +28,12 @@ function IndustryShell({ name, links, children }) {
       <Link className="industry-brand" to="/" aria-label="Integral Holdings home"><img src={media("integral-logo-transparent.png")} alt="Integral" /><span>{name}</span></Link>
       <nav id="industry-navigation" className={menuOpen ? "is-open" : ""} aria-label={`${name} navigation`} onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }}>
         {links.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
-        <Link to="/contact.html">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
       <button type="button" className="industry-menu" aria-controls="industry-navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "Close" : "Menu"}</button>
     </header>
     <main id="industry-main">{children}</main>
-    <footer className="industry-footer subsidiary-footer"><Link to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand={brand} white /></Link><Link to="/contact.html">Contact</Link><Link to="/careers.html">Careers</Link></footer>
+    <footer className="industry-footer subsidiary-footer"><Link to="/" aria-label="Integral Holdings home"><SubsidiaryLogo brand={brand} white /></Link><Link to="/contact">Contact</Link><Link to="/careers">Careers</Link></footer>
   </div>;
 }
 
@@ -98,16 +98,16 @@ export function MetricPage() {
     </section>
     <section className="industry-reveal">
       <ImageFrame image="africa/lagos-meeting.jpg" alt="Business professionals in a meeting in Lagos" />
-      <div className="industry-copy-split"><h2>Part of Integral Holdings.</h2><div><p>Metric connects the Group&apos;s energy interests with its wider engineering and infrastructure focus. Based in Port Harcourt, Integral Holdings brings specialist businesses together across six sectors.</p><Link className="industry-text-link" to="/about.html">About the Group</Link></div></div>
+      <div className="industry-copy-split"><h2>Part of Integral Holdings.</h2><div><p>Metric connects the Group&apos;s energy interests with its wider engineering and infrastructure focus. Based in Port Harcourt, Integral Holdings brings specialist businesses together across six sectors.</p><Link className="industry-text-link" to="/about">About the Group</Link></div></div>
     </section>
-    <section className="industry-contact industry-reveal"><h2>Contact Metric</h2><p>Discuss your project requirements.</p><Link className="industry-button" to="/contact.html">Contact us</Link></section>
+    <section className="industry-contact industry-reveal"><h2>Contact Metric</h2><p>Discuss your project requirements.</p><Link className="industry-button" to="/contact">Contact us</Link></section>
   </IndustryShell>;
 }
 
 export function EngineeringPage() {
   return <IndustryShell name="DOI-TECK Engineering" links={[["Overview", "overview"], ["Engineering", "disciplines"], ["Approach", "approach"]]}>
     <Hero name="DOI-TECK Engineering" subtitle="Engineering and technical solutions." image="home-service-infrastructure.jpg" alt="Building structures and cranes on a construction site" pillars={[["Design", "Technical foundations"], ["Projects", "Engineering coordination"], ["Operations", "Practical support"]]} />
-    <section className="industry-intro industry-reveal" id="overview"><h2>From ideas to working systems.</h2><p>DOI-TECK Engineering Limited extends Integral Holdings into engineering, technical systems and infrastructure solutions. Our focus is on translating project requirements into practical, reliable and efficient systems.</p><Link className="industry-button" to="/contact.html">Discuss a project</Link></section>
+    <section className="industry-intro industry-reveal" id="overview"><h2>From ideas to working systems.</h2><p>DOI-TECK Engineering Limited extends Integral Holdings into engineering, technical systems and infrastructure solutions. Our focus is on translating project requirements into practical, reliable and efficient systems.</p><Link className="industry-button" to="/contact">Discuss a project</Link></section>
     <div className="industry-inset industry-reveal"><ImageFrame image="engineers-industrial-site.jpg" alt="Two engineers discussing work at an industrial site" /></div>
     <section className="industry-inset industry-reveal" id="disciplines"><div className="industry-section-heading"><h2>Engineering across disciplines.</h2><p>Our planned capability spans design, technical consultancy and project support.</p></div><ImageTabs id="engineering-focus" items={engineeringAreas} /><p className="industry-scope">Specific capabilities and delivery scope are confirmed with our team before engagement.</p></section>
     <section className="industry-inset industry-reveal" id="approach"><div className="industry-section-heading"><h2>Defined around the project.</h2><p>A clear brief connects technical decisions to the work on site.</p></div><div className="industry-three-up">
@@ -115,7 +115,7 @@ export function EngineeringPage() {
       <article><ImageFrame image="doiteck-building.jpg" alt="Building exterior supplied for DOI-TECK" /><h3>Coordinate the design</h3><p>Bring the disciplines together around a consistent project scope.</p></article>
       <article><ImageFrame image="africa/lagos-meeting.jpg" alt="Professionals reviewing information around a meeting table" /><h3>Support the work</h3><p>Keep technical information, responsibilities and project decisions aligned.</p></article>
     </div></section>
-    <section className="industry-support industry-reveal"><div><h2>Technical direction.<br />Practical context.</h2><p>Engineering sits alongside construction and the Group&apos;s other specialist businesses. Each brings a different perspective to how a project is planned, delivered and used.</p><Link className="industry-text-link" to="/construction.html">Explore DOI-TECK Construction</Link></div><ImageFrame image="modern-towers-1600.webp" alt="Modern architectural towers viewed from below" /></section>
-    <section className="industry-contact industry-reveal"><h2>Work with DOI-TECK Engineering</h2><Link className="industry-button" to="/contact.html">Contact us</Link></section>
+    <section className="industry-support industry-reveal"><div><h2>Technical direction.<br />Practical context.</h2><p>Engineering sits alongside construction and the Group&apos;s other specialist businesses. Each brings a different perspective to how a project is planned, delivered and used.</p><Link className="industry-text-link" to="/construction">Explore DOI-TECK Construction</Link></div><ImageFrame image="modern-towers-1600.webp" alt="Modern architectural towers viewed from below" /></section>
+    <section className="industry-contact industry-reveal"><h2>Work with DOI-TECK Engineering</h2><Link className="industry-button" to="/contact">Contact us</Link></section>
   </IndustryShell>;
 }

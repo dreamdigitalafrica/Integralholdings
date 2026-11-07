@@ -8,11 +8,11 @@ export const FooterOne = () => { const brand = usePageBrand(); return <footer cl
     <nav className="integral-footer-nav" aria-label="Footer">
       <span>Integral © {new Date().getFullYear()}</span>
       <Link to="/#subsidiaries">Sectors</Link>
-      <Link to="/about.html">About</Link>
-      <Link to="/leadership.html">Leadership</Link>
-      <Link to="/updates.html">Insights</Link>
-      <Link to="/careers.html">Careers</Link>
-      <Link to="/contact.html">Contact</Link>
+      <Link to="/about">About</Link>
+      <Link to="/leadership">Leadership</Link>
+      <Link to="/updates">Insights</Link>
+      <Link to="/careers">Careers</Link>
+      <Link to="/contact">Contact</Link>
       <span>Nigeria</span>
     </nav>
   </div>

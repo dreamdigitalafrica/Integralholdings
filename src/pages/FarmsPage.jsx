@@ -61,7 +61,7 @@ export const FarmsPage = () => {
         <a href="#operations" onClick={() => setMenuOpen(false)}>Operations</a>
         <a href="#livestock" onClick={() => setMenuOpen(false)}>Livestock</a>
         <a href="#academy" onClick={() => setMenuOpen(false)}>Academy</a>
-        <Link to="/contact.html" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </nav>
       <button className="farms-menu" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
     </header>

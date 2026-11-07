@@ -4,24 +4,24 @@ import { FooterOne } from "../components/footers/FooterOne";
 import { ScrollToTopButton } from "../components/scroll_to_top_btn/ScrollToTopButton";
 
 const sectors = [
-  { name: "Energy", image: "/integral/home-service-energy.jpg", alt: "Energy facility", description: "Supply, logistics and infrastructure that keep industry moving.", path: "/oil-gas.html" },
-  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers at an industrial site", description: "Technical design, systems and execution for complex briefs.", path: "/engineering.html" },
-  { name: "Construction", image: "/integral/home-service-infrastructure.jpg", alt: "Construction work in progress", description: "From project planning to civil works and delivery on site.", path: "/construction.html" },
-  { name: "Automobiles", image: "/integral/autos-showroom.webp", alt: "Vehicles in a showroom", description: "Vehicles, fleets and technical services for everyday use.", path: "/automobiles.html" },
-  { name: "Realty", image: "/integral/africa/lagos-residential.jpg", alt: "Residential development in Lagos", description: "Property development, management and investment.", path: "/real-estate.html" },
-  { name: "Agriculture", image: "/integral/africa/abuja-farmland.jpg", alt: "Agricultural land in Abuja", description: "Productive land use, farm operations and agricultural trade.", path: "/agriculture.html" },
+  { name: "Energy", image: "/integral/home-service-energy.jpg", alt: "Energy facility", description: "Supply, logistics and infrastructure that keep industry moving.", path: "/oil-gas" },
+  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers at an industrial site", description: "Technical design, systems and execution for complex briefs.", path: "/engineering" },
+  { name: "Construction", image: "/integral/home-service-infrastructure.jpg", alt: "Construction work in progress", description: "From project planning to civil works and delivery on site.", path: "/construction" },
+  { name: "Automobiles", image: "/integral/autos-showroom.webp", alt: "Vehicles in a showroom", description: "Vehicles, fleets and technical services for everyday use.", path: "/automobiles" },
+  { name: "Realty", image: "/integral/africa/lagos-residential.jpg", alt: "Residential development in Lagos", description: "Property development, management and investment.", path: "/real-estate" },
+  { name: "Agriculture", image: "/integral/africa/abuja-farmland.jpg", alt: "Agricultural land in Abuja", description: "Productive land use, farm operations and agricultural trade.", path: "/agriculture" },
 ];
 
 const departments = [
-  { name: "Project delivery", image: "/integral/editorial/construction.jpg", alt: "Construction project", description: "Plan work, coordinate teams and follow a project through to handover.", path: "/construction.html" },
-  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers reviewing a tablet at an industrial site", description: "Connect design, technical systems and practical execution.", path: "/engineering.html" },
-  { name: "Automotive services", image: "/integral/africa/nigerian-mechanics.jpg", alt: "Nigerian vehicle technicians", description: "Work across vehicle specification, repairs and fleet support.", path: "/automobiles.html" },
-  { name: "Business operations", image: "/integral/africa/lagos-collaboration.jpg", alt: "Colleagues working together in Lagos", description: "Keep the commercial and administrative work behind each business moving.", path: "/about.html" },
+  { name: "Project delivery", image: "/integral/editorial/construction.jpg", alt: "Construction project", description: "Plan work, coordinate teams and follow a project through to handover.", path: "/construction" },
+  { name: "Engineering", image: "/integral/engineers-industrial-site.jpg", alt: "Two engineers reviewing a tablet at an industrial site", description: "Connect design, technical systems and practical execution.", path: "/engineering" },
+  { name: "Automotive services", image: "/integral/africa/nigerian-mechanics.jpg", alt: "Nigerian vehicle technicians", description: "Work across vehicle specification, repairs and fleet support.", path: "/automobiles" },
+  { name: "Business operations", image: "/integral/africa/lagos-collaboration.jpg", alt: "Colleagues working together in Lagos", description: "Keep the commercial and administrative work behind each business moving.", path: "/about" },
 ];
 
 const learning = [
-  { number: "01", title: "Understand the work", text: "See how Integral's businesses operate across essential sectors, and where their responsibilities meet.", image: "/integral/home-office-interior.jpg", alt: "Office interior", path: "/about.html", link: "Explore the Group" },
-  { number: "02", title: "Meet the people", text: "Get to know the leaders responsible for the Group's direction, people and operations.", image: "/integral/leadership-hero-team.jpg", alt: "Integral leadership team", path: "/leadership.html", link: "Meet the team" },
+  { number: "01", title: "Understand the work", text: "See how Integral's businesses operate across essential sectors, and where their responsibilities meet.", image: "/integral/home-office-interior.jpg", alt: "Office interior", path: "/about", link: "Explore the Group" },
+  { number: "02", title: "Meet the people", text: "Get to know the leaders responsible for the Group's direction, people and operations.", image: "/integral/leadership-hero-team.jpg", alt: "Integral leadership team", path: "/leadership", link: "Meet the team" },
   { number: "03", title: "Explore a sector", text: "Go deeper into the services, projects and technical scope of each business.", image: "/integral/africa/lagos-meeting.jpg", alt: "Business team meeting in Lagos", path: "/#subsidiaries", link: "View the sectors" },
 ];
 
@@ -71,7 +71,7 @@ export const CareersPage = () => {
         <a href="#departments" onClick={() => setMenuOpen(false)}>Departments</a>
         <a href="#life" onClick={() => setMenuOpen(false)}>Life at Integral</a>
         <a href="#learn" onClick={() => setMenuOpen(false)}>Learn</a>
-        <Link to="/about.html">About us</Link>
+        <Link to="/about">About us</Link>
       </nav>
       <button className={menuOpen ? "careers-menu-toggle is-open" : "careers-menu-toggle"} type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span aria-hidden="true" /><span aria-hidden="true" /></button>
     </header>
@@ -94,7 +94,7 @@ export const CareersPage = () => {
 
       <section className="careers-departments careers-reveal" id="departments" aria-labelledby="careers-departments-title"><div className="careers-shell"><h2 id="careers-departments-title">Featured departments</h2><div className="careers-department-stage"><img key={department.image} src={department.image} alt={department.alt} loading="lazy" /><div className="careers-department-content" aria-live="polite"><span>0{activeDepartment + 1} / 0{departments.length}</span><h3>{department.name}</h3><p>{department.description}</p><Link to={department.path}>Learn more</Link></div></div><div className="careers-department-tabs" role="group" aria-label="Departments">{departments.map((item, index) => <button type="button" key={item.name} className={activeDepartment === index ? "is-active" : ""} aria-pressed={activeDepartment === index} onClick={() => setActiveDepartment(index)}><span>0{index + 1}</span>{item.name}</button>)}</div></div></section>
 
-      <section className="careers-life careers-shell careers-reveal" id="life" aria-labelledby="careers-life-title"><div className="careers-life-intro"><h2 id="careers-life-title">Life at Integral</h2><p>Our businesses have different specialisms. The standard is shared: plan carefully, take responsibility for the work and deliver with integrity.</p><Link to="/about.html">Learn about the Group</Link></div><div className="careers-life-grid"><article><img src="/integral/africa/lagos-collaboration.jpg" alt="Colleagues working together in Lagos" loading="lazy" /><h3>Work across disciplines</h3><p>Project, technical and commercial teams each bring a different perspective to delivery.</p></article><article><img src="/integral/africa/lagos-meeting.jpg" alt="Business team meeting in Lagos" loading="lazy" /><h3>Accountability in practice</h3><p>Clear responsibilities and considered decisions matter in every business we build.</p></article></div></section>
+      <section className="careers-life careers-shell careers-reveal" id="life" aria-labelledby="careers-life-title"><div className="careers-life-intro"><h2 id="careers-life-title">Life at Integral</h2><p>Our businesses have different specialisms. The standard is shared: plan carefully, take responsibility for the work and deliver with integrity.</p><Link to="/about">Learn about the Group</Link></div><div className="careers-life-grid"><article><img src="/integral/africa/lagos-collaboration.jpg" alt="Colleagues working together in Lagos" loading="lazy" /><h3>Work across disciplines</h3><p>Project, technical and commercial teams each bring a different perspective to delivery.</p></article><article><img src="/integral/africa/lagos-meeting.jpg" alt="Business team meeting in Lagos" loading="lazy" /><h3>Accountability in practice</h3><p>Clear responsibilities and considered decisions matter in every business we build.</p></article></div></section>
 
       <section className="careers-learn careers-reveal" id="learn" aria-labelledby="careers-learn-title"><div className="careers-shell"><div className="careers-learn-heading"><span className="careers-kicker">Learn</span><h2 id="careers-learn-title">Know the work before you apply.</h2><p>Explore the people, projects and sectors behind Integral Holdings.</p></div>{learning.map((item) => <article className="careers-learn-row" key={item.number}><div className="careers-learn-copy"><span>{item.number} / 03</span><h3>{item.title}</h3><p>{item.text}</p><Link to={item.path}>{item.link}</Link></div><img src={item.image} alt={item.alt} loading="lazy" /></article>)}</div></section>
 
