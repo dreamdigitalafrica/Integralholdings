@@ -10,3 +10,37 @@ body select:not([multiple]):not([size]),body .cms-root select:not([multiple]):no
 }
 body .nice-select{padding-right:44px}body .nice-select:after{right:18px}
 @media(forced-colors:active){body select:not([multiple]):not([size]),body .cms-root select:not([multiple]):not([size]){appearance:auto;background-image:none}}
+
+/* Shared spacing for outlined public form controls. */
+body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) label {
+ display:flex;
+ flex-direction:column;
+ gap:8px;
+ min-width:0;
+ font-size:15px;
+ line-height:1.5;
+}
+body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) :is(input:not([type=checkbox]):not([type=radio]),textarea,select) {
+ box-sizing:border-box;
+ width:100%;
+ min-width:0;
+ min-height:48px;
+ padding:12px 16px;
+ border:1px solid #cfd8dc;
+ border-radius:4px;
+ background-color:#fff;
+ color:#20282d;
+ font-family:inherit;
+ font-size:16px;
+ line-height:1.5;
+}
+body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) select:not([multiple]):not([size]) {
+ padding-right:48px;
+}
+body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) textarea {resize:vertical;min-height:128px;}
+body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) :is(input,textarea,select):focus-visible {
+ outline:2px solid #2b5097;
+ outline-offset:2px;
+ border-color:#2b5097;
+}
+body select:not([multiple]):not([size]) {padding-left:16px;}
