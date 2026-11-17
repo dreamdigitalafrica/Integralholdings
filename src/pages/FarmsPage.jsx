@@ -42,7 +42,7 @@ export const FarmsPage = () => {
       `Area of interest: ${data.get("interest")}`,
       `Message: ${data.get("message") || "Not provided"}`,
     ].join("\n");
-    window.location.href = `mailto:Integralholdings@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:support@integralholdings.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const moveTab = (event, index) => {
