@@ -44,3 +44,31 @@ body :is(.integral-contact-form,.autos-v2-contact-form,.farms-dialog) :is(input,
  border-color:#2b5097;
 }
 body select:not([multiple]):not([size]) {padding-left:16px;}
+
+/* Translucent navigation panels blend into the image beneath the header. */
+.integral-header .integral-nav-submenu {
+ background:linear-gradient(145deg,rgba(20,35,49,.88),rgba(29,48,63,.68));
+ backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
+ border:1px solid rgba(255,255,255,.18);
+ border-radius:8px;
+ box-shadow:0 16px 36px rgba(10,22,34,.18);
+ padding:10px;
+}
+.integral-header .integral-nav-submenu a {
+ color:#fff;
+ padding:12px 16px;
+ border-radius:4px;
+}
+.integral-header .integral-nav-submenu a:hover,
+.integral-header .integral-nav-submenu a:focus-visible {
+ background:rgba(255,255,255,.14);
+ color:#fff;
+}
+.integral-header .integral-nav-submenu a:focus-visible {
+ outline:2px solid rgba(255,255,255,.8);
+ outline-offset:-2px;
+}
+@media (prefers-reduced-transparency:reduce) {
+ .integral-header .integral-nav-submenu {background:#203342;backdrop-filter:none;}
+}
